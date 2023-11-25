@@ -8,7 +8,6 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"strings"
 	"time"
 
 	"github.com/jmoiron/sqlx"
@@ -382,27 +381,9 @@ func moderateHandler(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted NG word id: "+err.Error())
 	}
 
-	var ngwords []*NGWord
-	if err := tx.SelectContext(ctx, &ngwords, "SELECT * FROM ng_words WHERE livestream_id = ?", livestreamID); err != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get NG words: "+err.Error())
-	}
-
-	// NGワードにヒットする過去の投稿も全削除する
-	for _, ngword := range ngwords {
-		// ライブコメント一覧取得
-		var livecomments []*LivecommentModel
-		if err := tx.SelectContext(ctx, &livecomments, "SELECT * FROM livecomments"); err != nil {
-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get livecomments: "+err.Error())
-		}
-
-		for _, livecomment := range livecomments {
-			if strings.Contains(livecomment.Comment, ngword.Word) {
-				query := `DELETE FROM livecomments WHERE id = ? AND livestream_id = ?`
-				if _, err := tx.ExecContext(ctx, query, livecomment.ID, livestreamID); err != nil {
-					return echo.NewHTTPError(http.StatusInternalServerError, "failed to delete old livecomments that hit spams: "+err.Error())
-				}
-			}
-		}
+	// ライブコメント削除
+	if _, err := tx.ExecContext(ctx, "DELETE FROM livecomments WHERE livestream_id = ? AND comment LIKE ?", livestreamID, fmt.Sprintf("%%%s%%", req.NGWord)); err != nil {
+		return echo.NewHTTPError(http.StatusInternalServerError, "failed to delete old livecomments that hit spams: "+err.Error())
 	}
 
 	if err := tx.Commit(); err != nil {

@@ -47,8 +47,8 @@
 [OK] NO SECURITY CVE FOUND FOR YOUR VERSION
  
 -------- Performance Metrics -----------------------------------------------------------------------
-[--] Up for: 1h 34m 59s (3M q [609.240 qps], 2K conn, TX: 5G, RX: 471M)
-[--] Reads / Writes: 95% / 5%
+[--] Up for: 1h 53m 30s (4M q [696.348 qps], 4K conn, TX: 8G, RX: 638M)
+[--] Reads / Writes: 96% / 4%
 [--] Binary logging is disabled
 [--] Physical Memory     : 3.6G
 [--] Max MySQL memory    : 459.1M
@@ -59,18 +59,18 @@
 [OK] Maximum reached memory usage: 219.1M (5.93% of installed RAM)
 [OK] Maximum possible memory usage: 459.1M (12.42% of installed RAM)
 [OK] Overall possible memory usage with other process is compatible with memory available
-[!!] Slow queries: 113% (3M/3M)
+[!!] Slow queries: 112% (5M/4M)
 [OK] Highest usage of available connections: 15% (23/151)
-[OK] Aborted connections: 0.07%  (2/2835)
+[OK] Aborted connections: 0.04%  (2/4578)
 [!!] name resolution is active : a reverse name resolution is made for each new connection and can reduce performance
 [--] Query cache have been removed in MySQL 8
-[OK] Sorts requiring temporary tables: 0% (0 temp sorts / 3K sorts)
-[!!] Joins performed without indexes: 23
-[OK] Temporary tables created on disk: 0% (0 on disk / 233K total)
-[OK] Thread cache hit rate: 98% (40 created / 2K connections)
-[OK] Table cache hit rate: 49% (859 open / 1K opened)
+[OK] Sorts requiring temporary tables: 0% (0 temp sorts / 6K sorts)
+[!!] Joins performed without indexes: 31
+[OK] Temporary tables created on disk: 0% (0 on disk / 235K total)
+[OK] Thread cache hit rate: 98% (51 created / 4K connections)
+[OK] Table cache hit rate: 44% (1K open / 2K opened)
 [OK] Open file limit used: 0% (5/10K)
-[OK] Table locks acquired immediately: 100% (20 immediate / 20 locks)
+[OK] Table locks acquired immediately: 100% (28 immediate / 28 locks)
  
 -------- Performance schema ------------------------------------------------------------------------
 [--] Memory used by P_S: 72B
@@ -91,9 +91,9 @@
 [OK] InnoDB buffer pool instances: 1
 [--] Number of InnoDB Buffer Pool Chunk : 1 for 1 Buffer Pool Instance(s)
 [OK] Innodb_buffer_pool_size aligned with Innodb_buffer_pool_chunk_size & Innodb_buffer_pool_instances
-[OK] InnoDB Read buffer efficiency: 100.00% (142275351 hits/ 142276460 total)
-[OK] InnoDB Write log efficiency: 92.59% (926035 hits/ 1000172 total)
-[OK] InnoDB log waits: 0.00% (0 waits / 74137 writes)
+[OK] InnoDB Read buffer efficiency: 100.00% (184697955 hits/ 184699116 total)
+[OK] InnoDB Write log efficiency: 91.97% (1278870 hits/ 1390475 total)
+[OK] InnoDB log waits: 0.00% (0 waits / 111605 writes)
  
 -------- AriaDB Metrics ----------------------------------------------------------------------------
 [--] AriaDB is disabled.
