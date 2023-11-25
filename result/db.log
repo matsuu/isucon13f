@@ -1,240 +1,303 @@
 
-# Current date: Sat Nov 25 07:55:36 2023
+# Current date: Sat Nov 25 08:08:42 2023
 # Hostname: ip-192-168-0-11
 # Files: /dev/stdin
-# Overall: 429.63k total, 91 unique
+# Overall: 614.63k total, 94 unique
 # Attribute          total     min     max     avg     95%  median
 # =============    ======= ======= ======= ======= ======= =======
-# Exec time        316.96s   1.0us   2.68s 737.7us   3.2ms 123.0us
-# Lock time          1.42s       0  41.8ms   3.3us   2.0us   1.0us
-# Rows sent        619.78k       0   7.68k    1.00       5       1
-# Rows examined     13.11M       0   4.00M   30.00      15       1
+# Exec time        128.81s   1.0us   2.73s 209.6us 426.0us  92.0us
+# Lock time        743.9ms       0   4.9ms   1.2us   1.0us   1.0us
+# Rows sent          1.24M       0   8.05k    2.00       5       1
+# Rows examined     21.35M       0   4.00M   34.00      15       1
 
 # Profile
 # Rank Query ID           Response time  Calls  R/Call
 # ==== ================== ============== ====== ======
-#    1 0xAF92DD1D2D0ABDAA 69.7329  22.0%  56382 0.0012 SELECT tags livestream_tags
-#    2 0x831AD2FB940FC23C 52.0380  16.4%  88713 0.0006 SELECT users
-#    3 0xA928B8B7CBA06B85 20.6467   6.5%  37044 0.0006 SELECT livestreams
-#    4 0x9E0C76405B54C261 19.6502   6.2%  17834 0.0011 SELECT domains domainmetadata
-#    5 0x23BF896EBFC51D24 16.5968   5.2%  14682 0.0011 SELECT records
-#    6 0x9DD098305A326FC6 16.0323   5.1%    208 0.0771 UPDATE reservation_slots
-#    7 0x152C35014639D1CE 15.7362   5.0%  45169 0.0003 RESET
-#    8 0xB723EE16C08655F1 15.2717   4.8%    210 0.0727 SELECT reservation_slots
-#    9 0xFF5C1EBB1979694B 13.1099   4.1%  26050 0.0005 SELECT livestreams livecomments
-#   10 0x476F8C0ACCA19263 12.1319   3.8%    854 0.0142 REPLACE
-#   11 0x571FFC8104A6E50C 11.7739   3.7%  10037 0.0012 SELECT records
-#   12 0xB61FC43A94BB888A 11.6302   3.7%  26052 0.0004 SELECT livestreams reactions
-#   13 0xF0CF7B8430DE8C23  6.5654   2.1%  13892 0.0005 SELECT users
-#   14 0x813031B8BBC3B329  4.9538   1.6%  12166 0.0004 COMMIT 
-#   15 0x34E11DDE0FBF5564  2.9684   0.9%  24397 0.0001 BEGIN 
-#   16 0x2A90AD975B9EF157  2.6816   0.8%      1 2.6816 INSERT livestreams reactions livestreams livecomments users scores
-#   17 0x19C8068B5C1997CD  2.2494   0.7%  13053 0.0002 ROLLBACK 
-#   18 0x9E55B3BFD624E8C3  1.7036   0.5%   1982 0.0009 SELECT reservation_slots
-#   19 0xBB531FA8516D53BD  1.5854   0.5%   2285 0.0007 UPDATE scores
-#   20 0x71D433A2FC998D69  1.5452   0.5%   2278 0.0007 SELECT 
+#    1 0xAF92DD1D2D0ABDAA 31.5958  24.5% 108985 0.0003 SELECT tags livestream_tags
+#    2 0x831AD2FB940FC23C 19.7761  15.4% 162490 0.0001 SELECT users
+#    3 0xFF5C1EBB1979694B 13.8342  10.7%  68035 0.0002 SELECT livestreams livecomments
+#    4 0xB61FC43A94BB888A 12.6039   9.8%  68040 0.0002 SELECT livestreams reactions
+#    5 0x9DD098305A326FC6 11.2258   8.7%    606 0.0185 UPDATE reservation_slots
+#    6 0xB723EE16C08655F1  9.2589   7.2%    607 0.0153 SELECT reservation_slots
+#    7 0xA928B8B7CBA06B85  7.0645   5.5%  61308 0.0001 SELECT livestreams
+#    8 0x476F8C0ACCA19263  3.1264   2.4%    598 0.0052 REPLACE
+#    9 0x2A90AD975B9EF157  2.7261   2.1%      1 2.7261 INSERT livestreams reactions livestreams livecomments users scores
+#   10 0xF0CF7B8430DE8C23  2.6308   2.0%  22717 0.0001 SELECT users
+#   11 0x9E55B3BFD624E8C3  1.9649   1.5%   6118 0.0003 SELECT reservation_slots
+#   12 0x813031B8BBC3B329  1.1712   0.9%  17852 0.0001 COMMIT 
+#   13 0xE09C79C72C73F8E1  1.1708   0.9%    607 0.0019 INSERT
+#   14 0x34E11DDE0FBF5564  1.0125   0.8%  40028 0.0000 BEGIN 
+#   15 0xD15E40763ACC23C7  0.9693   0.8%   2952 0.0003 INSERT livestream_tags
+#   16 0xBB531FA8516D53BD  0.7709   0.6%   4640 0.0002 UPDATE scores
+#   17 0x19C8068B5C1997CD  0.7155   0.6%  22157 0.0000 ROLLBACK 
+#   18 0x20E98C5E6CC3EBDC  0.6212   0.5%      1 0.6212 INSERT
+#   19 0xAB7A3E53517FA04C  0.5038   0.4%   2311 0.0002 SELECT livecomments
+#   20 0x71D433A2FC998D69  0.4723   0.4%   3176 0.0001 SELECT 
 
 # Query 1: ID 0xAF92DD1D2D0ABDAA
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count          13   56382
-# Exec time      22  69.73s 113.0us  93.2ms   1.2ms   5.7ms 212.0us
-# Lock time      18 258.0ms       0  13.8ms   4.6us   2.0us   1.0us
-# Rows sent      43 263.50k       0      11    4.00       5       5
-# Rows examined   6 789.69k       0      33   14.00      15      15
+# Count          18  108985
+# Exec time      25  31.60s  87.0us  58.8ms 289.9us 822.0us 181.0us
+# Lock time      23 173.2ms       0   4.1ms   1.6us   1.0us   1.0us
+# Rows sent      43 528.40k       0      11    4.00       5       5
+# Rows examined   7   1.58M       0      33   14.00      15      15
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-SELECT * FROM tags WHERE id IN (SELECT tag_id FROM livestream_tags WHERE livestream_id = 7571)\G
+SELECT * FROM tags WHERE id IN (SELECT tag_id FROM livestream_tags WHERE livestream_id = 7595)\G
 
 # Query 2: ID 0x831AD2FB940FC23C
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count          21   88713
-# Exec time      16  52.04s  44.0us  82.7ms 586.6us   2.7ms  94.0us
-# Lock time      32 455.1ms       0  41.8ms   5.1us   1.0us   1.0us
-# Rows sent      14  88.71k       1       1    1.00       1       1
-# Rows examined   1  88.71k       1       1    1.00       1       1
+# Count          26  162490
+# Exec time      15  19.78s  47.0us  62.5ms 121.7us 220.0us  77.0us
+# Lock time      26 193.5ms       0   3.9ms   1.2us   1.0us   1.0us
+# Rows sent      13 162.49k       1       1    1.00       1       1
+# Rows examined   1 162.49k       1       1    1.00       1       1
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-SELECT * FROM users WHERE id = 1041\G
+SELECT * FROM users WHERE id = 1027\G
 
-# Query 3: ID 0xA928B8B7CBA06B85
+# Query 3: ID 0xFF5C1EBB1979694B
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           9   37044
-# Exec time       7  20.65s  51.0us  84.7ms 557.4us   2.6ms  96.0us
-# Lock time      12 173.2ms       0  22.2ms   4.7us   1.0us   1.0us
-# Rows sent       6  37.04k       1       1    1.00       1       1
-# Rows examined   0  37.04k       1       1    1.00       1       1
+# Count          11   68035
+# Exec time      11  13.83s  76.0us  23.9ms 203.3us 600.0us 127.0us
+# Lock time      14 103.6ms       0   2.7ms   1.5us   1.0us   1.0us
+# Rows sent       6  68.03k       1       1    1.00       1       1
+# Rows examined   0   9.00k       0       3       0       1       0
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-SELECT * FROM livestreams WHERE id = 7526\G
+SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l.id = l2.livestream_id WHERE l.id = 1601\G
 
-# Query 4: ID 0x9E0C76405B54C261
+# Query 4: ID 0xB61FC43A94BB888A
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           4   17834
-# Exec time       6  19.65s  81.0us  60.4ms   1.1ms   4.6ms 190.0us
-# Lock time       5  72.4ms       0  14.7ms   4.1us   2.0us   1.0us
+# Count          11   68040
+# Exec time      10  12.60s  70.0us  20.0ms 185.2us 540.0us 116.0us
+# Lock time      14 104.1ms       0   4.9ms   1.5us   1.0us   1.0us
+# Rows sent       6  68.04k       1       1    1.00       1       1
+# Rows examined   0   9.03k       0       4       0       1       0
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT COUNT(*) FROM livestreams l INNER JOIN reactions r ON l.id = r.livestream_id WHERE l.id = 1173\G
+
+# Query 5: ID 0x9DD098305A326FC6
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           0     606
+# Exec time       9  11.23s   5.1ms  56.4ms  18.5ms  37.9ms  16.2ms
+# Lock time       0   1.4ms       0 839.0us   2.4us   1.0us   1.0us
+# Rows sent       0       0       0       0       0       0       0
+# Rows examined  25   5.31M   8.76k   8.76k   8.76k   8.76k   8.76k
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+UPDATE reservation_slots SET slot = slot - 1 WHERE start_at >= 1703440800 AND end_at <= 1703451600\G
+
+# Query 6: ID 0xB723EE16C08655F1
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           0     607
+# Exec time       7   9.26s   5.0ms  99.8ms  15.3ms  31.9ms  12.9ms
+# Lock time       0 802.0us       0 151.0us   1.3us   1.0us   1.0us
+# Rows sent       0   6.12k       1      21   10.00      20      10
+# Rows examined  25   5.32M   8.76k   8.76k   8.76k   8.76k   8.76k
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM reservation_slots WHERE start_at >= 1701108000 AND end_at <= 1701140400 FOR UPDATE\G
+
+# Query 7: ID 0xA928B8B7CBA06B85
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count          10   61308
+# Exec time       5   7.06s  45.0us  21.8ms 115.2us 201.0us  81.0us
+# Lock time      10  71.9ms       0   4.0ms   1.2us   1.0us   1.0us
+# Rows sent       5  61.31k       1       1    1.00       1       1
+# Rows examined   0  61.31k       1       1    1.00       1       1
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM livestreams WHERE id = 7547\G
+
+# Query 8: ID 0x476F8C0ACCA19263
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           0     598
+# Exec time       2   3.13s   1.3ms 140.4ms   5.2ms  15.4ms   2.7ms
+# Lock time       0 583.0us       0  10.0us 974.9ns   1.0us   1.0us
 # Rows sent       0       0       0       0       0       0       0
 # Rows examined   0       0       0       0       0       0       0
 # String:
-# Databases     isudns
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-select kind,content from domains, domainmetadata where domainmetadata.domain_id=domains.id and name='u.isucon.dev'\G
+REPLACE INTO icons (user_id, image, hash) VALUES (1119, _binary'ÿØÿà\0JFIF\0\0\0´\0´\0\0ÿá$Exif\0\0MM\0*\0\0\0\0\n\0\0\0\0\0\0\0\0\0\0\0\n\0\0\0†\0\0\0\0\0\0\0\0\0\0\0\0\0\0\Z\0\0\0\0\0\0\0˜\0\0\0\0\0\0\0 (\0\0\0\0\0\0\01\0\0\0\0$\0\0\0¨2\0\0\0\0\0\0\0Ì‡i\0\0\0\0\0\0\0à\0\0\0\0Panasonic\0DMC-LX3\0\0\0\0´\0\0\0\0\0\0´\0\0\0Adobe Photoshop CC 2019 (Macintosh)\02019:08:03 10:41:13\0\0#‚š\0\0\0\0\0\0Š‚\0\0\0\0\0\0’ˆ\"\0\0\0\0\0\0\0ˆ\'\0\0\0\0\0}\0\0\0\0\0\0\00221\0\0\0\0\0\0š\0\0\0\0\0\0®‘\0\0\0\0\0‘\0\0\0\0\0\0Â’\0\n\0\0\0\0\0Ê’\0\0\0\0\0\0Ò’\0\n\0\0\0\0\0Ú’\0\0\0\0\0\0â’\0\0\0\0\0\0\0’\0\0\0\0\0\0\0\0’	\0\0\0\0\0\0\0’\n\0\0\0\0\0\0ê \0\0\0\0\00100 \0\0\0\0\0\0\0 \0\0\0\0\0\0ô \0\0\0\0\0\0ô¢\0\0\0\0\0\0\0£\0\0\0\0\0\0\0\0£\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0ò¤\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤	\0\0\0\0\0\0\0\0¤\n\0\0\0\0\0\0\0\0¤ \0\0\0\0!\0\0ú\0\0\0\0\0\0\0\0\0\0}\0\0\0\0\0\02009:07:14 11:16:44\02009:07:14 11:16:44\0\0\0\0\0\0\0\00É\0\0š\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\03\0\0\0\n\0\0\0\0\0\0\04831e93aa0377ab50000000000000000\0\0ÿá\nzhttp://ns.adobe.com/xap/1.0/\0<?xpacket begin=\"ï»¿\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?> <x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.4.0\"> <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"> <rdf:Description rdf:about=\"\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" xmlns:aux=\"http://ns.adobe.com/exif/1.0/aux/\" xmp:CreateDate=\"2009-07-14T11:16:44\" xmp:ModifyDate=\"2019-08-03T10:41:13\" xmp:CreatorTool=\"Adobe Photoshop CC 2019 (Macintosh)\" photoshop:DateCreated=\"2009-07-14T11:16:44\" aux:SerialNumber=\"F350812050269\"/> </rdf:RDF> </x:xmpmeta>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <?xpacket end=\"w\"?>\0ÿí\0xPhotoshop 3.0\08BIM\0\0\0\0\0?Z\0%G\0\0\0?\0111644>\0200907147\020090714<\0111644\08BIM%\0\0\0\0\0~å(ßuY9c5(Øu²EÿÀ\0ôô\"\0ÿÄ\0\0\0\0\0\0\0\0\0\0\0	\nÿÄ\0µ\0\0\0}\0!1AQa\"q2‘¡#B±ÁRÑð$3br‚	\n\Z%&\'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ\0\0\0\0\0\0\0\0	\nÿÄ\0µ\0\0w\0!1AQaq\"2B‘¡±Á	#3RðbrÑ\n$4á%ñ\Z&\'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÛ\0C\0\n\n\n\n\n\n\n\n\nÿÛ\0C	ÿÝ\0\0 ÿÚ\0\0\0?\0álåÆ¤¹ãÌ„ûå‡ø×L’zW›.m$ë»zþkŸé]<RôÍA%8IYþe?Ì­\ZpñýÆ5BæÃK¼;îm—÷ÓäoÌ…«©ð¯„õ¿j#NÑáÞxß#pˆ§»éÔÖŠìMØãF—yüƒoÛÚ9×púë^ø_ñC[ºKˆì¿²£­ÛHcSî a}eà?ƒžðŠGwv‚ûP™d\0…?ì/ðÿ\0:õÒÈƒjŒbºéÓ±ËSÑ?„<=âOÚuŸMªc*áO±ÆãøšëŸÌŒÏõ9§Hãª­\'½tóoVYó6Œ/\0TF^Õ\\¾j=ÜÒæ1r{Rù˜ëUúÑ¼Ö—3ÖüŠauÆqUŒ”Æc©LMwæ˜ÏØÕs/jaqùRæ\"Å‚ø9ªæUìj&hæ·qÚC%ÔçlP«HçÑdŸÈWáïÅ/Mâ¯^ê²œµÄÓ\\·±ŽÑø(Å~Ä|E7ž\nÖì4é–««Y\"Glà=9äd~5ù¯ø~ÚÚòHõ&²¼~Ævð8<ô®jÓ;pÐ¼Yã²ëv7ÑËa)ŠhOÞ¨=ˆÇRÂË®ëÈ°$/;¨Gò¯«:;+·ÔügkÚSbe@“•”ÉÇUcùjÉðnšñê³Í:öªFfn?Æ°æF¦Ó>áý–üG¤ø/Çw¾-Õ55ÒžÖÔÛÛ;ä)i˜Á*ô>µún¾8Ó<MiÆ·¦Øë¶³(e” Êz‘+ó»àïŒü-à?^µ¸ûN¥;Î­]ã¸ÜÄˆÄmlëÞ¾‰ømiuáïéú]ò¬S6V‰NáŸ+H#v@Áxô®Ú1\"­gtÏ¡G‡>kCË‚â÷@‘¿…˜O\0üwˆ¬ËÏ€ú•ÔFçÃ÷VZÄG¡†Co\'åó&*ã¤™À8>Õ£g«]ÙÊ\'³àqÑ‘ŠŸÓÔ«MuûÈXˆ¿Š\'/¨ü>ñŸ…å7	i§l?x)hÿ\0ï¸‰˜¬¶ñ>±:-f(ux»¤Ñ¤‡Cƒ_Hx_ã³¦o®íbGÏÂÊ£ù7ã^µoÃoˆÐ¶ûKkÉ1ó$‘„™“~ Õ}}¯Ž?wüogê™ù×wá¿…ò‰o|8tëŽ¾m›™O¨ÈS\'ð½»\"·‡¼i3,<‹]R?7ÎÅvF{cm}ÙªþÏÞ¼t««<ŸáÜ&‹þø“?Î¼w^ýœ<IÒÞÚö1È(LcýÖ,¿­tÃNZ\\‡‡’Øó/ê=ðl]Ë¤ÛëFVŽ0Ö73å.âÍÿ\0-?\nÔÓ¾5è:f‰ƒâ´ér«JæY­ËÀÆggÈ–\"HëŒ²ÖN¿àøCOEžÆîÙåw!uÚB¨ËFH	çÖ¹ËëPXÇc¥å¤jQÂÊ6Ž™Fÿ\0\nÚM¦Œ%Aö2<W¬ê> šÐü;ñ„&X¤2<K/˜­€¥NHü…ixgâÅ\rUÓ4íwNŽá/&Ž:ÚM„np¥ˆã¦sÒ°uM+á¶»&<Aá(aŸþ{Y–¶”{à|¿¥Giá+-¯à_\ZêzD±0xà¾Qw\nr\0ê8?ìVÜöÛúþ½iàéËt~•Xj÷…eÁ\"1ÒU8ôeÇò®{Vø…gfL7ÞV@9òä¿Ù}¦¾9Ñ¼]ñÃH„±é$_úscgpãè¬?öÌÖ\'‰>(X^ÙÍcãoêZ=ÄÑ²š0‚	 VÇü×7Õ ¥Ì‘3¦ä¹n}a¦ëžÔ¶Ü#*Ü>RsÏQ_ž_´­¡ñWZ¹’;!º6sÄqŒóõ&¶´‹++_*?x­¬›€–×È$›òÍxo‰/n/5}NöíüÙ¤šBíŒnlàœ~ÇU¼JÉò÷N¬¤ö±ÀÊ|ÝB5ük¬ˆ`\nå­É¨;g€1]ZkåÙô÷Ð¶8©TäTC‘R©Å@‰ãRTJ})àŠ\0“¾)àö¨ÔZu\0;84½zTyõ§rFÙÍ)3Œ{Q‘Ú’@/š3ÏÖç84ƒŽi€â{SI¨§qLÏ4\0g#Š=ý(\'4ž€\Z¡	â“ëÈ ý):ý#0ÈÇJN\0Å/Za eOQFSÒ£çµ7¥\ZÿÐò™bÛ¸þ	Gë‘ýk ŠcÞ°uÛI4ÁqjÇ>K++yrÊ­$Ø=s\\¶³+to‰EIæzÖJL	¯Dð/€õÏ_,\Z|e-”6v\"oSè+HFä¶x;Âz§Œõxô½9v©æIH%cOSî{õúàßi^\rÒbÓ´Ø‚•{‘ó;wb{“úVw‚|¤x+KOÓ“.^C÷½Iïý+·Ýë]ôámÎ\ZÕo¢- wç5“¡gõ­Ž{UÝÇjGjªÎ@â“bå&2TfJ›=j2õ#å\'/Þ›¿ÿ\0×UYÍ0¿sJã±h¾\rFd>µ[y…û)ó”œÉëÅ0ËéUË\Zaj|ÀÑ#H:¬îzR³\n…‰Çê\\‰0µˆüë9baÃóÎ¿á7Ri¨ÛGqÏ þ^•ômèÝÍy¶©h’cSSª‹±ò^³ðZØHn<;tm=bð9Ü+Ì/|	âûkå´}5å2ÑaÔŒõ\'‚?\Zûí”GZŽ;eÜ8ý+¥KB–‰áùgÒlí®“1ÙD‘DŒ~U¡A×ŠõM*ÂX­#›îŒTzTj`\nGLWIP=+ºœìpUZ%°M[UÚ0\r&}©	ü*œÌ¹I|Â¾õ%¾¡qk2ÜZÈÑKÊ²6ÖØŽj“>r=jÀSçe-‡Ñ^øÛ<&\r?Å)æFÌíkÁQêê:û‘ùWÒ6óÛ^ÃÍ´‹,2€Êêr¤v ×çcÔ\ZôŸ‡ßo¼r-.ØÜi30Þ„ŸÜ’ytöõëSOmÎêUú3ì/©mþ%Æe‰£äeþ_ëYz—€|¬@±jz5¬ÅT\0ÞXV™pGçPx[°}\"ÂUo2ßS¹´Ž\'æWó$R1Žzk°ŠòÖn#•Kzg‘øVIÊ+Fu	­~ÏÔt»Ë‹ì¬DñÁùy6µû2ëð†—H½·ºa’\0Ýô%…}¹ŸNj£ß[ÂØ˜˜ýØ`~}+¢Ú«KÜÎTâõhüÖÕ>|Eðáf½ÓçòãêÁ<Äÿ\0¾—5‹ˆ¼Qd†Ù‹Ká¢|JŸŒr?JýKY\"™s‡Ä\Zæõø[\\Bº®•opOñ4k»ŸF×\\35ö¢C ™ùªÞx3T¶™¼Eá»V’$iá\rjÁd©û³Ïû5ò]ã±‹}çäýO&¿Q~=ü0ð/…þëž\"±škIà„$P³nF’V\0Ü3ß±¯Ë\rMÂÅòöÏé\\9–!M«\ZáérlPÒt²Hz“]2šÁÑÔˆwŸâ®†:òŽ’p¦œ8£µ8\n†4…ëOÏ\"š8ïaHáŠ\\÷¤Î(ÆMü©ÝsMjLž?\Z\0y$FO¥4äÒ\0zRl	3“I‘ŒÒ×½&i]€ìšiàæç­hæ\0ÏŒJN})	¥bIÆM4úRf˜ji…‡“ŽôÞô„{Ò}ÒÄny¤ù)¹£\"—0ÿÑó#t¾\"ð©º7ˆQýã#ÈÕ;–ðB–êÒÉ(]ª£$’=z\'Âƒ^8Ôeûn£oý¥Ì¤7ž>wVþêuüM}™à_…~ð<gÁç\\ Ï—æ“ðì?\n\'»¢DøwðQÕ\Z-KÅ¹µµÈan$aþÑt{uúWÙz.¦èv1éúeºÛÁ\0*ŒSal8«¨õ´!c’¥VËáûš±Q[¨¥Ü:šÓ˜Äœ¿Þ¢-øTEˆç5cß­>`°çZ¬ÍëJÍéU‰ïSq¤<¿­G¿=ê65bG(¸ùIS2)™8æ›œÒD›ºÓKw¨‹`SKq@‰	íL$ƒQî\'­!n9 f=ê&ldw¡›5Ñ’ÀrzŸ¥®WÈ_E»&ºé¹°®ÓŠ†Í Î>XGz ÃVä±zTÎEB‰¡µ¦üªt*r¸õ¬1€3ÅnFrµª0’N)­Ò‚EDN{S¹),qQ‘ÞŸžØ¦riÜ,DsÒ sÕMZ#\0Ô;h¸ÍÍ/âT¾‹GÓµÝ_ìZn¨$‘<ÉæCJT¶`7£°Ïµ}A¢üJ¶×­Öx\"²×àÇúÝ>tiý³8aô¯”|%¤hš÷ôÝÄ«{a|þ\\‘6pNÆe<z2ƒ^Ï¯þÊ¿/çû‡šëÃ·ƒæY,å ô?ã]œZ´‘¿¶Qø™ìö¾6ðÛ¸·MBm&sÿ\0,®Ô¨Ïüù\Zë\"ÔµtêPŸâ‰‚“øƒù×Æz—ÂŸÚÃ@ÿ\0Â9â¸|Mh£ßQEf#Óçôa\\­·Äß|9ÔÖóÆ>¸ÒÝAVŸN%¡#¹1>äü˜VŽ„Ì=´ŸÂî}Ô÷º!“pÉ§Ê{°h¿ñåùjò›ò<Í;PY“²ÈûépkæŸþÔ~×\nÚÝÞÅ¯€c¸Sjù>ÒeàÕêvþ ðv£þ“o ¶yDˆÅú2†¥aY•LD£¹á_¶Wˆ¯í¾iú%Ü+ê7èw#îVH˜ðpz•¯ÊÝVBßÎ¾ãý±µ——ZðæƒóÞE´×#qVÁ•ÂF3Âw¯…5Ý0}…yxµiY–|Ð¹³§¦ÛuÂµS¥Q€F*êŽy®&Î‚Êòy©\0ÅF¾3ROJLwJ:SpM/9âÚÔRŠNÜõ¥=½hÀZ^	ÓžÔg7îF\0¥j`ïK‘ÐÒæÙ=sšiÆsŠ„Õ\\éÒšoS@ÀÆzÔ6KvM0’y ñíLã·4ÛQäM÷¦ç=hÍ4Š	éM¨¡4tÓDØ9¥æ€À(Þ?½NÀÿÒûÅ\0(À«qœqTU±VcoÖ´8Í8Üâ­«àb³Pš°­ùÕ)Íô»ÅTž)Û¹ª‰gp¦3T[ª6zÊÇlÓ˜äpjrsI²ÅfíQä\nBÃ½DÇŒ\n— $fâ£\'4ÒÔÍÀf‹ƒXÓsQî4n<æ‹‘aû…0¿¥10µ!X{`Ôli¤ž¹âš[ƒ@ìC&;šËG&´œŠ¡(Ï#­SeÄÈ’<ÔB?J»\"Ôa\0©Éà\\÷«ËÅU U¥sM2Y&h£¢Ÿ1m˜4ï¥(ò£˜v\"1œbGëVBç­ckºœ\ZMŒ·¨‹¹·`=ÍK•‹Œ/¡CN×›ã2hdµÜžz\0›óÉ¯¤4ï‹2ð·85ù£oñf\r;Äw×—vÍp.]ÈyES÷@=EzÎñKÃ\Z EŠøC#¿)Ïò®¼.\'•XŒV¶ÐKO‰\ZeÎ¹÷­qâ6ñ6y¨ê…°Gäx¯‰-õ–`)!ç ä~bµa×\'QÃ‘^Œqê6XcèøáÏŠÕŽ¯¢ÚÈî?ÖF‚7ÿ\0¾—â÷ß³þe)ºðOˆotg*›Ë\'æ¤~ ÓlüYy\0Jq]u—Y¶¬Ø|ž½+¥Nƒ×a¯m\r\"Ï…~-Å¯ØxÒm+Äº‚êwº|1Bf\\`©Ôp 7=ëÆ%;ïâ^¸$×¥üDÖˆ<m®k9ÊÜ]ÈWýÕ;~J+Î-Æûö=”\nùL¯6}=…\\èPdcÒ­§Nj¢‚\rZB1é\\­\Z–À©¨Gzx?¥ %½IÆ*ëJŠ. óŒÑëÏZf)ÝøíRÛ{Rÿ\0Zo$RñI€ï­&3ÚŒ“HN <àÒw¤Ï<Q?\ZÈÔÏ\rºy—¨£»\n•âåŠÚ.q÷œýÕÿ\0R\rZHD·$ÜÉýçè>ƒ ¥%+h{ùfFê¾j¯–?‰ÅÞøÃOµ%aŽIˆîëY±xûNÞæ„âûÀWkªxnÏÊeXùÅx¶½¤}™Ø¨àWŒ¯ˆ¤ù´hý3+á,ª¼99]ûÜö‹[«{ØVâÖA,mÑ”ñSgàþ×dÑ5E‚V?eœ…aØÀ5îäåzW~\Z«BýOÎø³†e—b=ïª×aI¤¤\'c]×>U¦KŸÂŒûÓ3ëFG¥W0ìÿÓû¡[µYFªJqÍNÐÕ&q4h#~UaXžGJ¤ž*ÊµPš-)5)<U`ÜSËÐ&‰7âšÇ\"£/M$â«˜@[aÚ‘³Ö˜MHN)¥¸æóšaãŠ\0V¦uéA\'¨ò(Ý9ô¤ÝÅ7w4„ó@H¦±íJN)„çš\0	£-JNj\"h¸ÕY;U›ÔÐ\rÍ3o­JV€´Ç\"Õ *%]¢§QÚ€n)Ô¡qÆ*EZb0ªUˆæ¥Uô§;,(d~ƒüâ“cK±NâD·Œ»Ÿóê}…|ñwâSIý—m)d‚W$õ`?•wÿ\0~\"[éVs[A.Œ9ÿ\0Ö¾\Z¿ÕnuK×»‰.x‚°œï¡ÝN•ÙXxsWYš²³n9ò®†Òrzg¥$ÚŸˆ´r?·´™ÏX~túÕè$­ëMFêÜbJƒÛ¨üFÅÜÃ¿Ì.¿Ù\Z£Û>~ã1_Ðñ^Õ£|bÖíÂ¦¡wqÿ\0y~Vý2+Ç.,´\r`ÄßL‰Üÿ\0ËHG–ÿ\0§‘ÿ\0JDÅü3­½«vŠä¿MÃŠ¥UŠTâ÷>ÆÒþ+xnù•\'g³sÿ\0=WóÞÇâCg%ý­ÂÊ‘£>U(Í~}Ì|m¢.ýWLûdþZÛÃ…[Ò|]m:ØÚ<°ÎùÝ§häçµkõ—k<,zëÌdÝ#ubXŸsÍQÓ2É\'©£qØÄö©4Î\"\'Ôæ¹%-N´´6PV\" F8â¥†“ÉÔóëRM@\rH\rE‡rlúÓ‡Ô\\æ¥ô†<Pæ4Àh\0ç,	‡¿jLSAÁãšRGnô4ºRg\'˜O8ÑšV…Ò¬Ákæ\'Ú.[Ê·Ï¯Ìÿ\0îû{ÓÚéöâûRû‡îGÞCêÙ­a¦«q¬ÝnþŠLTß[a‘äšöÕV‡gnÞ{ ]‘¯\0Âº(à™=VÒl¼¨=MkNB¡•Ô£¡ìVšnÑØåµv:šñÿ\0@v:ŽµìÄHï^OâB«ÎkÊÌ’ägÓðûjhñKø•[#µ{þpotK+—?3Ä»¾£ƒü«çíRP¨ëž+ßôV±Ñ,mdtw}O?Ö¼L†Wœí±§Šj?T¤Þüß¦¦ÏÓ¥ \0ÒñøÒdw¯«?Š_Â£8Í&EsÿÔûOzHïUÞ§R	 æh¸­Üv«õMHéS+U&AqZž\Z«ãšpn*€³zÓKTt™í@¹A›\'µ!#Šc`ŠkøÐ\r\nMFsG4Ìy \\¢Ó8§ô¦œž”	¡)‡\"œO¨ÅGÁäP <ñMÎ(Ï9¦÷ úñQ\Zq4Ìõ |¤mŠ…‡ö$TDóA]c4ôQš_Âž\0=©\\Ê¾µ2¥\"®:ÔñóEÇa;TêžÔôLÓå–;uÞÿ\0€õ£˜èFÌ¡wàÏð¯øñ\nÛGµ–¦\nTÍŸ¹ô÷©|}ñ×J¶œ$ÁJ½ó€ƒÐS_ø»Å×^&½fËj‡(¾§Ô×<ê]´©[V7Äþ%¹ñ%óNäˆT‹ŸÔÖ6Üc’*eªäiBV4r¹n68´àbqYh¸~.*[$Ù‰€À«±õ•“9­(š¢@jÚÜÜÛ°6ò4CÇåRÜOÌ©$¶ÐùëœL¨L ‘ëTã?¥N˜2;~µ%)•·sëV-ØF*½ßªÿ\0xŠµÚ¡jå\\Ñ‰³ŒñVÐôÍf©UØØg©1\\´0sOTa§ýzT¶2E8äÓÃPƒ†úÒ¯RËÞ‚{Ôa‡jMÔ˜ylqÜQ»Û½Cš\ZrÀ|U{ÍRÃF´mGQ9Qþ®<ÿ\0¬oþ$wª\ZŽ§k¥Ú½íëm‰âO`=ëçÍsÄ÷ž!¾3HpƒˆÐtTôÿ\0ë×7\ZJÝO¼àÎ–6~Þ§ð×âüŽöï_¿ñ&¢e‘ÉÜp\0è\0è°¯]ð®š±¢…y„tþQÝz×ÐZ4K.aF9{ò>ÿ\0>œiAR¦¬‘ØD =1TîåãŽÔ4ÛT{VMÄûò;WªÝ‹§Ù™y(DgcÀä×„x»WVwÚpq^‰â­n;HqßÜ×–é:$Þ&»:…è)`‡ÐÈ}·­|Ög9Õ~ÆžçÝå.Ž‹Æb¢¿O2‡ƒ¼96«x5‹õÅ¬G(§þZ7oÀW¶ŒŠ‰\"ŽÖ8”* À\0`OÜ1Žµß—àcB±ùúŸ“qOTÌ±¬´ŠÑ/!Äö¦1ïHO|Ôdçó®öÏ™HïFV›“éK“éSrÿÕûdÕ*õ¨W¯5()œå…5epj `*elwÍQ-)Á±Å@Ö¥àÓ¸‰sžô™™‘Iž:|À+Œ\Z`ëJyéQ“z.Ày=j&ÏJ\\÷¦i°\Z)I=é™Å!?.`’{PFZ`bx¢š(‡‘œÒg¥ÍGJ.	!¥†yâ£cŽ”¤€sŠŠ†ÁˆGzhÔ˜æœž*Y7\"ÛÍN©ÆjUOJž8É=)Ep¬{UØãø©D\\sÀ‘©ë6ztLîà*Ž¹ëì(nÆŠ-š70Ú!y\0óÓñ¯Ÿ>$|TÓô]>ææ[•‚Ú%äcŽƒ ö®câ_Å;}6ÙŒ²í\r‘)ùßðþf¿2>?x«\\ñRÜÎÑÛI+%OÉÀgÔõ¬e+ž…*\n:Èï|Kñj÷â´!³c–ò.y“ž½½hÇW¼À#-O¥}\Z| c°¬â¬vf\n6‡*èM\Z\01Ö®\'ÅF£ŒÔÊ9ÅiÌyÄËÃŠ°§·JˆªA×ŠMj7\"´\"“ÐÖZ’¾õaúÔ°7!“×½\\ÍZÇŠN5¡hû€É\'õ¨cEÛ ZX×Ò®è*«á®±Ø\n²P™M“®8«pj°À©CPÙäz°¤u5AñÍYFâÓ&\'œŽÔìÓf°â‚Ç†ÁúÒä“ÅE‘ž´…ñ@cÎ)¯\"F$‡\nœ’{\nN¦¼kâ‡ŒE±Ðìdýì˜2žƒÒ¹±x•J›“=¾É*cñ1¡\ržï²êqÞ9ñƒëzÙmØýŽÜ•\\tcÜÖvlg™]Ç¥p¶¥¥Ø×­øjùIâ¾FGV·4éšx\ZxL:£IY#Ú¼7l±Æœb½BÎMª1^s£¸T»8n6!ç5ö8f”QùÖm)³rk‚¨5ÍkzÅ¾•c%ÕÃmQ9å ©&¼Ž(d¼¸mB	f\'ôõãIuñYi4Z=³àã~?Oþ„k,^%«B:Éÿ\0W0Âa©S‹¯ˆv„wÿ\0%æÇØZÝxÂðê7Ù]9…ç÷„ÿ\0dw=ëÒ‘Ö$Pˆ€(\0p\0ì)‘¤pF°Â¡\0\n\0À\0vòjpØeæúŸžqUÇT»ÒeÛþdƒòÒtÍ&@<SXµÕcç…‘šB\0óFj’I#ÒÇÚ“ëGäÓ)ÿÖûXdœÔ “Þ£Zp5™ÎXSŒ\n‘HçÖ¡SŽ´ñÁúÕ ,)â¤\rUÁã¤™›%9£w4Ì’(ÈÅ\0?>”ÓÉæšHÒØ§pæ£lþâM3ÚùDíMÏµ:šOj\'½ 8 di¹_J\0Ri¤Š^§Ši<Ðsž(Æ¥\0U„LÐ`†¦H›<ÕÄˆÕ•‰qEÅÊUŽ\Z•¶B¹sTïu;[(Ë»\0sý+É<SãÈ­ –G”A\n³±Ç¡ÌÚ&ÎÇÄ,¶±‘;Ã úÿ\0…|“ñ\'âòZ¼–¶N.ozm+N==:×›øãâÕÞ²d°ÐKE	ÈiÞaþÏ ÷¯@îÛŸ%‰É\'’OÖ²go*¦µÜ“R¾¾ÕoûQ”Í3žIì= ¯ øµkæxn€?ÔÜ§äÁ…{0·Ý\\\'Å-Þ	¾|sDÿ\0“ñ§›zž_ðû™¢õô¢®Ñ’kæŸ‡ÍûÔö5ô×WÜ\n\Z5¯S™Ev$ÚOz™FI¨\0ÛÓ­L„â¦ç9a}1š”õu©Á½ÀJ0=\rH:Ô@æŒŽÆ†Çbê÷«§ó\"AXAºõ½¦`	$Æp+6;•³3·½XSÞ³b”ã=Í[I9ÅK@Ëá¸æ”=W\rŸ¥JM;N’V–@EgƒéRâ¤âZp|Ÿ¥gï\'J‘×4\rKàqÞ€Ü‘ÔÕ]çOJÈÖõÛ=ÊK»—h8¦¦¬ãyø\r\\MXÒ¡É”|eâ¸<7¦4›¹‹ß5ò5þ¡s¨]IsrÅÞF$æµ¼Qâ¯ß½Ìíòçå^ÀVQ305ñ9†9ÖÓÑlOð\nÓËpê;Íîÿ\0O‘·¥¨Þ	ö¯WÑ%Ø@ÕæhW§zî´©v°çëXaj¥#ÚÆÂè÷*ä`c¥v¬÷Må¡ÀQ–cÑTu$×™iÍ1Ž»±@êI­_kRÙ$^Ð˜I¨ÞNëÑO~{*WÔSÄZþ™ðØì/¿oú%Ý”¼C¨Üø»T\ZÑ˜¦Ÿjs<£Ó×ýæÇ•ÚYÚ[iÖ±ÙY Š†GoÇ¹=ÍghºM¶…`–P|ÍÖW=dõcýkâºpô-yËwýXü‡‰³ï­OÙQÒ”vó}[õéØqjnîÔÒÂþU×cåGf”±¨½»Š^´¬³‘Å&qHH¦1ÏÀ“q¥Üj!õ£õ`ÿ×ûUMJ¸¨TãŠzšÍäóš—œÔJA<ÔœUs($u§;Ô@ãŠpõ4ÓD¡©7sŠfGjæ™-c‘ŠnsH}M&î\r!sÆ(ÏjacIœÐ2Bj=Ù£4Þ‡Š	hq#¥7m=Fjt‹wJW$«‚z\n·¥i-¾ML-Ç¹€£gÒ´#Ö¥+#.q\\ö¥â+[![\'Ðu©æ-A³~Ic„Ç¥q\ZÏŠmàVH›sNŸ­y·Šþ ÛØÀ÷7×mn€’K`õëóÿ\0âßíZa\Z?‚G7!§\'åãŠ›¶uSÃõgÖßþ1hÞŒ¶¡r$º|ùp©Ž=»\nøsÄ¿uß¹Öc’ ß»Då\0ìHî}ëâoë~\"×õFÖu[Ù¦¼$åËì¾‚¯i?õ½7êh5ÛáÀúŠ¯foíV‰öŽŸwe¨Æ%´™e€óùu­¨àç\"¾^Ñ|[áíUÑì.ÍÑéŸcÐ×ªéþ0Ôì­ê¸¿¼8o®G¦Q±ëQ¦>ðÁô®cÇ6ksá^#Éû3·ýò7J»¥ø›HÕXgÊåœŸ+õêöµ	¸Ñï ÆL–ò®>¨Efž¢>]ð¡n£Qê\r}R‹û±žàÒ¾Eð;”½ˆz+ë¸¹Š3êò­¦ sœÓÔÂòOJ–ÞÞ[Û˜í-ÔÉ,§\n_ÀW¢A¦éÞˆ4»noq’Çî¡ôQßë\\íž–,©^I%¡ÈÚèº„éæù~Zcï?Ê?Z’K;;l‹¥ú(&™«ëSÜ1Ëçñ®&æiõ\'ñ¯/˜rü(ýG)à:\r\'[Sª’óI£³~B©I¬ikÐ7ç\\L¥ŽI8¬¹Ÿœf¼JÙÍTì²Ãð6[ÿ\0>‘è\\°#<UËÛ@ŽŠ7o÷¯\'gnƒ4äg9®9gU­{ž„<?Ë_üº=]|Qh6ŸÀÖ„(ÓÉù‹Ã5ã†WíÎjX¤!ºÖ+ˆ1ª Ÿ…ùTþË^Œ÷H¼E¤8ÁŸi÷SW“XÒä?%Ô|û×…¬²¸œúT‹1õæ´Ö[Å3ÌÄx=€—ÁRKî¡ïkyhÝ&CôaKö˜ç¢ÿ\0ßB¼F9HêjÜr#ÒºãÅkX/¼ójx5Ej±îG°5õšró ÿ\0Q6³d£ä}ÿ\0NækÎà(>\\síT5A)B8­*çóåº‰X_\n0Q—ï*J_r:ýWÇºVœ¤gÎ“ž¾çü+Â|Iâ]CÄ[—ÄyùP}Ñì*+øäÞÜqëY‹nÇ­xuó*µt›Ðý\'%áœ?ìðß¯S3Ë$ô­\"ÚEZK]½j]›F:W+•ô=™êIQë]F3db¹¨×<+¼ð–ŸÕË\\Þ|¶–£|‡×ñ­¨&ä’81QQƒ“=\"ÛQ‡Â\Zk7<_\\))ê¨xÝõ=½«CÁÚD¶¶ï­jc:†¢7¶î±ÆyTž¦¸­0ËãŸ¶¡r3§iä¿ÂÎ>êý{(8ëÖ¾Ç.¥ÏûÇ²ÛüÏÂ¸ÿ\0:öìtß½-gåÚ?«OqM$ò)¥0“^»Gä÷¹ 9?Zwn{Ô*px§dŠi€üÒ\Z‹}!aš\0E3pTeût¨Ù…0&ëÞŽ=j\rÔn ÿÐûLS†	Æj>iâ±Lç% Çzˆv©½PÈ§ŠŒ6)À÷4\0óÈéFNx¦çÒ”U)\0§ŠLP:pæŽ`Ï\\RTá;Ô«µÂ¹LgÒŽk@[öÅJ¶½ñK˜MÜ¥\ZŒVŒQóN¤#/€zÏ½Õí­àóÐRlY¬Å\"˜€=kQÖ­¬Óï8úŸÊ¸\rcÅåAØÛWŸ˜õ¯›~!ürð×… ‘îo[ü\nrsQÌuSÃ·©ô6¹ã=Šîd ÎXœqîkä‰ÿ\0´w‡|.“Ek/Û/p@U9¯>#þÐ^)ñ{Kg§LÖVŒxÛ÷ˆþ€×Ï3¼óJd™Ì’19bs’}êãNæ×ŒtG¡xïâç‹|{;>¥tÑ[dâ%8\0zW“º3ð½úö«âI=qëQ0G zV©$c)¶f<}±œöªØ	q·5µå¦Kž£®(ÙÉÇ8÷¡óTúq^@é[\ZW‹¼I¡mŽƒ,#þYKó.=³È­6MÄ—¬ë‹E*xæ“Ôiž™¤üFÐ5-±jÑ>sü]cÏ±Šö-3\\Õ µé÷‹}jGÝ$8#Ó=kã™¬7ÒéúŽ³ Ì\'ÒîžžBŸ”ýW¡©tîRg´xY„\ZÁVBÈxôÃ\ZúÚÞád·ˆ§ÎH\nœ’ÞœWÄ¾Ô§¸¿ŽêR³ìG$ä×Ûü;¤ßxÂïqów,\nÝdüÀù¥WDvà0ÞÖªC­ð—aö»û®nùkþÂŽÂ“SÔ$•‰\'šŽÚR°\0O\'ŸÄÖeÑÜÜ\nñ±^ÇíYNYKDdO+9úÕ	ã=ëFUëëY3õ9í^*v>óM-Šsc©¬‰\0ÜN:Uë†Û“šÎ}Çšð«Ï[žæ–—+¾rÓÁ§(%±Ú§Ž=+ŠsÐõiBÄ\r•àS£¯­HËÆCNDÍ9hwB$Ëœc­H\0Ï© dbšI­s©Xè•=±·­\\Ô·–œµv\"ÍmNv9*R¹ÐÚÈ7«×*²Ær95…„t­ç8æ½J5•™åV Ó¹Åê– ;`Y–öeºŠí¯­ÖS¸ŽµRÚÓŸ²|ÖFê§»©ÎIl¨äVk¦\rvwÖe5ÍIÈ\"¢§ºõ.“æW*EI2Äœ³­uÚ½áÓìaðîžIžr<Â½Øõÿ\0\nÏÓ’;8äÕ.“Ý«sáþ—&±¬I¬Þ¬?0Ï<ÿ\0þµÛ—áÜä ºžæpÂaç^[Gñg®øcGAÑá°Uùñ¾Cêí×ò­òäS3ßÒë_ Ò¦¡$cqs¯VUj;¶î;9äRž”Üâ“8íW¹Ì˜ýÝ)žõ&šXŠ-b®?#·zi\'·ZŒ¶i¤úS!lS	÷¨óÅ¸¦‰R0zÑëM;i8¢ÁÌÿÑûGž´ð{Ó\"íX#œxúõ§ŠŒu§Š|ÀH){b€¤Š•S4ù€Œ{ÒõüêÊÃœTëm“œSêd«‚Û¾*u¶ÀéI°*¤y«ñÄ1Í!1EËžœâ±/üGei•7ËÖ—0Ô.tE’1–8¬[íjÚÌ¸~uæúÇv£ÞZú÷üëç¯|kðÏ‡•ÅÍêË\'\'hnj\\Ž¨adõ>ŠÕ¼c€Û`þñ<×Îþ<øÓáÿ\0\rÆïyz®ëü\nrOÔ×Å^=ý¢õï<–š!ò!9\0‚A?Jù¯S¿¿Ôek‹éÞyä–lãÛáU\ZmšÚ0ó>†ñ÷íâÉ%®‹›kc‘»Hö¯šo¯.õÚêîV™ÎI,IëÏz`Îàë÷O$ç ¨7üÙOÖº#ITÄ6ªãxã=*=„à•<çéV%ù=ð°©Up¸çÇåÓó¡«Üªw8\në°Uä€°Î5u¶ /œñÅ4;@àûö¦ÒlÎX†âØã9ö¡ÁL`\\“rÜgÓ×éPÊŒpÇT°ELõ~•EÓ9ÚkJL™¾™ª’(CôþTŠ*<Þÿ\0\n§$JÜãWfùN0¥A†Áã\"£²ø£K®xŸMÑíÆ|×ˆìƒ’kô_Äñ¦›¤éúh@2>‚¾ký–|2·Zµï‰gL­ªˆã>ç–çò¯ ¼Op÷šáÈŒW.*vGÝð¦ó‹k»2Þ0¨9¬éúñÞ´fR=+9ÔžkÁ«PýƒLÏ—¥dËùfµæÅfH§<×‰“gÐáÑ“*g‚:U9\"äšÖtÆj£©é^5e©ìÐÔ¦±®y©\0`Tá0:Srx®\n’±ìR§ÔªWµ=W.ÒRÀæ¹\'.§m8°=*\"F8«,¼g*¹Cßò¬yÎÛ!é×«(@â© î*uÆx«”ádiFÃVœ6½aÆO¥mZ6x¯F„õHò1/´{‡<ÔöVƒÌ4i¸Þ¶¬mNàkÝ¥I6xøŠÊ1f­eˆó\\3Z–›jõ<W°j–Û Æ+Éõ«•Óa’b~sÂs\\Ù…\rQ¦[_š9ýbãíSÅ¤Áþ®/½Ž¤úWÐ^ÒÓHÑâ…—l²ïõ=à+Å¼¢¶§ª¬ó®åSæÈONñ5ôU{Ù¨¹¾§â)g¾Ò¤ppz-Xÿ\0P(-ÇÒ™šBx¯£{È4Òqõ¦gæš[4’ù7w4ÍÔ…‡Z¡ÛAsœŠN¼Òv4›³ÇJq“JIÇ4Òp94d´\0ï¥4zRü¾”ÿÒûLx¥ïÍJ±ûTËEs˜5bºÔ‹ž3VVß¶*QoÏ4…‘Å[*d·çŠ˜ˆüÆØ|qzÕ€€uëYWZÅ¥šŸ5ÀÇç\\V¥ãxÀ+h3îÂ‹šF¡Íwo\n–v\0~UÉê^/³·R±ÄzWˆø‡â­ªoîÄ@v\'¯˜<sûGhZ+½µŒžtänQÔ°Î8”¹ŽÈaïD}‰­xÝ™¤˜Bƒ’3Šù«âíá[Ë=ÕØ•Ðpõ>ÝÏà+á?\Z|kñ_‰ÒÚcoÎ2yëù\nùÏYŠóSf–ògÜòÌI5J›{—ÏN§º|Jý¯üOâ3-—†PÙÛœáÜseÖ¾xÑµícYÕ¥Ôõk¹.fe*Øž§°è?\nç¤Ð0üæ·´Û²`tF(Æ¦\"R=]ŸæáIOu gvsÏN}ëÔH@?OjÔQµ9a“Î}êÎ;ê\\\\ã×¨V<œ1Á<Žä\n½ˆÊüù”œ#ü«Ga@H”çv>Rpj%2ázÔžYÙÉSúTe•9#=:CdeAdõÇj…@Ü2	ã!‘F¨•˜Ã þT®\rœ£y„œú÷¨7ÙŽøëV	y#=yî*«mPMƒ6ÓƒÇáT\\0ÈnO­XÝÔõ\'œUaódäú¨@8 ñßüj³Û€úÕ—ÇÒª°n9 hýýì!Òþà0÷.Î}y5<×^vµ1=I®àŸ‹áÿ\0„ûÛ\r#±ë[	¨ÄuMÙûüW®­cöŽËŸ½+tVô;9qºª<]jìk¾<õ´Ç\\^dÑöXwou2Â¦²\'@§‘]ƒÛµe\\s^}x­OÛ9ù0IÌÖ‹®#5^zWÏWž¶>“K©H®*-§5qÓò5ÞÇ¥y³’¹ëB™\0AùSŠg­L©ÇÒ›Ž1\\•<ŽúpV +ùÕrNµpã¦zTLQô¬”¯¡Ó•±Ž‚š89§¶¦ØsW\r(hN<Š×³l°ÏŒ€ç´-²²Jí¥+4y•©£·³]ÀW]c\0Æk”Ó>lgÒ»kv	Ï_eJ×gÃg3’vFN»p–Ö+œ‘_7êW«êeWý\\mŒz×oñÅÛì6Í×Ö¨|>Ð\ríÇÛ®˜bçŸâcÐsJÄb9c²9ñøøå¸V®í·àí iZR³ŒM8ÞÃ\nê²*²·½;xâ¾Ê•5¨£ùsŒ•z²«=Ù1oÊ°éëPî\'¥&x9æ´8ÉIÇ)¤þµr)R¸ÜhÏÓAä\n\\SAqÛ±Ò‘Œb›ž3ëJ9§!¡Oç@÷¤öëFy¤p9\'¿E¸w¥Ü¾´ÿÓûª8»b®,+M/#,sô¬‹ßØY™F}&¹®gÉØÞ*rp½C-Ô0)\'§©àWš_øßho è[­y~¿ñ;`Òjw©Žp[¥O1¤(7²=Úÿ\0Å¶V¹ÃEÿ\0\Zàµ_ÊAòˆ‰=úõñ÷‹¿hhÊñÚÉçMÎ3þkå?~ÐÞ\"ÖËÃbû!={~@ST¢ÙÕ\ZZÍŸ~x§âÖ…¤,’^_	\n°?™¯–¼eûO>^ÛA\'€Tçóoð¯‹õM{WÕæ/wròîè@}08¬ØÌ6œ¼ŸzÒ4{ƒÄÆ?=\'Ä_<Uâ)·78SÜsÉ?Ë¥pš…Ü7\r$ÐÈ×P²º ¢©ûàçPúÔ\nâDùòXÇµ>)-ãp×,Â,åF[hëÇ|u®…¶9g^Sø˜ÈA¹_9[rüiÏl_G§¡¬_ê¶÷²ZInbš&%ƒ±$ç h½o ù³Ó=iØÊæL–¡¾dåG^)Ùã? â´”¹‘ºóÀ¨>Ð	ëœ\nV„s4xFçjän€zcüæª\n7gëè1R\' dæ?J`õ,»l{8=GlÒ†Ü»ÁÇ\\óøUC‘s“ŒóÛNCŒ…ÃÀµDÇk…p=;Ó\n©$²’;ŽÜÿ\0Z~:68ôõ¨<üý1Ð{R5Äa)9ô¨åT*<Á³ßÛÖ‡dÜoê}*\'ÊÉ¼|Ùâ€HÜÁ#ê}Ä‚0éOaË	=ýê6Êœqïé@$2F\0€9#Ó§4Æ	·r~yô¨ØmÉäŽ´Áî}=)´Pç\\®âÜz\Z¬Ùþ”öÀ9<u=j\'o3¡ävö¤cáŸÝhSb&>SŸükÑ\"ñD³J&Y3žsšñ‹—Í~¡WVÓR¸µpªr½…xy–[*ºÃsõ>ãjxF¨â–oSíO\nøéVÞôú`“^­ÄH2ïJøGHñ4!”;yl1Á¯nðÏ‹¦ù#ŽPsÐf¾[ÛÕ ù*­Ü£„Âc¡íðU¿D}\0öìy+6kSÉ¨¬|@ž‡šÛK«€>lf›ÅS¨®™°u©?z7G/-¸g´85ÙKf’Ñ85™.Ÿ ÆkÌÄPê	]4“9†NÝª?+ŒšÙ–Ù—¨ªÆ:ñ«Aì{t’3ŠqÅFWµhò=ª&Ž¹%¡Û¡œF9\'Ö‰Ž 1öÅd•Žˆ¢šhA×Ö¯ÏqIåqÅ[•´Ú±^0p2+BÝr0F;V¬î1–\' 5ÛJ.êÇ›[¹Òé§`ªÞ)ñzVœçv=zÓ5ÛY5Þ§*¡Q¹ÉZðIÄµ†‡J£Óãl4Í€}{Ÿa_SF3šöpÜøÌÓ† ž#$¢¿Ð¬ï¼g¯Jó1ûªµõao¥ÙÅej¸HÇæ{“Y^ðÞá9l,œ\ròYÏ©ÿ\0\nèø¯§Ë°*„|Ïç1âÚ™•f–[!êisúS3ŠQÅzÅÏQFâ:SM.hhïÖÝ…&r0GJ—¸isúRg¸¤ÏAUpÖ“qéÒ64œhÙÇJNzšiÏ…°hÝyÅ…4\Z3@ÿÔöÍ_Ç…/qt#@;¢¼7Å¼5£+ÿ\0¥	ä„müúWç§‰¾+x·]½·ƒÎ*.„dw0.p@íÇÒ¸_Lïâ½J\'rËo/”–¡NÔ\ZÁS:T¡SêŸþÓ÷wLöÚ6Bò2½?ï£ý+ç\rwâGŠ¼@í-Íã*·e<ò}O5ç$…<§¸a0#Žãžµ¼ Œ§‹–È°Zy¥ËÈXIêOçL“\nK©Á>ƒŠÊ€@	¤##,vúûÕ´r¹¶F˜À*ry¤ÃŒÙ\'×Ðš¬gH‡”£yô^Ôï\"Y>yŸh#îŽŸOzw$V*¿w’8oJPèácaºƒØÒ£Ü*¨Áàçµ.`rI8ç¥0ö0zôÅ]-ócUQ»8Èî;{Ô›T‚#ûÃž{Õ>C)ËdçúSJ:œ“€*)TÙ·žÇ¿5cy;Wiàñ@l¯ÍÃç8÷¨šG+ÊäŽ¿Jh8kG·6å!ˆ\'¸©ÐÁ0)†ä0ý)‚YùÁéýjrÎÛxãô¦’îëÍIDí3Asß¥C#ùÆ?®hbŽ Œvâ£Ýr~zöybJžyê9¨¼ÎxÈãô§0#k( ã5RBç»U=‰¸¯\'\0ž~†•8\rÎzT HaÔRŒ©ÁÏj’“œÚ:PmçvHíõÅ)bIlôã ÜœõýhÉG;{LRX‚£‘ü½*(µ}8Ÿí-²XÏ»óÓ&±†kÝ5ÉTÊœ¯#ô«åÐMøåam)ÇÅPÁ#â±t½bK§û&ÑŒ“ô­§ažµ™i–`Cÿ\0w¯­^´Õo¬ÜIm3!à5R(7sPÈêŠYºvµ)ÆzI\\ìÂãëQ—5)¸¿\'cÒ4ÿ\0‹~+ÓÊÂe¢öqÚ»›?Ž÷q•ûe€o÷Î¾yržÖ®gæÜos”‹æ9èqÚ¼ªÙ{Àúü‰½k¯4™õD_´›PŸnµšã?)Ší4Ÿ‹º©e.¡Ì¶ð<i#2p­1Ú€ãÔð+áë™$¾¼Rˆ]É\n€³g ¾Mzï€|+¬ê:Wˆ<\'ywo¦ÚÍ-ºÎ_÷“‰£>tB$s±Á9\n+Ž\\-F_šùŸACÆÉ0—Èúrßâ7„o§öŒ;ÁvzcšÞ‹QÒo`–91ýÆóÅx†ü7à»®µŸCZ…¤æ—¿˜ÛÂyR(39uÃí\0uäÔúçÅÿ\0ZX>•¥ZËªÀü4PF4ëÁÈÝ×Œÿ\0yÖ¹jpkÞ5~ýO¢ÂøØ×ñpËå#ÞLV®HV¨^ÈÆ¾1Õþ)x‡U»…âŽ2Î U`²_-W=NâK3{’kªÓ|gã³@lõq†\ZM»fv1?rOCÐ×‘[„+ßI&}.Æ¬¶ZU§(ýÏü§\r„ˆüéŸÙ³>Qù×ÌÚÅ¯\ZiS.DRÂãr3GƒFÁ0èkkFø¹â[ô¼ººŠí­\".ÎªysÂ(ç«\Zóß\nb•5ê{´¼^ÉåµF¿íÓèì«–þÇ½NºÄ\rì©ø×Ïr|Rñ¤ZpÔ¯\ZÊÊ7\'bÉŸ5€vòG§=k˜ñÅ?\ZaYj6—ÞS]Ú€p¡HÇýõ[SáJÉë¾g.\'Åì­EòM¿ûwüÏ®F“¦Z.ûë\0ì0£ó5JãÄ\"h<5gæ7A!ùñsý+ã?â?ˆ4ÝHÞM0¾Y±Žœ`Œð{\Z÷oü\\ðæ®C:tíÙùŒý·ãŠ÷0œ6¡ñ¿»üÏÏóŸÕ°´ß¬¶û‘­\'‚.µë±{ãÓt™ÊÚÃ•ˆ{1êÕëº\\Úu¤vZ¥¼1Œ(€þÐÿ\0:Â‚hîb[ºË•”‚§ñiN:õ¯zŽ\ZÕ ¬~OšçØ¼tùñ5¿%ò;Õ&]ÖÎ$ö7â) c<`×.ŽWj×‡V˜Â‰— -÷‡ÐÖÇ’i”}9¢9m.X_cŸá~?#Ò•âtl2ã4\0˜ÍŸ­/Ò“A§Ú›Î9¤ÈzÔØ	¤Îzõ¦žôg­R@8Ziný©qMäûSÅ¹ÇJCÅ7?…í@Ÿ\\Š\\ûšq¥ÜhÿÕüê>ò¾(é\ZAl_l(Aì‘ÌÏûäW—k7O}¬ß_·Ìnn&ÿ\0À...\G
 
-# Query 5: ID 0x23BF896EBFC51D24
+# Query 9: ID 0x2A90AD975B9EF157
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           3   14682
-# Exec time       5  16.60s  90.0us  54.8ms   1.1ms   4.9ms 208.0us
-# Lock time       4  58.6ms       0   6.1ms   4.0us   2.0us   1.0us
-# Rows sent       0     298       0       1       0       0       0
-# Rows examined   0     298       0       1       0       0       0
-# String:
-# Databases     isudns
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT content,ttl,prio,type,domain_id,disabled,name,auth FROM records WHERE disabled=0 and name='dp3i9rsjdl1du1j2dcux480.u.isucon.dev' and domain_id=2\G
-
-# Query 6: ID 0x9DD098305A326FC6
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           0     208
-# Exec time       5  16.03s   5.2ms 199.1ms  77.1ms 158.3ms  74.1ms
-# Lock time       0 948.0us       0 765.0us   4.6us   1.0us   1.0us
+# Count           0       1
+# Exec time       2   2.73s   2.73s   2.73s   2.73s   2.73s   2.73s
+# Lock time       0   4.0us   4.0us   4.0us   4.0us   4.0us   4.0us
 # Rows sent       0       0       0       0       0       0       0
-# Rows examined  14   1.82M   8.76k   8.76k   8.76k   8.76k   8.76k
+# Rows examined  19   4.00M   4.00M   4.00M   4.00M   4.00M   4.00M
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-UPDATE reservation_slots SET slot = slot - 1 WHERE start_at >= 1701453600 AND end_at <= 1701460800\G
+INSERT INTO scores (user_id, name, score) SELECT u.id, u.name AS name, (SELECT count(*) from livestreams l inner join reactions r on r.livestream_id = l.id WHERE u.id = l.user_id) + (SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l2.livestream_id = l.id WHERE u.id = l.user_id) AS score FROM users u\G
 
-# Query 7: ID 0x152C35014639D1CE
+# Query 10: ID 0xF0CF7B8430DE8C23
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count          11   45169
-# Exec time       5  15.74s   9.0us  89.4ms 348.4us   1.4ms  46.0us
+# Count           4   22717
+# Exec time       2   2.63s  56.0us  61.6ms 115.8us 139.0us  89.0us
+# Lock time       3  26.0ms       0   1.5ms   1.1us   1.0us   1.0us
+# Rows sent       2  22.72k       0       1       0       1       1
+# Rows examined   0  22.72k       0       1       0       1       1
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM users WHERE name = 'akemikobayashi1'\G
+
+# Query 11: ID 0x9E55B3BFD624E8C3
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           1    6118
+# Exec time       2   1.96s  66.0us  14.6ms 321.2us   1.4ms 112.0us
+# Lock time       2  12.2ms       0   2.0ms   2.0us   1.0us   1.0us
+# Rows sent       0   6.12k       1       1    1.00       1       1
+# Rows examined   0   6.12k       1       1    1.00       1       1
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT slot FROM reservation_slots WHERE start_at = 1704297600 AND end_at = 1704301200\G
+
+# Query 12: ID 0x813031B8BBC3B329
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           3   17852
+# Exec time       1   1.17s  14.0us  12.1ms  65.6us 175.0us  33.0us
 # Lock time       0       0       0       0       0       0       0
 # Rows sent       0       0       0       0       0       0       0
 # Rows examined   0       0       0       0       0       0       0
 # String:
-# Databases     isudns
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-Reset stmt\G
+COMMIT\G
 
-# Query 8: ID 0xB723EE16C08655F1
+# Query 13: ID 0xE09C79C72C73F8E1
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           0     210
-# Exec time       5  15.27s   5.1ms 185.9ms  72.7ms 148.1ms  69.3ms
-# Lock time       0 371.0us       0 152.0us   1.8us   2.0us   1.0us
-# Rows sent       0   1.98k       1      21    9.00      19       9
-# Rows examined  14   1.84M   8.76k   8.76k   8.76k   8.76k   8.76k
-# String:
-# Databases     isupipe
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT * FROM reservation_slots WHERE start_at >= 1701018000 AND end_at <= 1701032400 FOR UPDATE\G
-
-# Query 9: ID 0xFF5C1EBB1979694B
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           6   26050
-# Exec time       4  13.11s  96.0us  44.6ms 503.3us   2.4ms 135.0us
-# Lock time       5  77.8ms       0  11.3ms   3.0us   2.0us   1.0us
-# Rows sent       4  26.05k       1       1    1.00       1       1
-# Rows examined   0   3.42k       0       3       0       1       0
-# String:
-# Databases     isupipe
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l.id = l2.livestream_id WHERE l.id = 2028\G
-
-# Query 10: ID 0x476F8C0ACCA19263
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           0     854
-# Exec time       4  12.13s   1.4ms 116.9ms  14.2ms  47.8ms   6.3ms
-# Lock time       0   4.3ms       0   2.1ms   5.1us   2.0us   1.0us
+# Count           0     607
+# Exec time       1   1.17s  74.0us 843.5ms   1.9ms   2.6ms 119.0us
+# Lock time       0 832.0us       0 251.0us   1.4us   1.0us   1.0us
 # Rows sent       0       0       0       0       0       0       0
 # Rows examined   0       0       0       0       0       0       0
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-REPLACE INTO icons (user_id, image, hash) VALUES (1557, _binary'ÿØÿà\0JFIF\0\0\0ð\0ð\0\0ÿáŒExif\0\0MM\0*\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0	\0\0\0’\0\0\0\0\0\0\0œ\0\0\0\0\0\0\0¢\0\0\0\0\0\0\0\Z\0\0\0\0\0\0\0¨\0\0\0\0\0\0\0°(\0\0\0\0\0\0\01\0\0\0\0$\0\0\0¸2\0\0\0\0\0\0\0Ü‡i\0\0\0\0\0\0\0ð\0\0\0\0SONY DSC\0\0SONY\0\0NEX-5\0\0\0\0ð\0\0\0\0\0\0ð\0\0\0Adobe Photoshop CC 2019 (Macintosh)\02019:08:03 11:22:34\0\0%‚š\0\0\0\0\0\0²‚\0\0\0\0\0\0ºˆ\"\0\0\0\0\0\0\0ˆ\'\0\0\0\0\0ú\0\0ˆ0\0\0\0\0\0\0\0ˆ2\0\0\0\0\0\0\0ú\0\0\0\0\00230\0\0\0\0\0\0Â\0\0\0\0\0\0Ö’\0\n\0\0\0\0\0ê’\0\0\0\0\0\0ò’\0\n\0\0\0\0\0ú’\0\n\0\0\0\0\0’\0\0\0\0\0\0\n’\0\0\0\0\0\0\0’\0\0\0\0\0\0\0\0’	\0\0\0\0\0\0\0’\n\0\0\0\0\0\0 \0\0\0\0\0\0\0 \0\0\0\0\0\0ô \0\0\0\0\0\0ô¢\0\0\0\0\0\0\Z¢\0\0\0\0\0\0\"¢\0\0\0\0\0\0\0£\0\0\0\0\0\0\0\0£\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤\0\0\0\0\0\0\0\0¤	\0\0\0\0\0\0\0\0¤\n\0\0\0\0\0\0\0\0¤ \0\0\0\0!\0\0*¤2\0\0\0\0\0\0L¤4\0\0\0\0\0\0l\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\02014:08:12 13:39:45\02014:08:12 13:39:45\0\0ñ\0\0:F\0\0¿˜\0\05\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0i\0\0\0d\0\0\0\0\0\0\05cÃ\0\0÷\05cÃ\0\0÷9f6ee3eecf7d576b0000000000000000\0\0\0\0\0\0\0\0\0\0\07\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0E 18-55mm F3.5-5.6 OSS\0\0ÿáBhttp://ns.adobe.com/xap/1.0/\0<?xpacket begin=\"ï»¿\" id=\"W5M0MpCehiHzreSzNTczkc9d\"?> <x:xmpmeta xmlns:x=\"adobe:ns:meta/\" x:xmptk=\"XMP Core 5.4.0\"> <rdf:RDF xmlns:rdf=\"http://www.w3.org/1999/02/22-rdf-syntax-ns#\"> <rdf:Description rdf:about=\"\" xmlns:xmp=\"http://ns.adobe.com/xap/1.0/\" xmlns:dc=\"http://purl.org/dc/elements/1.1/\" xmlns:aux=\"http://ns.adobe.com/exif/1.0/aux/\" xmlns:photoshop=\"http://ns.adobe.com/photoshop/1.0/\" xmp:ModifyDate=\"2019-08-03T11:22:34\" xmp:CreatorTool=\"Adobe Photoshop CC 2019 (Macintosh)\" xmp:CreateDate=\"2014-08-12T13:39:45\" aux:Lens=\"E 18-55mm F3.5-5.6 OSS\" aux:LensInfo=\"18/1 55/1 7/2 28/5\" photoshop:DateCreated=\"2014-08-12T13:39:45\"> <dc:description> <rdf:Alt> <rdf:li xml:lang=\"x-default\">SONY DSC</rdf:li> </rdf:Alt> </dc:description> </rdf:Description> </rdf:RDF> </x:xmpmeta>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 <?xpacket end=\"w\"?>\0ÿí\0„Photoshop 3.0\08BIM\0\0\0\0\0LZ\0%G\0\0\0?\0133945>\020140812<\01339457\020140812x\0SONY DSC8BIM%\0\0\0\0\0þJ Šï˜3õ÷”x–w”ÿÀ\0ôô\"\0ÿÄ\0\0\0\0\0\0\0\0\0\0\0	\nÿÄ\0µ\0\0\0}\0!1AQa\"q2‘¡#B±ÁRÑð$3br‚	\n\Z%&\'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ\0\0\0\0\0\0\0\0	\nÿÄ\0µ\0\0w\0!1AQaq\"2B‘¡±Á	#3RðbrÑ\n$4á%ñ\Z&\'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÛ\0C\0\n\n\n\n\n\n\n\n\nÿÛ\0C	ÿÝ\0\0 ÿÚ\0\0\0?\0ê/òØã<~U^ÒB{«,wÄÞëü«6ûíž\n‚?\nþZ’?£S5ì¼àämÌÓ/Y|ò½Ç?Î«K [¸Èà2óøþ½X½\0ºÉŽHEÅ«f2¿_ñþ•¿œ*ú¨?LW9r¼VôR±íà‘ýg%©ªgGjÅ£dÎ1Wô¹w&{…?ÌVU““½G ý*}6Dê ÿ\0<ÿ\0ZÈ¤t“¹û&WûÂ°ÏÎ…Gcþµi;“k‚ˆVU»±ƒÎÐXÖUtÇ[“:û5v¶ÎZ%8ôþb¸dmÓ³tëÇÔWWop|¼}ê+–KC{—¬ä-!Ï«Ô\nßÒÎg}¾ÿ\0Î¹›,<ãð*ètÝË+x\"¹,jÎ‘8\\oÖ¨\\ç³SÆä†°¥UŸpb£ŽCf°­±½Æš3ÎÁÊsÇ±5ÖÚÊ²\"H¼ƒ‚+‘·r$l‘Ï¹¥¿îŒ_óÍÈýkžœµ5««t{\\ôðÍW¹SæDÝ\0R>¹§[7ÈuÈ­-Öb*pr\nï›¼+LŽ\"w†Ï#ùTÖ¼JF}*(p„2>cÇáS[|Ò’\\\Z‹j®:Ftƒ10öÊªÙ°[ÁƒÎâæ*Õ£‰ìòª¶\Zße?‰Ë~f½Uÿ\0.Ï)í3®Œ|Ã4û’\r»güñMLopGÕô7÷Yàý¤sî¹¸ˆŽÁ¥oÇËý+ŽÙã8þ,Vì#{nµÇ…øš:ñ;\"òŠxŒ{ÔjsŸÂ¥Çî¯U¥cË“+ÔZYËŽØ4«žãI!ãð5‹Z·3tÎn‚ýk¤›¢+œÓ?ãì}\rtéµõâ§*_»WîN=ûÿ\0\"¤ñífcé\\µÂ³‘ÓºÛ’Nàzb¹)ò`®?\ZË2Š[à)B¡m“=ê;Uí¿¸_j¦ÝkÆ¨¬’=ºr»exMR¸R#«ÖäˆxïU.2SÞ¹åðtŸ¼rÚ×$uùÖlEr{\Zèu!›1Ç úÖ%ÀgfïŒþ\"¼ú–R¿‘ëSøLÂÄBp3ÇóÍ`™?tCué]	\0[9Ïÿ\0®¹Ï,2œžÔ7ª)-d0òØõÉþ•ÌÜ\'Ì¤óÎk  ­»sžµ…!!×<\Zè3HÄÔG™o\"Ž2T×-0Ý{gùþ½u\Z€Û	~û©ü…s\0ùŽ>¸ü«¦{\"¨Hwr¨£\n·bÇnkFQ‡‰{ÅQÚ(“¹É?­vÓîqÕ*j\0˜`X~˜¬Ç•sþzš×Ô3æÀŠpgòª\n™bO#‘Ïû¿ýzê‰Í#CE¶\ræ8à\r£ôÍtv‘î¼Éè Ö^Œb#¨,I÷è+¢°OÞHÇ€q[Àóë=YRLš£¾0ÐWWkÖÍ`Ø\0o§öcý+¤ƒ<ú\nè¦pVz”u=Â-„ü¬ÊeZÉû÷ç¢‘Zz£î0¡ä“øV‹þúI?¼HüÛWÔÅltð†hä$NYÚ²AåWb @Ä­Y±áçaêÄS–¬…ÔÞ™§¡jœ¤™žx,Rbä/ª‘U.áFµžÆZ™»\ZnAè:ULGèÕmˆy·÷±ùqI„©ÔÕ#ÿÐébOB¤gß™nÄÇ°õ`Wh[É€ óÎ?ZÏM©!ÇUf¿–ìEÆB3¹ò™‡+‘øà\ZÒº?»]½°IöéYW]„bLãê«’;˜ÎOÊÈy÷ÜK½ÇÄycŽ1ÈúV…¬˜\0<çüë&&Ê¿mËW¢;S»?‘Çõ¬§âÎ²Å¾sîŸÆ§ÓWmÔ™ëÏô¬»9–2OÒ­iì´X7|úÿ\0…fÒL¾‡K>Ô¶\'?Ä3Xñ¹UÉä\0áÔÖËbÞEî9þus#Gm´šB\0®zˆÒ“-ÚfŽw7Jéí˜Ï—úW%jq:\"œÊ?×IbÄ³!é‚?˜®y+75,Ÿý.e=óÎºm8·žÝÔƒüë’¶r.ñÕAóæº0–—l\Zâ¾¦’gAeˆõT3Œ¿^vÿ\0*H™ƒýr)e”žæ°ª´5¢õ&Y‘xù{þ5ÐZ—™aø¥aÁ€Ñ«åEjÂëåG*œìaúW\n:§ª;;FÈÁôçð4ë¥ D€¬sùTVÄÜqƒüªÕ×Ín¬§¿ô¯F÷¦Ï\ZzT ˆüá»réSZ‚%l˜üª(1ò‚:?Ê•@‘³Ž?3Š–ìÓa>§IjBê=V±Â^‚;œ~¢¬é äpj(Lz†îÜìGÐž+ÕŠ¿³g“\'ntuˆ	aO¹èì)|ôë…cnØ¯¢¿ºÏþò9ÉTù©ßåþ•¿i÷xõþ•Œ£tëìŸÐVí²`qÜÿ\0JáÂ/}´ubŸºòÎ¬@Uï›ÈÚ QN:Õµ¶@}+×¥îyu%¢+F7\0qŠdÝÇ±«»0£ÛR`2ÃØÔU¦Ò%yzoËr±þUÑ†èœuÍéœÝú×H¢3Yeû5nãÇ|zö*ÜO¹š3ÇËÌäoµÕO˜úW/0”Ö7S£kIÕF88ýj«¦ž*ô#÷qŸP?JdÑa˜šó6âzQ¥c\"ûœUå`úÕ»^mÉ÷¨§-q¿„ôbýã’Ô8„)éƒüëì‰‡A€\rojk”Qëþ5ƒy…ŒƒíüÅyU®ç·IhŒ[Çhí/ñÉƒù5f@›Q3ÎEk]ôt9èÙý\rPŒf5#ÓëZEê‡Ð‹hkvS\\ýÀhZèˆ[iÏ\'ùÖ\rÀ\"e?ZéOSsº¯Ë`wä+™¹?)Àä†oÌàWIª’DXþOé\\é!Üýà?L×E0èM‚fÉè#¡™Axv\néVP1‰ê#ÉAÃ´õÙIØáªbÞ–ûlj{úæ ¿×~õ3v»»cùTK9sŸð®è­49fÍ­\Z=°Ÿ_›ù×If™GlrÄ\nËÓcÛŸcúšèmT,ç¢–?ZÞ+ª<Ú¯S+MV3Í\'©?Îº;|…`ÞÕ§ÆBHøâ¶`ÿ\0WóVðGGs#T$›EãXºh#nî¤¯ó«Z”…¥uõ*Ÿ®MCjá¤?ÝÝü…;j.‡U#¹¬HŸ÷…€þ3úŠÙl‚+Ìùˆ‡¹ Ó‘Œ^æäy7(O\\\ZŠb®Oùâž§(s€:Ö~¦æ6.¾™úÖ’Õ/ŠÆ\'ï¥fhÏ\0ãñ¥ò®½M\\¶xRÁ<œzš±æÃïT¢®ÏÿÑØ€wPQTåošvï»õ¥GÚ’Ðÿ\0…Q»b—2 €ß…14D\"ìì¦Ý%> ŸóøÖ–Á%¾z²®G¾EcÎvéäŽ0ô­{\"$·ÀåFß¨éYµ¡NV(Áºy=\r_ˆ…©8ýA¬Å‰þ5¥hOÌ?ºÂ³‘qfý²<hŒsÃ\nžÍÌzŽ	ä;Ãwÿ\0^£!Œ={Õ)ddÔœálñî¨+˜í®08ö¬§ýä1`àeá[NÁ£rG¬+“ºBAT?­sÎÔ˜–&o¶A#r’6}ÅuÖ,LÞœŸý\n°4°ª7%:{b¶,ïX“Àsüë•èÎ•#FaºHØp#lþŠë´Æù÷§*Â¹•LÝ«uÊŸç].Ÿ…p£µqµ©«–†Üm™0?½üêGþ}EUVù¹ìjidÄÉÎ>jçª´4¤õ/¦Öêvæ*Ý$ÈRÆ¨¯*ŒœqýsW­ð—;:þ¢¸,w-ŽÆÊO™Fr¥^œ…²Œûäk7J*É1Ï´®Sm‰Éà`×m$Ý6y5­íó …ÎÀ;ßÌRÀ±¶e~|¬0øâ¢·ÁU#žM* /èª#×+.g£b”wGS¦åD€óÍ[…WíJÃ®áýj­’\0ëêjí²íº™ÿ\0\Zú6±Š<\ZïY3vÇz³(ýÃ}*´Xóp;UÉ\017Ò¾†ž±g‡7ª9È1ö„÷Zè6í\n?Î+\0ÈO¡¿×üö®l4w6Å½G`„úƒüêâ.`zTd×ëW\"\\Â1ØW±J–¬òjOB-Ÿ &©Ü)¾†´›ýUSœ`ùùUb!u`¥=NkGÏÚI>†ºÄ¹9î+œÑÓ÷ÌØþ]2ŒÜ}EyÙ4²^§Fa+Íúî›ïç¦+““;Xž„×Y|@Êú\næ…¿\ZçÍåc§\0ìˆQñåö ©X«#·NböÇåŠ™€¶ñÁþUåÓm£½ØÌ¶\\Z{š†P6‘ØUØ—6ÀUYWä\'5ŒÕ¢‘ÝNZ³Õ¨ÿ\0gùæ¹ëÏõ-Ø‘é].¢¹dÏý\rsZ‡qÓ#ù×…_FÏ£ÃëfÏ…´É+Y`ü¹Ç¯á[ŸñîSEsjä±QÐfœ^¨Ó—Ý±û>O¯õ¬i˜™O¶EkK‘n§·øÖ<€ùÇß5Ôž§9Îê¤Eîwcô®d·ÌF0r•u\Zª	ô5Î·Í3`göôÅuSB–ÅõŒý¢\\ÿ\0pS$LÝÆ}üÿ\0*˜³©ŽxÚó§ÈGÚ£ê:þ»é½>«1o\07¿îãô2þñ¶ž?úõbæ.÷0ÈlŸÈâ˜@Vgèu#’lè4òß‘ØVÂH>Ë‘Àe5oÍ±ÿ\0u•hŸøöEìËŠéƒ<ê›“X•òˆ~R*Ñû¢O\0\nÁÓr??uWúÖ¼’lÌOÀü«¢,â©¹ÌÜ¾ùcã,çéÒ’×ïznÿ\0\ZŽéOšáO	\Z¯Ó<Óì±!Œ/vþ”GQIènÎI´ 	\rùV^žw`z\0GãW®¤ð;ªIúV~–¸–OEUnÌ—ÂkÄÌ÷gŒ\0:V~®ÇhíÚ¯[ÿ\0¬‘ÿ\0Ö²u¶À_LÕt%-JGU@¤Ž;}i<é¼k\"y$ÛÎ01Pý¥ýés3OdÿÒ™c\"úçÅVºbÁN9x‡çŒTê˜È=ÿ\0Nj½ÛmžÐ2_ÌÖ?¡QjB%±8?ÃújÞ#ÜºÀýAëU!#ì w\nµ.—„±çœ?LJÎQÐ·½Èå,³J¿íqøô­‡|÷QúU/X,ì=@§[JWr¡ÉB+:‘-;\\r§¾ó¬ÝFo/QR7m\'ñZ³m&P†ëÓô[RA%ÜLzmBÖEÇs¸È*ÄwSX·;ÿ\0Ü­XÁ#ƒÁÒ²åBÓzþµ„öeÁê>É¶åji×;°Ãoæk˜¸•b·‘30ùšßÓU#·ŒÆI?\nã’ÐêGgŸô„íŒÏÿ\0ÕZö³•ŸcœV0ósèEi[0)=ÍsIjju‚2\"¤˜ïf8éƒùU0IÉÏJ³!8fö®Z«KRÜ·„B€Ž0EmÙ6U,;ô®f	EÏBGèk¢°}—1ÆOUÍyËs²[UŠì†=§œ#Z3Iþ‚äô_ñ¬›#˜»3WÛþ=dQÎþu×î´»}Xû×ÝcFná˜L‘Š\\°` gvÐh–_»ÇðÔ±:€Ùÿ\0…L­t‘û³£´p\núb­¬˜»B\\:¡f2G°n&ísÛoèq^å;Ed®ÎŽ3™;\n¼ÜÂÇÚªGËýjé\0ÆãØ×ÓQNÏæ|ýGª9´oßÅŽ€šèâ2“þx®i•ŒÈS³\Zê#(Çoé\\x\r[¹¾3¥‹# >ßÖ®Ãþ¨UM¿*÷â­AÌ_CŠ÷è-O\Z¦Â9ýÉ¨&	ãƒüªfB=êÖì7°8üª+KKŽžæf˜16CÅtÚ3X69Ž+}y þq\\™_Áo3lgÄýûèÂy’ÁÇä+›pRß×#ù×C«¾èD+Án?:ÄºeLŸÒ¸³$¹ånˆëÀ·ÊŠjøù=ò©$g±§*ñÜëEÀ œtÅy±ºz×eK]­kUî!?CVl“6¬}ê; <“ŸJ‡Á3¢ßg¨}íÇøÂ¹YÛÏQëÐ×]©)p9ÁþB¸ë5yA,66áÁ¯™Åi;Y…ø9ˆµöA€k˜\0•È÷®¾ü}õÇq\\ÁP¼céVÕ¤iî‘\\‚(úÒ±$¼$ú\ZÞ¾;Š€8ëX¯Œ¶}?­t­ÎVsº¢€có5Ï!6;±þuÑj®¢ãüæ¹Ä`îêF­vRz“-¤\\ÍHÂŒSŠ‰.×hÀ_åÍK7rgîçñ ÍÒ‘ÆÏçŠë†º}FPºf.GLóLº*z¶EhjânOëùU¢(	É®”ÎI±2‹]§‚@ ­9Š¥²c\n+\0TýU¯8ÿ\0Gý9®¸=>¢Ô§¥.Ø¤süLéZ7gýS?|â¢µ‡dÓqÿ\0\n’÷ˆ¢ô?•u%¡Å-ÎnåÇï˜KãþùûlDÙÇÍŸÒ³åoÝƒ×q$þ5vÄƒÔ7þËN;ŽKCvõw[3žê~¤Ö~˜Ì‹!#ùU«ÉOÙ‚ƒ¦j¥³Œz®(êek¢Æ#²LÎs™8íž*®¯–Ú;æ¯X®ËPßÞ%ª–¦7öëD´3Nò9;ÐLçhãªaÿ\0ºjK©öLÀ±ü*¿Ú¿Ú5‹Nç¡èÿÓ0ï‘U¯˜ƒwò©\Z@eVíÅAx–¬z+ùŠþhê@Äµlù€ -[ÓÔ´}pÿ\0ÈšÎÒŽøYIÉÃ*ÒÓŽÃ8ëó“üª-©wPÜ\'Éî*;&F=ISüª}M2VLðGÿ\0^©Ø9I¶·pØüª$´.è¡‘óŽ™§j{Ä–Òv ÔÒ[ª„Ôí«Û|¨ß9ØOåkžÆ©m³††&ÔuúU›î‘úÔ–’o‚„…DÜN£9Ýº±{1­Ì=D…Tò»¹úWOc†Ž òƒX—,¡âìÕ½™,¢îqËc²2;À\\I¸õ+ûäV¥±Ý2·£\nÀ‹\\6î@U5¯hûfÉõ^?\Zæ™´v:dÈ$zÕõ ¢¶sÀ¬ÙU\Z½nÛ”¨®J¦ÔÆÛ’»W¸rC]¬£í{ß¢Æ\rsÌ®½†Oùýk^×/1Áÿ\0–5æùËTvZkÈlâÞ¸,Äþg5¯¸-¼ç9*èk&\'){G\'h¦kM2N½x9ü³]û•V£ËoMËÈÛÖ™çyE[ÉïQØ*õ§D¡ä@zƒž}@¬ªô\"ËS¨³3`t©äÊÌŒ8È9üê½€-éšµ\'X‰ï‘^å+ºIžKsØèí÷		bNãŸn•¬xCß‚k6#™1Ú´Ç*ÃØ×Õá´LùÊû˜üÜŸ©š×B«·\rì+ž· Ü}JŸÎº¹>Õ†®V<fè¸‡(8ÅOhv}T„åT{\Z¹mòî_zö¨=S<ª›1€îÈ>µ^ås“Û¬ž7}j­ÓvÁ¬ë|.åSÜÎ°æäžØ­€ÀOL*È°*Z|	KâŸÃ5Í€v¦šîmŠøÌ[ùK^yc¢®3Y×\'÷\'©´.€3Èøé…ÏëT\'å6ÿ\0´Jò1rmÉžŽhŠ,˜ãi—†Å*…Â¸ôýx¨ïØÆ2xâ¹å\'ÈÛ:)¯}\"+&Cz[•Qö£NBöìÇ¦ãùS®£ßOZ¸G÷iš7ûÆŽ7U]Èç\nk‹´—z»Ìå]¶®ùû¹K8F1ô?Ÿ5ò˜µûÔ}~þé•oŽQœçùW2Taq]eøýËÓšæB”/e§ˆÕ?t£|Ä8àV,˜ÚIë[Wc3cÚ¹éH2J­ÔûWT{˜´`êŒ®px c5‹´œ‘Ï?Òµ//“É<sïTâ-ÃÄþXÿ\0ë×E=Ìç±©Ï+?»ŸÊ–4\"í×®Ñ;HÇ•ãè)±¾ëùS·Ëõè+¾uBÿ\02¶CåTI%œçV¯B‰Y¿¼i¢–C×&º\"îr²ö;OcZ!û(lð?Æ¨ð±V¦eû[¶žk®™ÁP½nWìÊzä·óªú¤ÅB§¢ŸÌñKnsn¤gnN>™ªz³p·\0ý5Ö™ÅmL; Ø\0tAÚŸdÿ\0¼E÷? NÊ°;¯þ5‹l`çžÿ\0­rØ×¿pã©b\0üsQ \'³ž•ã‰c°?Éhu-PvíT·27µ@¼VV¨øÜâ´¥8WÐÅcê{x9èÕ¥ô1†÷<ßW•ð©=…eý¡=MM¨Á=ÅÛº®qÇõª?a¹þá©åg¥¡ÿÔ ìC:©ou³)õSúÕgè2:f§“-g®Ñú`×óUß¢.‘Ð±ëžjõ«,«ëŽžõ—¦9ó˜oZ½fÛ.qäŒút¨kVQp6¼î=EQµ“lè®qùñVaø—¶GÜfó¬tp³!\'Ãô9©qÐÒ;…«~â\'Îò.¦¹³VÏñc¹ªZ¡òYI1€&´&¬ðy*ê:ç±q‘³§¸KhW¸^jbs,gý¢ãM‡Z@?•1³æ\0xùÅbÑªcÑsƒÈaK¢¡…ÚØðN>Ò£›UbxÇ?ž*Í¨Sz[}ó\\µŽ˜3­Û‡\'9$(úõ­HG,{‚+¾$Œ®0ÄsZðãÌ\0¸\'ó®IDÝ=“r†Ü}*í©8SYò\0[Ð•?¡«VM¹ëº¸ëGSzlz·Êáº«ÿ\0…iXŸÞ’X¹¬–L¸ç÷•«§üÌÌ:lÇêkÌœu;ÓÐìbmË\0ßË5¥Ÿ<Ä{ÿ\0!YVÇ\rƒ\'ô«¶íÌ˜îþµkcn\\·lÀNzüêh3ç‚@–jœ›pb83’ª:¾VS–ˆR…îv:qùI\'gó«²à?xš§h\0„wÁ¬\\ZÙ[Œ×¿IÚŸõÜùº¯ß:hylÖ ?!úV<GjÔSÀúWÓáå£GÏ×‰nqtœõºso@+™…¿ÒbôÀþuÑÆÿ\0»e•žI©!c¨±` óW¡{\ZÎLn‹ÔVœL‡=Å{8g±åÖV¸ÇûÍŸj©rÀÎ¬Ê~r=k>ãæ— šŒ[Ñ¢©-J–y}ù­VÉ@}?¡¬»a‡9ô5¬¤{çúW.	{¦¸ŸˆÃœ¹’]Ã€Ü}1TgâÇ¨-ZWC÷¥Iþ,qY÷01?Å“^^*6æG}°ÈÁ1ªŸJMPeTøÓÃ¢ç¦?_ÿ\0UI¬G#GR\0\ró}0kŸþ\\ÉÒ¢cf\0¥‘p2h²M–j{š$É×jqL›ûìâ5~^QáþµÎ[ð@#–Åt:·>}ó5Ž‘aáÇò¯‘Ä«Õ>Ã	+R±“¨(ƒ“Óó¬8“üc®Žäî\n¤g€~•$Ù‡ëSNÜÇEýÓ›º\nÓ2÷ïX·Q„„œä‘]ÑîgoSü«ômŒg®+zh™#Œ¾b.+ÓÊ )‹eç½­ºòE½K(Â ÿ\0žúõÑKÌÆ¦Å×$GÇEoåŠ†Ýw#Ôä*ãmhY©ªVû„Óíù¾n?]ôÏ6ek¡ºC»§\\\0¾Rç5<ïÊîçåÓ\n®ôç ü±šéŠ9ªSLuÁÅ\\½LÙÆ¹ÆqŸÎ¨Fylý*{×>Dðqüë®™Å5©«oF½êkùÙçuçüqý+~ˆbÏ þUÍ\\2£É/dçô®³‰nf^>ãåéRÛc\nGRêMebY8/“øVœ£d^ûAý	¢!4MzJKz‘ŸÐUâ¤Ê€dŒÖuÓt¥yÃåZÄË*öÁëô§\rÌ%±§1tuÈ¬=Q¸_sZÒ·ï¨‰©±)ÇnŸZÖÌÊ	|#¡®«eurË»£ðU®¯þþåu´µ—Â-;Ždº˜ÿ\0!ý+Õ?²\"ôý+Ý¡–¹B2î‡<bM£ÿÕÈ/–8é¸ÕÅÚWž	_éT\Z\\ð;Âž¯´>˜¯æ×÷¥\"+	WíüþX­¸Zåøê3ú×3fáo>^Ak ÿ\0Ó2½	oéRÑ§1n8ÚJd1\'éšÂu&\\ýqø×H6þ™þÌJG˜Ì§Ò¡©×À~\\z€ßSñiÛ•þñR?Æ³mŸ*„Ãõÿ\0õÕÌæ6Ï8_ËiÏ$jŽ®7Qì?•,Àd¼*¬6FÙþ*y¸éò“X£X”îA9\ny¿[²s%ä‹»°¦*÷ÊCvËäjÝÉ+³}æaúXTŽ¦Ðg@ÌË=oä+bõ»n+Ø~ï¾?JÔ·ûäg$‚k­N˜ÞÇZï÷[®2*[RJdôVd¥„c\'×ˆ©íåÂH=?Â¸jîtÒZä`\ZáóÜ~•«`ÇÉ‘‡+Zæî%>dñâ­Ý4òñã­^l·g¡¡ØÙÉ¼DÍÔZºy$Áûª™¬BTÇØuý+zÁˆ-ô?ÌÔ£)’[¹0€{ç?Y¶9¹B:c#ê¬øróØŸçSBß¾Œg©ùÖNZ¡Ê\Z3··\"80zõ©ïT[žÀqùU@ÃÈëR_pgßôïó5—‘óŽ)Í3¦²ëô­T<~‡nÀºŸjÖÞ?Â¾‡\r=<D5±“æxÉ?ç5ÐÆB‰l\Zç aº6éœ:èy›ô`­,¬ÈÆæaãÇ¡ÅkDpã=ë¨U‰Gðþ­ÉŽ½<#|Íeu¢1QTe#x9ìjìÃ÷ƒñ¬»¥ã7ð§‰oQP@€ƒŸLÖ‚ÞY÷5r¹àfµU2ŠG5ž]KÄ+nc\\np?¿Y—AÛ¡uƒ{Ç\"¨Î¸ŒÉú×—‰m©ô:Ò)‚d³	?^•¥|€¦Ò:ÕKhÊ³n;˜OÖ®Ý =Á¥B?»z){ëQ!P-”vçùÓ]G\'ox¦7LWlcd‘š•ÙÁk@o“=€ª€(q×åZZºþúU>‚©È@‹¯ÿ\0Z¾Bªýä¯Ã¿r&È9bF0bªni¸®¦ì\r¼³þ5ˆ‘‚d8Ç\"¹ùuHìRÐç$Œüùõ®oQP±nëÛõ®¾A÷ýô®V÷ˆ×wùæ¶HW<Úè—¿”ªä£sÄò¿Ïÿ\0­Uä_3RœÆòæjÛ)PƒÝ”ÿ\0ZÞˆ«2ú¨ÇðçŸÄÕk=¥åfãZR§ïd>Šéÿ\0×¬Í0êý	ëøšôi#ÊŸR¥ä~\\ÅG\0tãµFËÉeêAþ•gPÉ¹ù»\0:­|˜Éü+¡#že¸mÛy”t<Ô7\\I\n“ÀQÿ\0¡VŒiˆ¹=«Rr—1Ä½5?&ºéœr:…ôhÎ?‡úW!¨HËo±GÍ#bºd,-À=U1ü«˜½æ@:R>•Ó-Ž8nsó,óH>c\r³Ù®Ak–Çnà1UlUPldv÷©ìö´æNpXÿ\0:q\"lIsèVçæv5­eË+¯NzÕ?,Év\\ŒáEh[¤ííœUSN÷0©°ù2‚;5sÚ£íÏAý+h–g‡\"¹}Và·@‡úV·\"šÕOü!·+à;òÔÈÿ\0›šôÏ-«øqn¶žÑá?/î¿ï®­vÙOZý_‚ýÄ=ä|n7Õi¥ÝþgÿÖçY‰g\'j…e&2IåMs+ß­WuòáÈ6	Å8¥©ûÀËfÛ|‹žNk¨°‘ÐçŸ®+ŒI6ê*\0ÇÍüë¯/‰­Èïþü*ZÖÅÜÕ?5³‘ÕAü«˜‘€˜Æ	Zè\'¹Ž Ðs¾@qÇq\\ÕÂŸ6BN\0jÆ(´õ:«@Lq0?y?\\UäoÝH¿ì·O§ÿ\0Z°t©‹BUŽv0\n=5¶Ÿ4¤úñùñXÉ\ZÜÝ³ù­¢aÝ•_”(2ðqXú\\‡ìªU­Œo‹¢°jÌÕKBÎfq\'ùŠºÌ¡ƒ·wèGÿ\0Z¨Ýˆ›ýÏþ½\\•ÈUíÒ³’6‹ÐÓ˜7“çŒ‚?:Ðµ™ƒ}1ü«\"yBÚFùÍùþ5«h©ltÿ\0\\5™ÓQÕ4ªUAéŸéOŒâ99àgùUvBVØóúT°õa\\–§M7¡jåÁšCŽJ©Ími\r¾qÏ ?¼ÖÒ~ýÔ÷k[K“ËºSÛ,?Jó*/xôcðTkb8‚?\nèl›-ŽÜÖ¹?‘°ìOõ·e ù²{·èÕžÄ²xl žwúŠÑ³ââ-ýÈý	¬[iÊcþÞ•jÁ0ó¢Ç¨þµ‡24”]¬vrŸÝ©^•bÿ\0Ÿ\'=?Ê©•@yéVµ;\"Ïfþ†½÷+FLùÎ_z(è S•ü+JUY?Ýþ••ŠvqéZR°0?o”×»‡·+<\Zéó#7Úñ)éŒþµÔ[\0\\c\\r\'‰{mÎº«-ó¼Ôe³¼š:êd³¹T}kJá	õ¬¹ï>†¯,ƒËRJõèNÓlòêÆñEÉóæ)<k>rÔÃúÕË†ÜÛü+:FP¾Øþµ¦&jìÊ„X–Ê¾s/N¦´‘¶•²í±ç†úÿ\0*»»æSŸ_åYa\'h—ˆŽ¦|èd¼|’}ñÀªÓ\r½À®ÊøyóÐš¢òóÚ¸«¤“·Sª’zlr­!/Î=;åSÞ7îzœÔqíÓ‚Ãò§Þ¨£Ü:)éNè¯¶…kxò:Ó%ûÕavù1ØS%;[§Ö£¥ÈRÔóÝh6aëU¶–ˆëVµ•/<ª:Ÿñ¨‘\nÛ¢·Þïõ¯Ÿñd}…ZœJC*sÙ¿¥c\'>aÏzß¹_”ã¹þ•‚©Ÿ4}+)hÎ¨=+†Ç™å\\½Îqïàq]EÐ!dÇC\\¦ 6“òšiê]Ž\0ÝÊGwn}³S«+j0¯@¨aÎ{óOµ¯ÛÑ\0ñ®Š\"¬mÍ‚Ò`ç JÃÓ€{iÀ<“ü‰5µrB‰\0c\0þ<ÕT´R82+Ñ¤®yU4Fmþï9›³QÚ«oÜ\0#ažK©±k†	ÀãôªÐ dS‚0?Q]KsžkC`1Çû ~µÍë·öœqýïº?Jß¾R§­d\\—Zë–uEìqÉît@…ÈëŒW) ùÏÐWM>|‡Ï þuÌ\\\0|Ãþ×ô®–rA\rÄv°´îqŸçWtÇ;“Ÿ¯Zæî¦ón¢´Û•^O¦MtÖ‡lÌËÑšhŠˆº¬<çnøëøñRÚHrÁ†Š¥€rGB9©íÛåv5¤Ï2g`dÜ¼às\\n¾Ì°¹^¤?•Õ7Þ#¾+ŽÖs,°[þ²D_ÍªÖº’÷‘÷\'‡-Å®ƒ§Ûã\\¯ä¢¶°*­ºù6ñEýÔQù\n—u~õ‡¤£N+É‘âª·VOÍŸÿ×æ™3,ž˜ªó!õÆE]U>cìZ«*eXtÿ\0:þu¶§îéœôóùwÊÍÜ©þUÛË€ÖíŒs^s¨>ÙâaÇÊ:{W¡<žd6äôùÖm>bº\Z1æá\\ðyü5ƒqŸ´íÎºK‰FWž[ü+”¸“„œ.?•d‘\\ÆÞ‚±Œ’?&¼™ó@8®ZÆ`°¨<ÇùŠê }ì‡®@?Î°•îlii2)‡£úšß‹c¡®_I}ÊúHtQáÔNk)E\Z\\†á°‘œg§ó«Lß Ç<­Q»oÜÄz‘€ïªVfò‹) Žïžk›Eš.VÚN»UÇèô®ŽÐÛ‚1ùW>ª$³RÇ\0gò­{)3ÏaÇå\\^§\\‡UƒìÈÞ8þU$-‰ŸOëT œ5¼~ÇùTð¸go¡®\ZÝÎše›–ï±™­=÷M¤õ,Oüâ±o»œ²ÐÕ½5Á’$cœñùµy•§¥\r‘ßX¹òÓaÛúÖÅ›fIW=Y¿^k°f!‰?vOë[6.~Ó.}N?+		!Ö¡V6\\ýÒæ+ZÛ>jw¡¬[c—‘z†SZ¶Ò5qëýk’Hé³Ôî\"9XÎÎjÝþ6FÞŒAYÐº…\\œr?hÝ0a÷?Ê½ÈÉ84|åEi£Z)3·éZ3ÈDO¡¬Ø˜„zåS]1òpzækØ§&¢Ï\"¤o$PËwjÿ\0Zê´ÖÉ=È®99g#ûç?¥tº{à’}g—T´Ó#OÜ/Ü¿ïÐzŠ·ýÞk\ZîB.ÁcÓ8ú`ZÒI‡\'Ø×«N¯¿+ždéû¨Ò‘‰·Vô˜	yÌ™û€þux6mÀö¬u|K\'¦?•o‰«¬LhCFZˆ›ŽßáVƒr„÷&¨ZŸœ·°5aI\"=Ç’Nò¬ðó÷GV\Z‘³îžx‡Pk:|å³Ó?Ò¯1i—ûÄV}ÃŒ±nùþ•ËŠÕ7êuQZèOe+¼Q»ÉÇ·AVïx[Ômþu°Äc ÅX¼ E\'•µþéÜ‰XŠLq»qøšžSÈÅäD=©Òã®ÊiXÉ½NQË^6}Ïê)ò§Ë»¸É¤¾æí½~oçOœb6#°5òÉ{Ò>ž/Ý‰“+RÇÔãò¬U<ÞØ­VWíåYvYB÷®9jÓ=­,sw[ó \'©®kQ@ÇžÀŸÒº›ÀwKŸZäµ@ÅŠŽWþU4ÍyN)|ÌÝAéRØ®ë¶nŸ0¥$XØõÅZ°BóQ›?®ªLšïr[–ÊÊG=*->2öÑç€9«3\0m¤=>cýj¼2¬ð†ïôâ½\Z/]O*¥Ú05pàž3QÛäDÄŒ+Œ~u.¤„ÎÜuïL´\"«w\'€ÿ\0ë×Bz˜Ëá,Ä¬ïƒÆ1ùY©þÝw^@cüÿ\0úÕ°ŒïÇqüë\"‘õrs‚O×šìÁ=™¿pØŒãžGé\\ÔÙòˆî\'ÿ\0¯[Ó7È	îI¬Œ­¨>¿Ö·Låµ™É«lÕJ7IpEuá)Ø¶\0âE`Ê€j¶ýŽÂ~¦¶öfÜ‘üL£õª¹5	÷å8É®F£Élòj‡Þàÿ\0õêòI¶ÛËŒýkHÒ!-–<ö¬‹í^$Ò-±÷Qüx\ZÕk0\'8\0~4¾…®¾ h±u6üº¤×VÕ#í	;]ùi˜Î1KøÔdæ’¿{HüzZ»³ÿÐÄmq“ÉRqûÇÆ@5ri0ªØèj”Ïûßªšþy±û¡Èêá|Ø¨aú×e§ÆAÉOò®WWQ²2v˜®ŽÌïÓòðý+&½âÑ¿!Dr7EQú\nåç9¸`z•ÉüÅo¸–k¶?Ló\\ÜçlÞ¼Å«=™I“Û†0Lò ‘ÿ\0|çúWYjÆ6ÞNwŸ…qöòfDàüÁÓ[s\Z¿n¿¥rÌÙlt:s¤\\(Üäÿ\0*ß·vÉã5ÊéòâýÓûÃ?˜ÿ\0ëWMoœ°î8”‘¢ ¼;¡Cœaó¦Èûm±ŽÆ›tO”{ÍÓëUšA.øûƒŠÂz›ÀèÑ—ìŒ¡¬XÜ•\".ùÖl{Å¢À+Š’ÔâfÛ×uqT‰×M´›mW\'\'ùš»o‘3ïf³mÛmš–ç5n;Çã\\5Q×ÕæZHÎ~êššÅ–;¥+Àüš«\\î£ü-ùÒÚ_™ºú×ŸTô)lw–3üó©ìÊEn[8û[Ôær–²âæ|ž>ZÜÉ¾\0ÁþUË$]‹–ÙóÊŸ—¶>½+VÕ¹õŸ“$ HœgýÒGõ«pÈ^@ ‚?\nä©c¢*çp­ÂFþµ§s.Ð¤kX\\õ§{þ­€=Ez4ßºÙãU‡¼“7,¥Ý\n˜þ‡vé‹ÇAžGçXºk7Ù—žäþµ«rß2}	ý+Ö¥;Ó¹ãW§ûÃ2%W°bÇõ®ŽÃ%›o8 þ‚¹`ÛcßŸÌ×K§±RÞáià$”’#vä÷Än³ó.xõ­HŽm>‚²/×î0ä‚Z¸Ò´zz¼cæß¹¯Fœ­RwìysáSeGî€ö®yÝ‘åõ·cbÊ¹þè¬i@óe÷¾-Þ)£2Õ¦ZòöÚ*bØòWgÛÈ0Ñ÷ÏåZ/ƒp«Ð\0õ©ÃËÜ\n±÷ˆ	ÿ\0J‘À:‡àôÉþ•|ó<£<ô¬ÙÎ2G^ß¥sb[åÛ©½%©¯i‚äŽ€þ‚¤¼;mÙýXS¬bX£(?„~¦›{ÿ\0€ú¸¯F1µœ—½DL˜òc>Â˜æœvˆÐ˜Œ8Ít½¢Žç\r{ÿ\0@ÿ\0´ßÎ¬Ë“ñ“†ªo›•>¬ßÎ­;–/±¯•Œµ‘ôÜ¾ìL6nPäÕ\"¸–A×Š·)£CîsUØâV=ŠšáŽ»ž¢ZÕÞC°Ï§ó®?U|HØê~µ×ßÿ\0®#·ZâµGçø­Le¹²[ÀÚ‹Œõ?Ò¯YFcCßqªO7Ö¶àŒÈ˜ìŠ }O&º°òÒæ8•bãmîIþµQ‚²Ç È\'úU›õ&ÝBŒuª²ö»pF6ƒ^6y³FV¯/ï[iÛéT¬ÜŸ(ž¤°þTº«+ž˜$Riª\0B~b~ WRÜçšÐÔÁ—gpEeið·ÚfŸ¾H©6îƒ\'ô\rŠb3ûìMvA3%™ŽSÖ°îÎ-T{ÖÕØ g²­aÞ±„ÇL~‚¶[ÒÜÇ¹¦·›¸;<ÖÞà–ÊqÈäŸÎ±‹’xè+Fã\"Èþ ?Æ­#)­K\nT|þU3nŠ$UyˆÓ?¥_¸À;`ÖËcšF^æmíŽN+káÌb‰VÝÄJÿ\0øèÖ°Ñ‚Œì+¬øA›Ç—óãýM³ãÌô¯O&§ÍŠ¤¼ÑÍŒŸ-\nÉŸSæ—>õhÝ_¸Ÿ“ÿÑç\Z\0Ç¡\0Õi‰Þ§¹^?\Z[vi,†<Ê Vc³<ã WóÙû’f¤¢öú{b·4™Ñv· ŸÀÖF¢¡cy=5kG9·da¸äþGŠÎ[š.ÇYi$bÇî©aùt®`:µÜîý7$ÖœWlÝÈ¡ÍÃ xüÂp[-Ç®Mg(ê4iÛmó®{\rÃð5ÑÛmUGQ‘ý+˜·“7õVñ®Š&&# ä}ÍsTZØÒ²‘Ž©=YTJì¡c½—½yô3®­äÉ gèk¼…Á˜÷Íc4\\YÞDRýâLÖ*KMàåIäz+zñsnìëÿ\0²×;$áuXã=?¥s´tÅ”$¬ç*F)°YI=ð\n†ÙÌˆ€õ­:¤ØÏå\\•tGDº9Ùcüæ®DãÌ¸Áþ•‘Œ¶©ëüêäR\rÙn3\\3Gt44¯%_!\0õ#ô¨m\\y»Œ“Î«ÜÌ*½zŸÒ¢·pxîZàªµ;élwV³«O“ÎøÐšÝ‚\\]GŽ:È×\'c&æˆÈAü\rtHÅnPž˜\'õ®).†±5®Ù½‰þu8UÊ`õ?Î©Ý8ßLÏ5$RGPqù\\U–§e%¡Ü@ä*ó“šèf;ãÏ­rp¶HôÁ®ecnö®¬<´hó10wMÖkˆ{õêåÛ\nÿ\0ìšÏ³oôtÉîO} +³Õ1ùñ^¼gjlð§Þ™±j:…º3°çø‘®jrK¿Â1ZÚt»{|§ùÖj–©aâ©Þ™½xûÊàp?­:GÍœc×üj¥ÌJz‘ùb¦\'÷Q©ú×«ÏïHñÔ4‰½*ª÷@¬«•˜ôÈ5¦OÝÏ ¬«Ï˜þÉ®ìS÷L?ÄEnß½bxùG?kçuÎqÇÊ±`Ú£õÛüëUXÜ}Gò¬°S÷u/Hdm³Ëþ÷øÖ{²ù‹» ?áSË&f™‡@¡¬ù	r@õüùÏˆ©ÛÏó7£5ìuÝ³zÕké1f‡Hâ¦bR.•[Qùmá©aüzµejoÐà‚÷Ó-+Š/ ¤”\r§ØÉòÓè?•Cs!xîè+i»&Â1÷´9	MÀføüé÷LãøUåš¤ýäyç$:™ŽâßîŸ×5óQióXúKms›¹$´mØ‚)_‰Ž Ó¯0 ¦±Ý$l=\ryÔÝäÑë}“˜½8—\'Ðÿ\0*âµ	Íl¼ÇšíïpÓ1>•Åj	‰ëŽ~˜ýz„·7Š0fŽ\"´íµ¢¸ãycùú«\"MÆ2ùùŽk^XìâNÂ1ú×^¡†$¡t0‘†=OåÍHQDÌíÎÞ·Ø+äóœ‘ýMJü#¹¯J™Pä5Fýûçø‰©,ˆXÔŽ;Õk×-)-Vm¾X‘{uÇtsÍhJçå`?7?…Y¶mâSéÍQÎ\"‘P­Vagò#sŠì†ÇD-ßÝÛœäXZ‹\0ÇŸ¼Oò­»Ž\näq‘X:‚y“¬jz“Ïã[DækS>Ù3pÎ~èÂÂ®\\”Ï$ÓvyD¯}Çüi·‘$Aº`þy­Œ÷\'¹Ç…O{/žÝ*¼$“ŽäS/² ð\0?j¶9Þä;ÂÆ­êÕèK¬kw}v¤IŸ©$×™<›cUä	ý+Ö~[ôýféºÉp‹ÿ\0|§ÿ\0^¾ƒ†ißOúèyÙ»¶§§ê}	»“Fê&—\'Ú¿ehü¹ÿÒãìŸh’CŸÎ˜	\\†þþt@13‚yaüª9kÝ8?•>É¸ÆFV 	W^ª8Ç¥M£Êœtÿ\0ëÔ7²|ì«Ô£U¬gÊ¾ŸÎ³‘¢gEDà=H¸Rk\0Ž%8Áœ}Oÿ\0^¶iù‡R§õ†…¼´~m¹oÃš†ÊEèØ}¤–éÀüë¢³$ô?Î?JåX‘::ð	ýpk¦°`\'^rH9ü«’¢ÔÞ/A<ïßÄ€rõæ½!¶@[œ×›¹òïƒ‚¤W¢£‡*ÀãœÖ56-‘;ãÁçéŠç$ÿ\0äÿ\0sùâº©ÿ\0ãÖO\\Zå$$K¡LV¾‡M3°ƒåUÇæ¨Ø„•©¤´q\"Œò•ó3qŸé\\uÕLè9KTéŒÔ¬ød+ÎýMWŠ[¯ÐTÐàóœÏ5ÅU´‰\'‘ÊŽ?:u¤¥ŽzŸÓ5Bé™S\0¼?Pjm5”Ìy+ýpÍjz0Z¦˜¥Ð¾ìmÝÏå[Æb.-Èþ% þb¹})ÈŒ <üÃô­ˆÝ‹@¨$~‚¸\'»: Ž¢ä*ç¸¬ÛÚóÒ³æc±qÛü*Ì\rû·=·|W\r]Î¨GC±…Àl[ñÚ7§5ÊZ¾v£h®’#›Wí“E=NLL:–‡·üU«çË¯üük;MöUç5bìâ\\ÃúW«?dx³‚ö£Ú@#by\'ùU«ÚÃóüë\"I8ôÅiY·®˜¬©Nó&µ?pÚüÆB{gÿ\0A«˜fÛÏJÈ¹,Œ˜õÈ\nÕFËŽÕêR•æÏ¤-m³œ¨úVuáè}ˆ«Îø cÒ³îÎvŸzôñZÅ£Ï¡y!ÜÅTõÂÿ\0:ÙFýéÏoð¬‹FÌ«žƒükAsæÉÏFþ‚¹ðŽÑ^¦Ø…vSw%¦#³JaáâŒ°þb««³	N9,Âš´‘û0þuÌëmýu7TÎ¦vÜƒÞ ÔÈT‹Ù¿¥8žê¾§’\"Ÿ˜ÿ\0*ö«K÷r~‡™J>ôQ8UÇ ªwÌ<‰	ì\rJI\\\n©¨°Ò{ƒZTá\"©CÞGçý&<vÛüêú0!™zmÿ\0\ZÍ|5ãîí¦kBû¢?ÙóXw«>Žª´S9ë¡™ðzñHÎHÇµ:óáý€þuZV\'cQ\\qv‘ê%x£QÂHÄrHÎ¸ëÏõ¸tãùWe¨ŒHIé\\<ÄÈó1=~}i\'«:)¥c¹M½1Z³±£#å€ª2ò¸êÜ~•¡8áœvü1]tlBÔÍ¸\\ÍÓŸÓÿ\0¯I))Œz1?­I*Ÿ¶Ä3÷EdÝoó˜–%T;W£...\G
+INSERT INTO livestreams (user_id, title, description, playlist_url, thumbnail_url, start_at, end_at)
+VALUES
+	(2, "æ­Œã£ã¦ã¿ãŸãƒ©ã‚¤ãƒ–ï¼ãƒªã‚¯ã‚¨ã‚¹ãƒˆå‹Ÿé›†ä¸­", "çš†ã•ã‚“ã‹ã‚‰ã®ãƒªã‚¯ã‚¨ã‚¹ãƒˆæ›²ã‚’æ­Œã£ã¦ã„ãã¾ã™ï¼æ¥½ã—ã‚“ã§ãã ã•ã„ã­â™ª", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690851600, 1690855200),
+	(3, "æ˜ ç”»ãƒ¬ãƒ“ãƒ¥ãƒ¼ï¼æœ€æ–°æ˜ ç”»ã®æ„Ÿæƒ³ã‚’èªžã‚‹", "æœ€æ–°ã®æ˜ ç”»ã«ã¤ã„ã¦ã€æ„Ÿæƒ³ã‚„è€ƒå¯Ÿã‚’æ·±ãæŽ˜ã‚Šä¸‹ã’ã¦è©±ã—ã¦ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690851600, 1690855200),
+	(4, "æ–°æ›²åˆæŠ«éœ²ï¼æ­Œé…ä¿¡", "ã‚ªãƒªã‚¸ãƒŠãƒ«ã®æ–°æ›²ã‚’åˆã‚ã¦æŠ«éœ²ã—ã¾ã™ï¼æ„Ÿæƒ³ã‚’ãŠèžã‹ã›ãã ã•ã„ï¼", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690851600, 1690855200),
+	(5, "æœ€æ–°ã‚¬ã‚¸ã‚§ãƒƒãƒˆç´¹ä»‹ï¼ã“ã‚Œã¯è²·ã„ï¼Ÿ", "æœ€æ–°ã®ãƒ†ã‚¯ãƒŽãƒ­ã‚¸ãƒ¼ã‚¬ã‚¸ã‚§ãƒƒãƒˆã‚’ç´¹ä»‹ã—ã¦ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690851600, 1690855200),
+	(6, "å¥åº·ãƒˆãƒ¼ã‚¯ï¼æ¯Žæ—¥ã®ãƒ¯ãƒ¼ã‚¯ã‚¢ã‚¦ãƒˆæ–¹æ³•", "å¥åº·çš„ãªç”Ÿæ´»ã®ãŸã‚ã®ãƒ¯ãƒ¼ã‚¯ã‚¢ã‚¦ãƒˆæ–¹æ³•ã‚„é£Ÿäº‹ã«ã¤ã„ã¦è©±ã—ã¦ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690851600, 1690855200),
+	(7, "ã‚¢ãƒ¼ãƒˆãƒ©ã‚¤ãƒ–ï¼çµµã‚’æããªãŒã‚‰ã®ã‚“ã³ã‚Šãƒˆãƒ¼ã‚¯", "çµµã‚’æããªãŒã‚‰ã€ãƒªãƒ©ãƒƒã‚¯ã‚¹ã—ãŸãƒˆãƒ¼ã‚¯ã‚’æ¥½ã—ã‚“ã§ãã ã•ã„ã€‚", "https://media.xiii.isucon.dev/api/8/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690855200, 1690862400),
+	(8, "ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°ãƒ©ã‚¤ãƒ–ï¼ã‚³ãƒ¼ãƒ‰ã‚’æ›¸ããªãŒã‚‰å­¦ã¼ã†", "åˆå¿ƒè€…å‘ã‘ã«ã€å®Ÿéš›ã«ã‚³ãƒ¼ãƒ‰ã‚’æ›¸ããªãŒã‚‰ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°ã‚’å­¦ã‚“ã§ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690855200, 1690862400),
+	(9, "æ‰‹ç›¸å ã„ãƒ©ã‚¤ãƒ–ï¼ã‚ãªãŸã®é‹å‘½ã¯ï¼Ÿ", "æ‰‹ç›¸ã‚’ã‚‚ã¨ã«ã€ã‚ãªãŸã®æœªæ¥ã‚„é‹å‘½ã‚’å ã„ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690855200, 1690862400),
+	(10, "ã‚³ãƒ¡ãƒ‡ã‚£ãƒ©ã‚¤ãƒ–ï¼ç¬‘ã„ã§ãƒªãƒ•ãƒ¬ãƒƒã‚·ãƒ¥", "æ—¥å¸¸ã®å‡ºæ¥äº‹ã‚„ãƒ‹ãƒ¥ãƒ¼ã‚¹ã‚’ãƒ¦ãƒ¼ãƒ¢ã‚¢ãŸã£ã·ã‚Šã«è§£èª¬ã—ã¾ã™ï¼ç¬‘é¡”ã§éŽã”ã—ã¾ã—ã‚‡ã†ï¼", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690855200, 1690862400),
+	(11, "ãƒ•ã‚¡ãƒƒã‚·ãƒ§ãƒ³ãƒ©ã‚¤ãƒ–ï¼ä»Šå­£ã®ãƒˆãƒ¬ãƒ³ãƒ‰ã¯ï¼Ÿ", "æœ€æ–°ã®ãƒ•ã‚¡ãƒƒã‚·ãƒ§ãƒ³ãƒˆãƒ¬ãƒ³ãƒ‰ã‚„ãŠã™ã™ã‚ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç´¹ä»‹ã—ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/1/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690855200, 1690862400),
+	(12, "ã‚¢ãƒ‹ãƒ¡ãƒˆãƒ¼ã‚¯ï¼æœ€æ–°ã‚¢ãƒ‹ãƒ¡ã®æ„Ÿæƒ³äº¤æ›", "æœ€æ–°ã®ã‚¢ãƒ‹ãƒ¡ã«ã¤ã„ã¦ã€æ„Ÿæƒ³ã‚„è€ƒå¯Ÿã‚’ã¿ã‚“ãªã§äº¤æ›ã—ã¾ã—ã‚‡ã†ï¼", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690862400, 1690869600),
+	(13, "ãƒ“ã‚¸ãƒã‚¹ãƒ©ã‚¤ãƒ–ï¼èµ·æ¥­ã®ç§˜è¨£", "å®Ÿéš›ã«èµ·æ¥­ã‚’çµŒé¨“ã—ãŸã‚²ã‚¹ãƒˆã¨ã€æˆåŠŸã®ç§˜è¨£ã‚„å¤±æ•—è«‡ã«ã¤ã„ã¦èªžã‚Šåˆã„ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690862400, 1690869600),
+	(14, "ãƒšãƒƒãƒˆã¨ä¸€ç·’ã®å¤œãµã‹ã—é…ä¿¡", "æ„›çŠ¬ã¨ä¸€ç·’ã«ã®ã‚“ã³ã‚Šã¨ãƒˆãƒ¼ã‚¯ã‚’æ¥½ã—ã‚€æ™‚é–“ã€‚ãƒšãƒƒãƒˆã®è©±é¡Œã‚‚ãŠå¾…ã¡ã—ã¦ã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/5/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690862400, 1690869600),
+	(15, "å®‡å®™ãƒˆãƒ¼ã‚¯ï¼å®‡å®™ã®ä¸æ€è­°ã‚’æŽ¢ã‚‹", "å®‡å®™ã‚„å¤©ä½“ã«é–¢ã™ã‚‹æœ€æ–°ã®æƒ…å ±ã‚„çŸ¥è­˜ã‚’æ·±ãæŽ˜ã‚Šä¸‹ã’ã¦è©±ã—ã¦ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690862400, 1690869600),
+	(16, "æ‰‹èŠ¸ãƒ©ã‚¤ãƒ–ï¼ä»Šæ—¥ã¯ä½•ã‚’ä½œã‚ã†", "æ‰‹èŠ¸å¥½ãã®çš†ã•ã‚“ã¨ä¸€ç·’ã«ã€æ–°ã—ã„ä½œå“ã‚’ä½œã£ã¦ã„ãã¾ã™ï¼", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690862400, 1690869600),
+	(17, "å¿ƒç†å­¦ãƒˆãƒ¼ã‚¯ï¼ã‚ãªãŸã®å¿ƒã‚’èª­ã¿è§£ã", "æ—¥å¸¸ç”Ÿæ´»ã§ã®å¿ƒç†å­¦ã®æ´»ç”¨æ–¹æ³•ã‚„é¢ç™½ã„å¿ƒç†ãƒ†ã‚¹ãƒˆã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690869600, 1690876800),
+	(18, "æ­´å²ãƒˆãƒ¼ã‚¯ï¼éŽåŽ»ã®å‡ºæ¥äº‹ã‹ã‚‰å­¦ã¶", "ä¸–ç•Œã®æ­´å²ã‚„æœ‰åãªå‡ºæ¥äº‹ã«ã¤ã„ã¦ã€è©³ã—ãè§£èª¬ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690869600, 1690876800),
+	(19, "éŸ³æ¥½åˆ¶ä½œãƒ©ã‚¤ãƒ–ï¼æ–°æ›²ã®åˆ¶ä½œéŽç¨‹ã‚’å…¬é–‹", "æ–°ã—ã„æ¥½æ›²ã®åˆ¶ä½œéŽç¨‹ã‚’ãƒªã‚¢ãƒ«ã‚¿ã‚¤ãƒ ã§å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690869600, 1690876800),
+	(20, "ã‚¬ãƒ¼ãƒ‡ãƒ‹ãƒ³ã‚°ãƒ©ã‚¤ãƒ–ï¼ä»Šæ—¥ã®ãŠèŠ±ã¯ã“ã‚Œ", "åº­ã‚„ãƒ™ãƒ©ãƒ³ãƒ€ã§ã®ã‚¬ãƒ¼ãƒ‡ãƒ‹ãƒ³ã‚°ã®æ§˜å­ã‚’å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/2/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690869600, 1690876800),
+	(21, "æ–™ç†ãƒ©ã‚¤ãƒ–ï¼æ‰‹è»½ã«ä½œã‚Œã‚‹ãƒ‡ã‚¶ãƒ¼ãƒˆç‰¹é›†", "å®¶ã«ã‚ã‚‹ææ–™ã§ç°¡å˜ã«ä½œã‚Œã‚‹ãƒ‡ã‚¶ãƒ¼ãƒˆãƒ¬ã‚·ãƒ”ã‚’ç´¹ä»‹ã—ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690869600, 1690876800),
+	(22, "Q&Aã‚»ãƒƒã‚·ãƒ§ãƒ³ï¼è¦–è´è€…ã®è³ªå•ã«ç­”ãˆã¾ã™", "è¦–è´è€…ã®çš†ã•ã‚“ã‹ã‚‰ã®è³ªå•ã«ã€ç›´æŽ¥ç­”ãˆã¦ã„ãã¾ã™ï¼", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690876800, 1690880400),
+	(23, "å­è‚²ã¦ãƒˆãƒ¼ã‚¯ï¼è‚²å…ã®æ‚©ã¿è§£æ±ºæ–¹æ³•", "å­è‚²ã¦ä¸­ã®ãƒžãƒžã‚„ãƒ‘ãƒ‘ã®ãŸã‚ã®ã€è‚²å…ã®æ‚©ã¿ã‚„è§£æ±ºæ–¹æ³•ã«ã¤ã„ã¦è©±ã—åˆã„ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/1/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690876800, 1690880400),
+	(24, "ã‚¹ãƒãƒ¼ãƒ„å®Ÿæ³ï¼ä»Šå¤œã®è©¦åˆã¯ã“ã‚Œï¼", "ä»Šå¤œã®ã‚¹ãƒãƒ¼ãƒ„è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690876800, 1690880400),
+	(25, "æ—¥æœ¬èªžãƒ¬ãƒƒã‚¹ãƒ³ï¼åŸºæœ¬ã®æ–‡æ³•ã‹ã‚‰", "æ—¥æœ¬èªžã‚’å­¦ã³ãŸã„æ–¹ã®ãŸã‚ã®åŸºæœ¬çš„ãªæ–‡æ³•ãƒ¬ãƒƒã‚¹ãƒ³ã‚’è¡Œã„ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690876800, 1690880400),
+	(26, "ãŠæ–™ç†å¯¾æ±ºï¼è¦–è´è€…æŠ•ç¥¨ã§å‹è€…ã‚’æ±ºã‚ã‚ˆã†", "2äººã®æ–™ç†äººãŒå¯¾æ±ºï¼è¦–è´è€…ã®çš†ã•ã‚“ã®æŠ•ç¥¨ã§ã€ã©ã¡ã‚‰ã®æ–™ç†ãŒä¸Šæ‰‹ã„ã‹ã‚’æ±ºã‚ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690876800, 1690880400),
+	(27, "èª­æ›¸ã®æ™‚é–“ï¼ãŠã™ã™ã‚ã®ä¸€å†Šã‚’ç´¹ä»‹", "ä»Šæœˆèª­ã‚“ã æœ¬ã®ä¸­ã‹ã‚‰ç‰¹ã«æ„Ÿå‹•ã—ãŸä¸€å†Šã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690880400, 1690884000),
+	(28, "é‡£ã‚Šãƒ©ã‚¤ãƒ–ï¼æµ·è¾ºã§ã®ã‚“ã³ã‚Š", "ä»Šæ—¥ã¯æµ·è¾ºã§ã®é‡£ã‚Šã®æ§˜å­ã‚’é…ä¿¡ã—ã¾ã™ã€‚ã©ã‚“ãªé­šãŒé‡£ã‚Œã‚‹ã‹ãªï¼Ÿ", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690880400, 1690884000),
+	(29, "ãƒ›ãƒ©ãƒ¼ãƒˆãƒ¼ã‚¯ï¼æ€–ã„è©±ã‚’å…±æœ‰ã—ã‚ˆã†", "å¤œã®æ™‚é–“ã€ä¸€ç·’ã«æ€–ã„è©±ã‚’å…±æœ‰ã™ã‚‹æ™‚é–“ã§ã™ã€‚", "https://media.xiii.isucon.dev/api/1/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690880400, 1690884000),
+	(30, "ã‚¢ã‚¤ãƒ‰ãƒ«ã¨ã®ã‚³ãƒ©ãƒœé…ä¿¡ï¼ç‰¹åˆ¥ãªæ™‚é–“", "äººæ°—ã‚¢ã‚¤ãƒ‰ãƒ«ã¨ã®ç‰¹åˆ¥ãªã‚³ãƒ©ãƒœé…ä¿¡ï¼è£è©±ã‚„Q&Aã‚‚ï¼", "https://media.xiii.isucon.dev/api/2/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690880400, 1690884000),
+	(31, "ãƒ¨ã‚¬ãƒ©ã‚¤ãƒ–ï¼æœã®ãƒªãƒ•ãƒ¬ãƒƒã‚·ãƒ¥ã‚¿ã‚¤ãƒ ", "æœã®æ™‚é–“ã‚’ãƒ¨ã‚¬ã§ãƒªãƒ•ãƒ¬ãƒƒã‚·ãƒ¥ï¼åˆå¿ƒè€…ã‚‚å¤§æ­“è¿Žï¼", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690880400, 1690884000),
+	(32, "å®Ÿæ³ï¼ä»Šå¤œã®ã‚µãƒƒã‚«ãƒ¼è©¦åˆ", "ä»Šå¤œã®ã‚µãƒƒã‚«ãƒ¼è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690884000, 1690887600),
+	(33, "æ˜ ç”»ã®è£è©±ï¼ç›£ç£ã¨ã®ã‚¹ãƒšã‚·ãƒ£ãƒ«ãƒˆãƒ¼ã‚¯", "å¤§ãƒ’ãƒƒãƒˆæ˜ ç”»ã®è£è©±ã‚’ã€ç›£ç£è‡ªã‚‰ãŒèªžã‚Šã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690884000, 1690887600),
+	(34, "å­çŒ«ã®ç”Ÿæ´»ï¼æˆé•·è¨˜éŒ²ã‚’å…¬é–‹", "æˆ‘ãŒå®¶ã®å­çŒ«ã®æˆé•·è¨˜éŒ²ã‚’å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/1/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690884000, 1690887600),
+	(35, "å¤œã®éŸ³æ¥½ãƒ©ã‚¤ãƒ–ï¼ãƒªãƒ©ãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ ", "å¤œã®æ™‚é–“ã‚’ã€å¿ƒåœ°è‰¯ã„éŸ³æ¥½ã¨ã¨ã‚‚ã«éŽã”ã—ã¾ã—ã‚‡ã†ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690884000, 1690887600),
+	(36, "ãƒ€ãƒ³ã‚¹ãƒ©ã‚¤ãƒ–ï¼ä»Šå¤œã®ç‰¹è¨“ã®æ§˜å­ã‚’å…¬é–‹", "ãƒ€ãƒ³ã‚¹ã®ç‰¹è¨“ã®æ§˜å­ã‚’ãƒªã‚¢ãƒ«ã‚¿ã‚¤ãƒ ã§å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/8/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690884000, 1690887600),
+	(37, "è‹±èªžãƒˆãƒ¼ã‚¯ï¼æ—¥å¸¸è‹±ä¼šè©±ã‚’å­¦ã¼ã†", "æ—¥å¸¸ã§ä½¿ãˆã‚‹åŸºæœ¬çš„ãªè‹±ä¼šè©±ãƒ•ãƒ¬ãƒ¼ã‚ºã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690887600, 1690894800),
+	(38, "å¤©ä½“è¦³æ¸¬ï¼ä»Šå¤œã®æ˜Ÿç©ºã‚’ä¸€ç·’ã«", "éƒ½å¸‚ã®å–§é¨’ã‚’é›¢ã‚Œã€ç¾Žã—ã„æ˜Ÿç©ºã‚’è¦³æ¸¬ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690887600, 1690894800),
+	(39, "ã‚²ãƒ¼ãƒ å®Ÿæ³ï¼æ–°ä½œã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚²ãƒ¼ãƒ ", "æ–°ä½œã®ã‚¢ã‚¯ã‚·ãƒ§ãƒ³ã‚²ãƒ¼ãƒ ã®å®Ÿæ³ãƒ—ãƒ¬ã‚¤ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690887600, 1690894800),
+	(40, "ã‚­ãƒ£ãƒ³ãƒ—ãƒ©ã‚¤ãƒ–ï¼è‡ªç„¶ã®ä¸­ã§ã®ç”Ÿæ´»ã‚’å…¬é–‹", "ã‚­ãƒ£ãƒ³ãƒ—å ´ã‹ã‚‰ã®ãƒ©ã‚¤ãƒ–ï¼è‡ªç„¶ã®ä¸­ã§ã®ç”Ÿæ´»ã‚„æ–™ç†ã‚’å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/2/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690887600, 1690894800),
+	(41, "çµµç”»ã®åˆ¶ä½œéŽç¨‹ï¼ã‚¢ãƒ¼ãƒˆãƒ©ã‚¤ãƒ–", "å®Ÿéš›ã®çµµç”»ã®åˆ¶ä½œéŽç¨‹ã‚’ãƒªã‚¢ãƒ«ã‚¿ã‚¤ãƒ ã§å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690887600, 1690894800),
+	(42, "è³‡æ ¼å–å¾—ã®å‹‰å¼·æ–¹æ³•ï¼åŠ¹çŽ‡çš„ãªå­¦ç¿’æ³•ã‚’ä¼æŽˆ", "æ§˜ã€…ãªè³‡æ ¼è©¦é¨“ã«åˆæ ¼ã™ã‚‹ãŸã‚ã®å‹‰å¼·æ–¹æ³•ã‚’ä¼æŽˆã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690894800, 1690902000),
+	(43, "ã‚³ã‚¹ãƒ¡ç´¹ä»‹ï¼ã“ã®æ˜¥ã®ãŠã™ã™ã‚ã‚¢ã‚¤ãƒ†ãƒ ", "ã“ã®æ˜¥ã®æ–°ä½œã‚³ã‚¹ãƒ¡ã‚„ãŠã™ã™ã‚ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/1/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690894800, 1690902000),
+	(44, "æ—¥å¸¸ã®å‡ºæ¥äº‹ãƒˆãƒ¼ã‚¯ï¼ä»Šæ—¥ã®ãƒã‚¤ãƒ©ã‚¤ãƒˆ", "ä»Šæ—¥ã‚ã£ãŸæ—¥å¸¸ã®å‡ºæ¥äº‹ã‚„ãƒã‚¤ãƒ©ã‚¤ãƒˆã‚’è©±ã—ã¦ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690894800, 1690902000),
+	(45, "æ—…è¡Œå…ˆã‹ã‚‰ã®ãƒ©ã‚¤ãƒ–ï¼ä»Šæ—¥ã®æ™¯è‰²ã‚’å…±æœ‰", "ä»Šæ—¥è¨ªã‚ŒãŸæ—…è¡Œå…ˆã®ç¾Žã—ã„æ™¯è‰²ã‚„æ–‡åŒ–ã‚’å…±æœ‰ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690894800, 1690902000),
+	(46, "å®Ÿæ³ï¼ä»Šå¤œã®ãƒã‚¹ã‚±ãƒƒãƒˆãƒœãƒ¼ãƒ«è©¦åˆ", "ä»Šå¤œã®ãƒã‚¹ã‚±ãƒƒãƒˆãƒœãƒ¼ãƒ«è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/5/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690894800, 1690902000),
+	(47, "å¥åº·ãƒ©ã‚¤ãƒ–ï¼ç¾Žå®¹ã¨å¥åº·ã®ç§˜è¨£", "ç¾Žå®¹ã¨å¥åº·ã®ãŸã‚ã®é£Ÿäº‹ã‚„ã‚¨ã‚¯ã‚µã‚µã‚¤ã‚ºã®ç§˜è¨£ã‚’ä¼æŽˆã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690902000, 1690909200),
+	(48, "æ­´å²ã®è¬Žã‚’è§£æ˜Žï¼æ­´å²æŽ¢è¨ªãƒ©ã‚¤ãƒ–", "ä¸–ç•Œå„åœ°ã®æ­´å²çš„ãªå ´æ‰€ã‚’è¨ªã‚Œã€ãã®è¬Žã‚„èƒŒæ™¯ã‚’è§£æ˜Žã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690902000, 1690909200),
+	(49, "æ‹æ„›ãƒˆãƒ¼ã‚¯ï¼æ‹æ„›ç›¸è«‡ã«ç­”ãˆã¾ã™", "æ‹æ„›ã®æ‚©ã¿ã‚„ç›¸è«‡ã«ã€çµŒé¨“è±Šå¯Œãªã‚²ã‚¹ãƒˆã¨ä¸€ç·’ã«ç­”ãˆã¦ã„ãã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690902000, 1690909200),
+	(50, "ãƒ“ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ¼ãƒ©ã‚¤ãƒ–ï¼ã‚¹ã‚­ãƒ³ã‚±ã‚¢ã®ç§˜è¨£", "è‚Œã«å„ªã—ã„ã‚¹ã‚­ãƒ³ã‚±ã‚¢æ–¹æ³•ã‚„ãŠã™ã™ã‚ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690902000, 1690909200),
+	(51, "å±±ç™»ã‚Šãƒ©ã‚¤ãƒ–ï¼çµ¶æ™¯ã®å±±é ‚ã‹ã‚‰", "å®Ÿéš›ã«å±±ã‚’ç™»ã‚ŠãªãŒã‚‰ã€ãã®çµ¶æ™¯ã‚’ãƒªã‚¢ãƒ«ã‚¿ã‚¤ãƒ ã§å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690902000, 1690909200),
+	(52, "å®¶ã®ä¸­ã®å¤§æŽƒé™¤ï¼ä¸€ç·’ã«ç‰‡ä»˜ã‘ã‚ˆã†", "å®¶ã®ä¸­ã‚’ä¸€ç·’ã«å¤§æŽƒé™¤ï¼ç‰‡ä»˜ã‘ã®ã‚³ãƒ„ã‚„ãŠã™ã™ã‚ã®ã‚¢ã‚¤ãƒ†ãƒ ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/2/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690909200, 1690912800),
+	(53, "å®Ÿæ³ï¼ä»Šå¤œã®ãƒœã‚¯ã‚·ãƒ³ã‚°è©¦åˆ", "ä»Šå¤œã®ãƒœã‚¯ã‚·ãƒ³ã‚°è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690909200, 1690912800),
+	(54, "æ—¥å¸¸ã®DIYï¼å®¶å…·ã®çµ„ã¿ç«‹ã¦", "æ–°ã—ã„å®¶å…·ã®çµ„ã¿ç«‹ã¦ã®æ§˜å­ã‚„DIYã®ã‚³ãƒ„ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690909200, 1690912800),
+	(55, "ãƒ•ã‚¡ãƒƒã‚·ãƒ§ãƒ³ãƒ©ã‚¤ãƒ–ï¼å¤ã®ãŠã™ã™ã‚ã‚³ãƒ¼ãƒ‡ã‚£ãƒãƒ¼ãƒˆ", "ã“ã®å¤ã®ãŠã™ã™ã‚ã®ãƒ•ã‚¡ãƒƒã‚·ãƒ§ãƒ³ã‚³ãƒ¼ãƒ‡ã‚£ãƒãƒ¼ãƒˆã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/5/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690909200, 1690912800),
+	(56, "å®Ÿæ³ï¼ä»Šå¤œã®æ ¼é—˜æŠ€å¤§ä¼š", "ä»Šå¤œã®æ ¼é—˜æŠ€å¤§ä¼šã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690909200, 1690912800),
+	(57, "å®Ÿæ³ï¼ä»Šå¤œã®ãƒ†ãƒ‹ã‚¹è©¦åˆ", "ä»Šå¤œã®ãƒ†ãƒ‹ã‚¹è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690912800, 1690916400),
+	(58, "æ–™ç†ãƒ©ã‚¤ãƒ–ï¼å­ä¾›ã‚‚å–œã¶ãƒ¬ã‚·ãƒ”", "å­ä¾›ãŒå–œã¶ç°¡å˜ã§ç¾Žå‘³ã—ã„æ–™ç†ãƒ¬ã‚·ãƒ”ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690912800, 1690916400),
+	(59, "ã‚¬ãƒ¼ãƒ‡ãƒ‹ãƒ³ã‚°ãƒ©ã‚¤ãƒ–ï¼æ˜¥ã®èŠ±ã‚’æ¤ãˆã‚ˆã†", "æ˜¥ã®èŠ±ã®æ¤ãˆä»˜ã‘ã‚„ã‚¬ãƒ¼ãƒ‡ãƒ‹ãƒ³ã‚°ã®ã‚³ãƒ„ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690912800, 1690916400),
+	(60, "éŸ³æ¥½åˆ¶ä½œãƒ©ã‚¤ãƒ–ï¼æ¥½æ›²ã®ã‚¢ãƒ¬ãƒ³ã‚¸æ–¹æ³•", "å®Ÿéš›ã®éŸ³æ¥½åˆ¶ä½œã®éŽç¨‹ã‚’å…¬é–‹ã—ã€æ¥½æ›²ã®ã‚¢ãƒ¬ãƒ³ã‚¸æ–¹æ³•ãªã©ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690912800, 1690916400),
+	(61, "ãƒšãƒƒãƒˆã¨ã®æ—¥å¸¸ï¼ã†ã¡ã®çŠ¬ã®ç”Ÿæ´»ã‚’å…¬é–‹", "æˆ‘ãŒå®¶ã®æ„›çŠ¬ã®æ—¥å¸¸ã‚„ç”Ÿæ´»ã®æ§˜å­ã‚’å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/1/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690912800, 1690916400),
+	(62, "èª­æ›¸ä¼šãƒ©ã‚¤ãƒ–ï¼ä»Šæœˆã®ãŠã™ã™ã‚æœ¬ã‚’èª­ã¿é€²ã‚ã‚‹", "ä¸€ç·’ã«ä»Šæœˆã®ãŠã™ã™ã‚ã®æœ¬ã‚’èª­ã¿é€²ã‚ã€ãã®æ„Ÿæƒ³ã‚’å…±æœ‰ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/2/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690916400, 1690923600),
+	(63, "å®Ÿæ³ï¼ä»Šå¤œã®ãƒãƒ¬ãƒ¼ãƒœãƒ¼ãƒ«è©¦åˆ", "ä»Šå¤œã®ãƒãƒ¬ãƒ¼ãƒœãƒ¼ãƒ«è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/5/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690916400, 1690923600),
+	(64, "DIYãƒ©ã‚¤ãƒ–ï¼æ‰‹ä½œã‚Šã®ã‚¢ã‚¯ã‚»ã‚µãƒªãƒ¼ä½œã‚Š", "å®Ÿéš›ã«æ‰‹ä½œã‚Šã®ã‚¢ã‚¯ã‚»ã‚µãƒªãƒ¼ã‚’ä½œã‚ŠãªãŒã‚‰ã€ãã®æ–¹æ³•ã‚„ã‚³ãƒ„ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/7/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690916400, 1690923600),
+	(65, "å­ä¾›å‘ã‘ãƒ©ã‚¤ãƒ–ï¼çµµæœ¬ã®èª­ã¿èžã‹ã›", "å­ä¾›å‘ã‘ã®çµµæœ¬ã‚’èª­ã¿èžã‹ã›ã‚‹æ™‚é–“ã€‚å°±å¯å‰ã®ãƒªãƒ©ãƒƒã‚¯ã‚¹ã‚¿ã‚¤ãƒ ã«ã€‚", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690916400, 1690923600),
+	(66, "ãƒˆãƒ¬ãƒ¼ãƒ‹ãƒ³ã‚°ãƒ©ã‚¤ãƒ–ï¼ç­‹ãƒˆãƒ¬ã®æ–¹æ³•ã‚’ç´¹ä»‹", "ç­‹ãƒˆãƒ¬ã®åŸºæœ¬çš„ãªæ–¹æ³•ã‚„ã‚³ãƒ„ã‚’ç´¹ä»‹ã—ãªãŒã‚‰ã€å®Ÿéš›ã«ãƒˆãƒ¬ãƒ¼ãƒ‹ãƒ³ã‚°ã‚’è¡Œã„ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/2/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690916400, 1690923600),
+	(67, "ç¾Žå®¹ãƒ©ã‚¤ãƒ–ï¼æœ€æ–°ã®ç¾Žå®¹æ©Ÿå™¨ã‚’è©¦ã—ã¦ã¿ã‚‹", "æœ€æ–°ã®ç¾Žå®¹æ©Ÿå™¨ã‚’å®Ÿéš›ã«è©¦ã—ã€ãã®åŠ¹æžœã‚„æ„Ÿæƒ³ã‚’å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/3/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690923600, 1690927200),
+	(68, "å®Ÿæ³ï¼ä»Šå¤œã®ãƒ—ãƒ­ãƒ¬ã‚¹è©¦åˆ", "ä»Šå¤œã®ãƒ—ãƒ­ãƒ¬ã‚¹è©¦åˆã®å®Ÿæ³ã¨è§£èª¬ã‚’è¡Œã„ã¾ã™ï¼", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690923600, 1690927200),
+	(69, "å†™çœŸè¡“ãƒ©ã‚¤ãƒ–ï¼åŸºæœ¬ã®æ’®å½±æŠ€è¡“ã‚’å­¦ã¶", "ãƒ—ãƒ­ã®ã‚«ãƒ¡ãƒ©ãƒžãƒ³ãŒã€å†™çœŸã®åŸºæœ¬çš„ãªæ’®å½±æŠ€è¡“ã‚„ã‚³ãƒ„ã‚’ä¼æŽˆã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690923600, 1690927200),
+	(70, "ãŠè“å­ä½œã‚Šãƒ©ã‚¤ãƒ–ï¼æ‰‹ä½œã‚Šã‚¯ãƒƒã‚­ãƒ¼ã®ãƒ¬ã‚·ãƒ”", "ä¸€ç·’ã«ç¾Žå‘³ã—ã„æ‰‹ä½œã‚Šã‚¯ãƒƒã‚­ãƒ¼ã‚’ä½œã‚‹æ™‚é–“ã€‚ç°¡å˜ãªãƒ¬ã‚·ãƒ”ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/9/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690923600, 1690927200),
+	(71, "è³‡ç”£é‹ç”¨ã®åŸºæœ¬ï¼æŠ•è³‡åˆå¿ƒè€…ã®ãŸã‚ã®ãƒ©ã‚¤ãƒ–", "è³‡ç”£é‹ç”¨ã‚„æŠ•è³‡ã®åŸºæœ¬çš„ãªçŸ¥è­˜ã‚’ã€å°‚é–€å®¶ãŒã‚ã‹ã‚Šã‚„ã™ãèª¬æ˜Žã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/11/playlist.m3u8", "https://media.xiii.isucon.dev/timewarp.webp", 1690923600, 1690927200),
+	(72, "é‡Žèœã®åŽç©«ãƒ©ã‚¤ãƒ–ï¼ç•‘ã§ã®ä½œæ¥­ã‚’å…¬é–‹", "ç•‘ã§ã®é‡Žèœã®åŽç©«ã‚„ä½œæ¥­ã®æ§˜å­ã‚’ãƒªã‚¢ãƒ«ã‚¿ã‚¤ãƒ ã§å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/6/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690927200, 1690934400),
+	(73, "ãƒžã‚¸ãƒƒã‚¯ãƒ©ã‚¤ãƒ–ï¼æ‰‹å“ã®ç§˜å¯†ã‚’å°‘ã—ã ã‘æ•™ãˆã¾ã™", "ãƒžã‚¸ã‚·ãƒ£ãƒ³ãŒå®Ÿéš›ã®æ‰‹å“ã‚’æŠ«éœ²ã—ã€ãã®ç§˜å¯†ã‚’å°‘ã—ã ã‘å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690927200, 1690934400),
+	(74, "ã‚¢ã‚¦ãƒˆãƒ‰ã‚¢ãƒ©ã‚¤ãƒ–ï¼BBQã®æ¥½ã—ã¿æ–¹ã‚’ç´¹ä»‹", "ã‚¢ã‚¦ãƒˆãƒ‰ã‚¢å¥½ããŒé›†ã¾ã‚‹BBQã®æ§˜å­ã‚’å…¬é–‹ã—ã€æ¥½ã—ã¿æ–¹ã‚„ãŠã™ã™ã‚ã®é£Ÿæã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/10/playlist.m3u8", "https://media.xiii.isucon.dev/yoru.webp", 1690927200, 1690934400),
+	(75, "æ‰‹èŠ¸ãƒ©ã‚¤ãƒ–ï¼ã‹ã‚ã„ã„åˆºç¹ã®ä½œã‚Šæ–¹", "æ‰‹èŠ¸å¥½ãã®ãŸã‚ã®ãƒ©ã‚¤ãƒ–ã€‚ä»Šå›žã¯ã‹ã‚ã„ã„åˆºç¹ã®ä½œã‚Šæ–¹ã‚’ç´¹ä»‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/8/playlist.m3u8", "https://media.xiii.isucon.dev/BBB.webp", 1690927200, 1690934400),
+	(76, "ç¾Žå®¹å®¤ãƒ©ã‚¤ãƒ–ï¼æ˜¥ã®æ–°ä½œãƒ˜ã‚¢ã‚¹ã‚¿ã‚¤ãƒ«ã‚’å…¬é–‹", "ç¾Žå®¹å¸«ãŒæ˜¥ã®æ–°ä½œãƒ˜ã‚¢ã‚¹ã‚¿ã‚¤ãƒ«ã‚„ã‚«ãƒ©ãƒ¼ã‚’å®Ÿéš›ã«å…¬é–‹ã—ã¾ã™ã€‚", "https://media.xiii.isucon.dev/api/4/playlist.m3u8", "https://media.xiii.isucon.dev/isucon12_final.webp", 1690927200, 1690934400),
+	(77, "æ˜ ç”»ã‚¯ãƒªãƒ†ã‚£ãƒƒã‚¯ï¼æ–°ä½œæ˜ ç”»ã®ãƒ¬ãƒ“ãƒ¥ãƒ¼ã‚¿ã‚¤ãƒ ", "æ˜ ç”»è©•è«–å®¶ãŒæ–°ä½œæ˜ ç...\G
 
-# Query 11: ID 0x571FFC8104A6E50C
+# Query 14: ID 0x34E11DDE0FBF5564
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           2   10037
-# Exec time       4  11.77s  90.0us  44.4ms   1.2ms   5.3ms 212.0us
-# Lock time       2  25.6ms       0   3.4ms   2.6us   2.0us   1.0us
-# Rows sent       1   5.37k       0       1       0       1       1
-# Rows examined   0  16.27k       0       3    1.00       3       3
-# String:
-# Databases     isudns
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT content,ttl,prio,type,domain_id,disabled,name,auth FROM records WHERE disabled=0 and type='SOA' and name='92wgrkyhukb380hkygsi2d8pajdb7jr0.u.isucon.dev'\G
-
-# Query 12: ID 0xB61FC43A94BB888A
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           6   26052
-# Exec time       4  11.63s  86.0us  53.1ms 446.4us   2.1ms 120.0us
-# Lock time       7 104.8ms       0   8.4ms   4.0us   2.0us   1.0us
-# Rows sent       4  26.05k       1       1    1.00       1       1
-# Rows examined   0   3.47k       0       4       0       1       0
-# String:
-# Databases     isupipe
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT COUNT(*) FROM livestreams l INNER JOIN reactions r ON l.id = r.livestream_id WHERE l.id = 1334\G
-
-# Query 13: ID 0xF0CF7B8430DE8C23
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           3   13892
-# Exec time       2   6.57s  64.0us  59.7ms 472.6us   2.2ms 110.0us
-# Lock time       5  66.4ms       0   9.3ms   4.8us   2.0us   1.0us
-# Rows sent       2  13.89k       0       1       0       1       1
-# Rows examined   0  13.89k       0       1       0       1       1
-# String:
-# Databases     isupipe
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT * FROM users WHERE name = 'hanakotakahashi0'\G
-
-# Query 14: ID 0x813031B8BBC3B329
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           3   12166
-# Exec time       2   4.95s  16.0us  46.2ms 407.2us   2.3ms  45.0us
-# Lock time       0       0       0       0       0       0       0
-# Rows sent       0       0       0       0       0       0       0
-# Rows examined   0       0       0       0       0       0       0
-# String:
-# Databases     isupipe
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-commit\G
-
-# Query 15: ID 0x34E11DDE0FBF5564
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           6   24397
-# Exec time       1   2.97s  10.0us  47.2ms 121.7us 428.0us  27.0us
+# Count           7   40028
+# Exec time       1   1.01s   9.0us   3.6ms  25.3us  34.0us  20.0us
 # Lock time       0       0       0       0       0       0       0
 # Rows sent       0       0       0       0       0       0       0
 # Rows examined   0       0       0       0       0       0       0
@@ -244,77 +307,493 @@ commit\G
 # EXPLAIN /*!50100 PARTITIONS*/
 START TRANSACTION\G
 
-# Query 16: ID 0x2A90AD975B9EF157
+# Query 15: ID 0xD15E40763ACC23C7
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           0       1
-# Exec time       1   2.68s   2.68s   2.68s   2.68s   2.68s   2.68s
-# Lock time       0   6.0us   6.0us   6.0us   6.0us   6.0us   6.0us
+# Count           0    2952
+# Exec time       1 969.3ms  33.0us  53.9ms 328.4us   1.4ms  75.0us
+# Lock time       1   8.0ms       0   3.5ms   2.7us   1.0us   1.0us
 # Rows sent       0       0       0       0       0       0       0
-# Rows examined  31   4.00M   4.00M   4.00M   4.00M   4.00M   4.00M
+# Rows examined   0       0       0       0       0       0       0
 # String:
 # Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-INSERT INTO scores (user_id, name, score) SELECT u.id, u.name AS name, (SELECT count(*) from livestreams l inner join reactions r on r.livestream_id = l.id WHERE u.id = l.user_id) + (SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l2.livestream_id = l.id WHERE u.id = l.user_id) AS score FROM users u\G
+INSERT INTO livestream_tags (livestream_id, tag_id) VALUES (7645, 12)\G
+
+# Query 16: ID 0xBB531FA8516D53BD
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           1    4640
+# Exec time       1 770.9ms  80.0us   7.1ms 166.1us 272.0us 126.0us
+# Lock time       1   4.5ms       0 273.0us 968.8ns   1.0us   1.0us
+# Rows sent       0       0       0       0       0       0       0
+# Rows examined   0   4.64k       1       1    1.00       1       1
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+UPDATE scores SET score = score + 10 WHERE user_id = 1099\G
 
 # Query 17: ID 0x19C8068B5C1997CD
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           3   13053
-# Exec time       1   2.25s  13.0us  33.9ms 172.3us 754.0us  33.0us
+# Count           4   22157
+# Exec time       1 715.5ms  10.0us   5.1ms  32.3us  41.0us  25.0us
 # Lock time       0       0       0       0       0       0       0
 # Rows sent       0       0       0       0       0       0       0
 # Rows examined   0       0       0       0       0       0       0
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
 ROLLBACK\G
 
-# Query 18: ID 0x9E55B3BFD624E8C3
+# Query 18: ID 0x20E98C5E6CC3EBDC
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           0    1982
-# Exec time       1   1.70s  89.0us  33.5ms 859.5us   4.3ms 126.0us
-# Lock time       1  16.2ms       0   8.2ms   8.2us   1.0us   1.0us
-# Rows sent       0   1.98k       1       1    1.00       1       1
-# Rows examined   0   1.98k       1       1    1.00       1       1
-# String:
-# Databases     isupipe
-# 
-# EXPLAIN /*!50100 PARTITIONS*/
-SELECT slot FROM reservation_slots WHERE start_at = 1701460800 AND end_at = 1701464400\G
-
-# Query 19: ID 0xBB531FA8516D53BD
-# Attribute     pct   total     min     max     avg     95%  median
-# ============= === ======= ======= ======= ======= ======= =======
-# Count           1    2285
-# Exec time       1   1.59s  94.0us  28.0ms 693.8us   3.3ms 147.0us
-# Lock time       2  26.8ms       0  16.2ms  11.7us   1.0us   1.0us
+# Count           0       1
+# Exec time       0 621.2ms 621.2ms 621.2ms 621.2ms 621.2ms 621.2ms
+# Lock time       0   4.0us   4.0us   4.0us   4.0us   4.0us   4.0us
 # Rows sent       0       0       0       0       0       0       0
-# Rows examined   0   2.29k       1       1    1.00       1       1
+# Rows examined   0       0       0       0       0       0       0
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
-UPDATE scores SET score = score + 10 WHERE user_id = 1248\G
+INSERT INTO ng_words (user_id, livestream_id, word, created_at)
+VALUES
+	(785, 2782, '2ç›¸ã‚³ãƒŸãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(953, 1951, '3DES', UNIX_TIMESTAMP()),
+	(609, 1607, '3G', UNIX_TIMESTAMP()),
+	(267, 6260, '3ç›¸ã‚³ãƒŸãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(685, 2682, '4G', UNIX_TIMESTAMP()),
+	(451, 3447, '5G', UNIX_TIMESTAMP()),
+	(606, 5600, 'AAAAãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(347, 346, 'ACIDãƒ—ãƒ­ãƒ‘ãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(850, 5844, 'ADSL', UNIX_TIMESTAMP()),
+	(89, 4084, 'AES', UNIX_TIMESTAMP()),
+	(63, 62, 'APIPA', UNIX_TIMESTAMP()),
+	(655, 6648, 'APIã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤', UNIX_TIMESTAMP()),
+	(304, 7296, 'APIã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤', UNIX_TIMESTAMP()),
+	(528, 6521, 'ARP', UNIX_TIMESTAMP()),
+	(61, 4056, 'ARPANET', UNIX_TIMESTAMP()),
+	(981, 4976, 'Anycast', UNIX_TIMESTAMP()),
+	(2, 2998, 'Aãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(979, 2976, 'BASEãƒ—ãƒ­ãƒ‘ãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(70, 69, 'BASIC', UNIX_TIMESTAMP()),
+	(494, 493, 'BBS', UNIX_TIMESTAMP()),
+	(271, 6264, 'BCP', UNIX_TIMESTAMP()),
+	(335, 7327, 'BGP', UNIX_TIMESTAMP()),
+	(422, 4417, 'BIND', UNIX_TIMESTAMP()),
+	(754, 3750, 'Broadcast', UNIX_TIMESTAMP()),
+	(844, 1842, 'CA', UNIX_TIMESTAMP()),
+	(530, 2527, 'CAPå®šç†', UNIX_TIMESTAMP()),
+	(940, 6933, 'CDMA', UNIX_TIMESTAMP()),
+	(512, 5506, 'CDN', UNIX_TIMESTAMP()),
+	(850, 5844, 'CDN', UNIX_TIMESTAMP()),
+	(485, 4480, 'CI/CD', UNIX_TIMESTAMP()),
+	(815, 1813, 'CIDR', UNIX_TIMESTAMP()),
+	(929, 4924, 'CIFS', UNIX_TIMESTAMP()),
+	(595, 594, 'CNAME', UNIX_TIMESTAMP()),
+	(89, 1087, 'CPU', UNIX_TIMESTAMP()),
+	(716, 3712, 'CQRS', UNIX_TIMESTAMP()),
+	(848, 5842, 'CRAC', UNIX_TIMESTAMP()),
+	(416, 1414, 'CSMA/CA', UNIX_TIMESTAMP()),
+	(991, 990, 'CSMA/CD', UNIX_TIMESTAMP()),
+	(368, 6361, 'DDNS', UNIX_TIMESTAMP()),
+	(440, 6433, 'DES', UNIX_TIMESTAMP()),
+	(878, 1876, 'DHCP', UNIX_TIMESTAMP()),
+	(90, 5084, 'DMZ', UNIX_TIMESTAMP()),
+	(224, 3220, 'DNS', UNIX_TIMESTAMP()),
+	(740, 2737, 'DR', UNIX_TIMESTAMP()),
+	(887, 2884, 'Diffie-Hellman', UNIX_TIMESTAMP()),
+	(443, 6436, 'DoSæ”»æ’ƒ', UNIX_TIMESTAMP()),
+	(583, 2580, 'Docker', UNIX_TIMESTAMP()),
+	(13, 12, 'EDGE', UNIX_TIMESTAMP()),
+	(216, 215, 'EIGRP', UNIX_TIMESTAMP()),
+	(136, 5130, 'Ethernet', UNIX_TIMESTAMP()),
+	(900, 2897, 'FCoE', UNIX_TIMESTAMP()),
+	(363, 362, 'FQDN', UNIX_TIMESTAMP()),
+	(519, 4514, 'FTP', UNIX_TIMESTAMP()),
+	(442, 3438, 'FaaS', UNIX_TIMESTAMP()),
+	(526, 6519, 'GIFã‚¢ãƒ‹ãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(318, 5312, 'GLBP', UNIX_TIMESTAMP()),
+	(813, 5807, 'GSM', UNIX_TIMESTAMP()),
+	(774, 773, 'GitOps', UNIX_TIMESTAMP()),
+	(539, 2536, 'Gossipãƒ—ãƒ­ãƒˆã‚³ãƒ«', UNIX_TIMESTAMP()),
+	(12, 2009, 'HA', UNIX_TIMESTAMP()),
+	(949, 5943, 'HSPA+', UNIX_TIMESTAMP()),
+	(421, 2418, 'HSRP', UNIX_TIMESTAMP()),
+	(245, 5239, 'HTTP', UNIX_TIMESTAMP()),
+	(277, 5271, 'HTTPS', UNIX_TIMESTAMP()),
+	(340, 3336, 'Hotspot', UNIX_TIMESTAMP()),
+	(304, 303, 'ICMP', UNIX_TIMESTAMP()),
+	(977, 2974, 'ICMPv6', UNIX_TIMESTAMP()),
+	(2, 1, 'IDS', UNIX_TIMESTAMP()),
+	(699, 5693, 'IEEE802.11', UNIX_TIMESTAMP()),
+	(891, 3887, 'IMAP', UNIX_TIMESTAMP()),
+	(177, 6170, 'IPS', UNIX_TIMESTAMP()),
+	(423, 5417, 'IPsec', UNIX_TIMESTAMP()),
+	(971, 970, 'IPv4', UNIX_TIMESTAMP()),
+	(457, 2454, 'IPv6', UNIX_TIMESTAMP()),
+	(110, 1108, 'IPv6ãƒˆãƒ³ãƒãƒªãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(955, 2952, 'IPã‚¢ãƒ‰ãƒ¬ã‚¹', UNIX_TIMESTAMP()),
+	(336, 2333, 'ISDN', UNIX_TIMESTAMP()),
+	(525, 1523, 'IaaS', UNIX_TIMESTAMP()),
+	(857, 3853, 'IaaS', UNIX_TIMESTAMP()),
+	(46, 6039, 'JPEG2000', UNIX_TIMESTAMP()),
+	(66, 2063, 'JSON', UNIX_TIMESTAMP()),
+	(515, 6508, 'Kubernetes', UNIX_TIMESTAMP()),
+	(777, 4772, 'L2TP', UNIX_TIMESTAMP()),
+	(283, 5277, 'LACP', UNIX_TIMESTAMP()),
+	(94, 2091, 'LAN', UNIX_TIMESTAMP()),
+	(941, 2938, 'LDAP', UNIX_TIMESTAMP()),
+	(30, 7022, 'LTE', UNIX_TIMESTAMP()),
+	(422, 1420, 'MACã‚¢ãƒ‰ãƒ¬ã‚¹', UNIX_TIMESTAMP()),
+	(588, 3584, 'MD5', UNIX_TIMESTAMP()),
+	(552, 551, 'MD5', UNIX_TIMESTAMP()),
+	(589, 4584, 'MIMO', UNIX_TIMESTAMP()),
+	(303, 4298, 'MP3', UNIX_TIMESTAMP()),
+	(299, 3295, 'MPLS', UNIX_TIMESTAMP()),
+	(469, 1467, 'MSTP', UNIX_TIMESTAMP()),
+	(987, 986, 'MTU', UNIX_TIMESTAMP()),
+	(744, 1742, 'MXãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(742, 1740, 'Multicast', UNIX_TIMESTAMP()),
+	(754, 6747, 'NAS', UNIX_TIMESTAMP()),
+	(485, 7477, 'NAT', UNIX_TIMESTAMP()),
+	(828, 5822, 'NETBIOS', UNIX_TIMESTAMP()),
+	(563, 5557, 'NFS', UNIX_TIMESTAMP()),
+	(644, 1642, 'NFV', UNIX_TIMESTAMP()),
+	(736, 1734, 'NIC', UNIX_TIMESTAMP()),
+	(287, 6280, 'NSãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(80, 7072, 'NTP', UNIX_TIMESTAMP()),
+	(748, 3744, 'NetBEUI', UNIX_TIMESTAMP()),
+	(581, 4576, 'Netcat', UNIX_TIMESTAMP()),
+	(384, 4379, 'OSIãƒ¢ãƒ‡ãƒ«', UNIX_TIMESTAMP()),
+	(792, 3788, 'OSPF', UNIX_TIMESTAMP()),
+	(998, 1996, 'PDU', UNIX_TIMESTAMP()),
+	(767, 4762, 'PKI', UNIX_TIMESTAMP()),
+	(685, 684, 'POP3', UNIX_TIMESTAMP()),
+	(306, 7298, 'POTS', UNIX_TIMESTAMP()),
+	(215, 6208, 'PPP', UNIX_TIMESTAMP()),
+	(225, 5219, 'PPPoE', UNIX_TIMESTAMP()),
+	(281, 7273, 'PPTP', UNIX_TIMESTAMP()),
+	(877, 1875, 'PSTN', UNIX_TIMESTAMP()),
+	(435, 3431, 'PTRãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(731, 3727, 'PaaS', UNIX_TIMESTAMP()),
+	(958, 3954, 'PaaS', UNIX_TIMESTAMP()),
+	(659, 5653, 'Paxosã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ', UNIX_TIMESTAMP()),
+	(506, 3502, 'PoE', UNIX_TIMESTAMP()),
+	(520, 519, 'QoS', UNIX_TIMESTAMP()),
+	(887, 5881, 'RADIUS', UNIX_TIMESTAMP()),
+	(350, 1348, 'RAID', UNIX_TIMESTAMP()),
+	(292, 2289, 'RDP', UNIX_TIMESTAMP()),
+	(838, 3834, 'RIP', UNIX_TIMESTAMP()),
+	(289, 7281, 'RSA', UNIX_TIMESTAMP()),
+	(666, 665, 'RSTP', UNIX_TIMESTAMP()),
+	(323, 4318, 'RSYNC', UNIX_TIMESTAMP()),
+	(247, 1245, 'Raftã‚¢ãƒ«ã‚´ãƒªã‚ºãƒ ', UNIX_TIMESTAMP()),
+	(257, 256, 'ReverseDNS', UNIX_TIMESTAMP()),
+	(229, 6222, 'SAN', UNIX_TIMESTAMP()),
+	(862, 6855, 'SCSI', UNIX_TIMESTAMP()),
+	(827, 4822, 'SD-WAN', UNIX_TIMESTAMP()),
+	(740, 6733, 'SDN', UNIX_TIMESTAMP()),
+	(73, 6066, 'SDSL', UNIX_TIMESTAMP()),
+	(131, 1129, 'SFTP', UNIX_TIMESTAMP()),
+	(805, 5799, 'SHA-1', UNIX_TIMESTAMP()),
+	(205, 7197, 'SHA-256', UNIX_TIMESTAMP()),
+	(985, 5979, 'SHA1', UNIX_TIMESTAMP()),
+	(260, 5254, 'SLA', UNIX_TIMESTAMP()),
+	(582, 6575, 'SLA', UNIX_TIMESTAMP()),
+	(703, 702, 'SLI', UNIX_TIMESTAMP()),
+	(223, 7215, 'SLO', UNIX_TIMESTAMP()),
+	(513, 2510, 'SMTP', UNIX_TIMESTAMP()),
+	(236, 2233, 'SNMP', UNIX_TIMESTAMP()),
+	(645, 2642, 'SNMPv3', UNIX_TIMESTAMP()),
+	(538, 5532, 'SOAãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(843, 1841, 'SOCKS', UNIX_TIMESTAMP()),
+	(689, 6682, 'SRE', UNIX_TIMESTAMP()),
+	(928, 2925, 'SRVãƒ¬ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(114, 6107, 'SS7', UNIX_TIMESTAMP()),
+	(946, 3942, 'SSH', UNIX_TIMESTAMP()),
+	(154, 7146, 'SSID', UNIX_TIMESTAMP()),
+	(133, 132, 'SSLVPN', UNIX_TIMESTAMP()),
+	(342, 4337, 'SSL/TLS', UNIX_TIMESTAMP()),
+	(137, 7129, 'SSLè¨¼æ˜Žæ›¸', UNIX_TIMESTAMP()),
+	(456, 3452, 'STP', UNIX_TIMESTAMP()),
+	(669, 2666, 'SaaS', UNIX_TIMESTAMP()),
+	(794, 6787, 'SaaS', UNIX_TIMESTAMP()),
+	(354, 6347, 'Samba', UNIX_TIMESTAMP()),
+	(892, 6885, 'Subversion', UNIX_TIMESTAMP()),
+	(269, 268, 'Syslog', UNIX_TIMESTAMP()),
+	(782, 1780, 'TCP', UNIX_TIMESTAMP()),
+	(959, 4954, 'TCP/IPãƒ¢ãƒ‡ãƒ«', UNIX_TIMESTAMP()),
+	(757, 6750, 'TFTP', UNIX_TIMESTAMP()),
+	(435, 1433, 'TLD', UNIX_TIMESTAMP()),
+	(896, 3892, 'Telnet', UNIX_TIMESTAMP()),
+	(218, 4213, 'Tethering', UNIX_TIMESTAMP()),
+	(125, 6118, 'TokenRing', UNIX_TIMESTAMP()),
+	(263, 2260, 'Traceroute', UNIX_TIMESTAMP()),
+	(755, 6748, 'UDP', UNIX_TIMESTAMP()),
+	(595, 3591, 'UMTS', UNIX_TIMESTAMP()),
+	(240, 7232, 'UPS', UNIX_TIMESTAMP()),
+	(97, 6090, 'URI', UNIX_TIMESTAMP()),
+	(578, 2575, 'URL', UNIX_TIMESTAMP()),
+	(20, 7012, 'UUCP', UNIX_TIMESTAMP()),
+	(219, 5213, 'Unicast', UNIX_TIMESTAMP()),
+	(927, 926, 'VDSL', UNIX_TIMESTAMP()),
+	(224, 5218, 'VLAN', UNIX_TIMESTAMP()),
+	(63, 5057, 'VLAN', UNIX_TIMESTAMP()),
+	(548, 4543, 'VMï¼ˆä»®æƒ³ãƒžã‚·ãƒ³ï¼‰', UNIX_TIMESTAMP()),
+	(153, 6146, 'VNC', UNIX_TIMESTAMP()),
+	(679, 1677, 'VPC', UNIX_TIMESTAMP()),
+	(757, 5751, 'VPN', UNIX_TIMESTAMP()),
+	(990, 2987, 'VPN', UNIX_TIMESTAMP()),
+	(312, 2309, 'VRRP', UNIX_TIMESTAMP()),
+	(624, 2621, 'VoIP', UNIX_TIMESTAMP()),
+	(704, 1702, 'WAN', UNIX_TIMESTAMP()),
+	(352, 6345, 'WEP', UNIX_TIMESTAMP()),
+	(681, 6674, 'WHOIS', UNIX_TIMESTAMP()),
+	(495, 5489, 'WPA', UNIX_TIMESTAMP()),
+	(614, 4609, 'Wi-Fi', UNIX_TIMESTAMP()),
+	(785, 4780, 'WiMAX', UNIX_TIMESTAMP()),
+	(158, 1156, 'Wiki', UNIX_TIMESTAMP()),
+	(430, 7422, 'XHTML', UNIX_TIMESTAMP()),
+	(515, 4510, 'iSCSI', UNIX_TIMESTAMP()),
+	(923, 2920, 'x86', UNIX_TIMESTAMP()),
+	(876, 4871, 'ã‹ãªæ¼¢å­—å¤‰æ›', UNIX_TIMESTAMP()),
+	(974, 1972, 'ã‚¢ãƒ¼ã‚­ãƒ†ã‚¯ãƒãƒ£', UNIX_TIMESTAMP()),
+	(903, 4898, 'ã‚¢ã‚¯ã‚»ã‚¹ã‚«ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(476, 475, 'ã‚¢ã‚¯ãƒ†ã‚£ãƒ–ãƒŽãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(191, 3187, 'ã‚¢ã‚¸ãƒ£ã‚¤ãƒ«', UNIX_TIMESTAMP()),
+	(164, 3160, 'ã‚¢ã‚¹ã‚­ãƒ¼', UNIX_TIMESTAMP()),
+	(576, 2573, 'ã‚¢ã‚»ãƒ³ãƒ–ãƒªè¨€èªž', UNIX_TIMESTAMP()),
+	(539, 1537, 'ã‚¢ãƒƒãƒ—ã‚¿ã‚¤ãƒ ', UNIX_TIMESTAMP()),
+	(104, 1102, 'ã‚¢ãƒƒãƒ—ã‚¿ã‚¤ãƒ ', UNIX_TIMESTAMP()),
+	(763, 1761, 'ã‚¢ãƒ‰ãƒ™ãƒ³ãƒãƒ£ãƒ¼ã‚²ãƒ¼ãƒ ', UNIX_TIMESTAMP()),
+	(120, 4115, 'ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢', UNIX_TIMESTAMP()),
+	(765, 4760, 'ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³å±¤', UNIX_TIMESTAMP()),
+	(466, 7458, 'ã‚¢ãƒ©ãƒ¼ãƒˆ', UNIX_TIMESTAMP()),
+	(18, 3014, 'ã‚¢ãƒ©ãƒ¼ãƒˆ', UNIX_TIMESTAMP()),
+	(716, 3712, 'ã‚¢ãƒ©ãƒ¼ãƒˆ', UNIX_TIMESTAMP()),
+	(51, 3047, 'ã‚¤ãƒ¼ã‚µãƒ¼ãƒãƒ£ãƒãƒ«', UNIX_TIMESTAMP()),
+	(589, 5583, 'ã‚¤ãƒ¼ã‚µãƒãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(549, 6542, 'ã‚¤ãƒ‡ãƒ³ãƒãƒ†ãƒ³ã‚¹', UNIX_TIMESTAMP()),
+	(466, 6459, 'ã‚¤ãƒ™ãƒ³ãƒˆã‚½ãƒ¼ã‚·ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(105, 6098, 'ã‚¤ãƒ™ãƒ³ãƒˆé§†å‹•ã‚¢ãƒ¼ã‚­ãƒ†ã‚¯ãƒãƒ£', UNIX_TIMESTAMP()),
+	(388, 2385, 'ã‚¤ãƒŸãƒ¥ãƒ¼ã‚¿ãƒ“ãƒªãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(611, 610, 'ã‚¤ãƒ³ã‚·ãƒ‡ãƒ³ãƒˆç®¡ç†', UNIX_TIMESTAMP()),
+	(235, 5229, 'ã‚¤ãƒ³ã‚¿ãƒ¼ãƒãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(12, 1010, 'ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹', UNIX_TIMESTAMP()),
+	(973, 4968, 'ã‚¤ãƒ³ãƒˆãƒ©ãƒãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(275, 4270, 'ã‚¤ãƒ³ãƒãƒ¼ã‚¿', UNIX_TIMESTAMP()),
+	(636, 4631, 'ã‚¤ãƒ³ãƒ•ãƒ©ã‚¹ãƒˆãƒ©ã‚¯ãƒãƒ£ãƒ¼ã‚³ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(491, 3487, 'ã‚¤ãƒ³ãƒ•ãƒ©ãƒ˜ãƒ«ã‚¹ãƒã‚§ãƒƒã‚¯', UNIX_TIMESTAMP()),
+	(320, 319, 'ã‚¤ãƒ³ãƒ—ãƒƒãƒˆãƒ¡ã‚½ãƒƒãƒ‰', UNIX_TIMESTAMP()),
+	(622, 4617, 'ã‚¦ã‚£ãƒ³ãƒ‰ã‚¦ã‚µã‚¤ã‚º', UNIX_TIMESTAMP()),
+	(795, 3791, 'ã‚¦ã‚§ã‚¢ãƒ©ãƒ–ãƒ«ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(238, 3234, 'ã‚¦ã‚§ãƒ–ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒª', UNIX_TIMESTAMP()),
+	(346, 345, 'ã‚¦ã‚§ãƒ–ãƒ–ãƒ©ã‚¦ã‚¶', UNIX_TIMESTAMP()),
+	(57, 1055, 'ã‚¨ãƒƒã‚¸ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(578, 5572, 'ã‚¨ãƒŸãƒ¥ãƒ¬ãƒ¼ã‚¿', UNIX_TIMESTAMP()),
+	(716, 1714, 'ã‚¨ãƒ©ãƒ¼ãƒã‚¸ã‚§ãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(885, 2882, 'ã‚¨ãƒ³ãƒ‰ãƒ„ãƒ¼ã‚¨ãƒ³ãƒ‰ã®åŽŸå‰‡', UNIX_TIMESTAMP()),
+	(408, 5402, 'ã‚ªãƒ¼ã‚±ã‚¹ãƒˆãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(205, 4200, 'ã‚ªãƒ¼ãƒˆã‚¹ã‚±ãƒ¼ãƒªãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(561, 5555, 'ã‚ªãƒ¼ãƒˆãƒ¡ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(111, 2108, 'ã‚ªãƒ¼ãƒãƒ¼ãƒ˜ãƒƒãƒ‰', UNIX_TIMESTAMP()),
+	(578, 2575, 'ã‚ªãƒ¼ãƒ—ãƒ³ãƒªãƒ¼ãƒ«', UNIX_TIMESTAMP()),
+	(209, 6202, 'ã‚ªãƒ•ã‚µã‚¤ãƒˆ', UNIX_TIMESTAMP()),
+	(562, 2559, 'ã‚ªãƒ•ãƒ—ãƒ¬ãƒŸã‚¹', UNIX_TIMESTAMP()),
+	(156, 1154, 'ã‚ªãƒ–ã‚¶ãƒ¼ãƒãƒ“ãƒªãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(580, 1578, 'ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ã‚¨ã‚¯ã‚»ãƒ¬ãƒ³ã‚¹', UNIX_TIMESTAMP()),
+	(626, 5620, 'ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒŠãƒ«ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒžãƒ³ã‚¹', UNIX_TIMESTAMP()),
+	(254, 3250, 'ã‚ªãƒšãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(436, 5430, 'ã‚ªãƒšãƒ¬ãƒ¼ãƒ†ã‚£ãƒ³ã‚°ã‚·ã‚¹ãƒ†ãƒ ', UNIX_TIMESTAMP()),
+	(401, 1399, 'ã‚ªãƒ³ã‚µã‚¤ãƒˆ', UNIX_TIMESTAMP()),
+	(171, 1169, 'ã‚ªãƒ³ãƒ©ã‚¤ãƒ³ã‚²ãƒ¼ãƒ ', UNIX_TIMESTAMP()),
+	(576, 1574, 'ã‚«ãƒ¼ãƒãƒ«', UNIX_TIMESTAMP()),
+	(726, 4721, 'ã‚«ã‚ªã‚¹ã‚¨ãƒ³ã‚¸ãƒ‹ã‚¢ãƒªãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(613, 6606, 'ã‚«ãƒŠãƒªãƒ¼ãƒªãƒªãƒ¼ã‚¹', UNIX_TIMESTAMP()),
+	(915, 5909, 'ã‚«ãƒ—ã‚»ãƒ«åŒ–', UNIX_TIMESTAMP()),
+	(63, 6056, 'ã‚¬ãƒ™ãƒ¼ã‚¸ã‚³ãƒ¬ã‚¯ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(76, 1074, 'ã‚­ãƒ¼ãƒœãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(508, 2505, 'ã‚­ãƒ£ãƒƒã‚·ãƒ¥', UNIX_TIMESTAMP()),
+	(580, 3576, 'ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚³ãƒ’ãƒ¼ãƒ¬ãƒ³ã‚·', UNIX_TIMESTAMP()),
+	(206, 7198, 'ã‚­ãƒ£ãƒ‘ã‚·ãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(503, 6496, 'ã‚­ãƒ£ãƒ‘ã‚·ãƒ†ã‚£ãƒ—ãƒ©ãƒ³ãƒ‹ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(392, 5386, 'ã‚­ãƒ£ãƒ©ã‚¯ã‚¿ãƒ¼ãƒ¦ãƒ¼ã‚¶ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹', UNIX_TIMESTAMP()),
+	(649, 6642, 'ã‚¯ãƒ¼ãƒªãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(627, 5621, 'ã‚¯ã‚©ãƒ¼ãƒ©ãƒ ', UNIX_TIMESTAMP()),
+	(752, 751, 'ã‚¯ã‚©ãƒ¼ãƒ©ãƒ ', UNIX_TIMESTAMP()),
+	(528, 527, 'ã‚¯ãƒ©ã‚¦ãƒ‰ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(35, 3031, 'ã‚¯ãƒ©ã‚¹ã‚¿ãƒ¼', UNIX_TIMESTAMP()),
+	(731, 3727, 'ã‚¯ãƒ©ãƒƒã‚«ãƒ¼', UNIX_TIMESTAMP()),
+	(215, 5209, 'ã‚¯ãƒ­ã‚¹ã‚µã‚¤ãƒˆã‚¹ã‚¯ãƒªãƒ—ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(787, 1785, 'ã‚°ãƒ¼ã‚°ãƒ«', UNIX_TIMESTAMP()),
+	(904, 903, 'ã‚°ãƒ©ãƒ•ã‚£ã‚«ãƒ«ãƒ¦ãƒ¼ã‚¶ã‚¤ãƒ³ã‚¿ãƒ•ã‚§ãƒ¼ã‚¹', UNIX_TIMESTAMP()),
+	(999, 998, 'ã‚°ãƒ©ãƒ•ç†è«–', UNIX_TIMESTAMP()),
+	(819, 2816, 'ã‚°ãƒªãƒ¼ãƒ³ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ³ã‚¿ãƒ¼', UNIX_TIMESTAMP()),
+	(732, 4727, 'ã‚°ãƒªãƒƒãƒ‰ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(521, 3517, 'ã‚°ãƒªãƒƒãƒ‰ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(709, 4704, 'ã‚°ãƒ¬ãƒ¼ã‚¹ãƒ•ãƒ«ã‚·ãƒ£ãƒƒãƒˆãƒ€ã‚¦ãƒ³', UNIX_TIMESTAMP()),
+	(944, 4939, 'ã‚°ãƒ¬ãƒ¼ã‚¹ãƒ•ãƒ«ãƒ‡ã‚°ãƒ©ãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(590, 2587, 'ã‚±ãƒ¼ã‚¸', UNIX_TIMESTAMP()),
+	(292, 3288, 'ã‚±ãƒ¼ãƒ–ãƒ«ç®¡ç†', UNIX_TIMESTAMP()),
+	(129, 1127, 'ã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤', UNIX_TIMESTAMP()),
+	(786, 4781, 'ã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤', UNIX_TIMESTAMP()),
+	(758, 757, 'ã‚²ãƒ¼ãƒŸãƒ³ã‚°PC', UNIX_TIMESTAMP()),
+	(488, 4483, 'ã‚³ãƒ¼ãƒ‡ãƒƒã‚¯', UNIX_TIMESTAMP()),
+	(531, 5525, 'ã‚³ãƒ¼ãƒ«ãƒ‰ã‚¢ã‚¤ãƒ«', UNIX_TIMESTAMP()),
+	(23, 6016, 'ã‚³ãƒ¼ãƒ«ãƒ‰ã‚¹ã‚¿ãƒ³ãƒã‚¤', UNIX_TIMESTAMP()),
+	(168, 7160, 'ã‚³ã‚¹ãƒˆæœ€é©åŒ–', UNIX_TIMESTAMP()),
+	(633, 1631, 'ã‚³ãƒ”ãƒ¼ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«CD', UNIX_TIMESTAMP()),
+	(13, 4008, 'ã‚³ãƒŸãƒƒãƒˆãƒ­ã‚°', UNIX_TIMESTAMP()),
+	(314, 2311, 'ã‚³ãƒªã‚¸ãƒ§ãƒ³ãƒ‰ãƒ¡ã‚¤ãƒ³', UNIX_TIMESTAMP()),
+	(841, 840, 'ã‚³ãƒ­ã‚±ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(960, 4955, 'ã‚³ãƒ³ã‚·ã‚¹ãƒ†ãƒ³ã‚·ãƒ¢ãƒ‡ãƒ«', UNIX_TIMESTAMP()),
+	(206, 3202, 'ã‚³ãƒ³ã‚»ãƒ³ã‚µã‚¹', UNIX_TIMESTAMP()),
+	(972, 6965, 'ã‚³ãƒ³ã‚½ãƒ¼ãƒ«', UNIX_TIMESTAMP()),
+	(263, 6256, 'ã‚³ãƒ³ãƒ†ãƒŠ', UNIX_TIMESTAMP()),
+	(745, 5739, 'ã‚³ãƒ³ãƒ†ãƒŠã‚ªãƒ¼ã‚±ã‚¹ãƒˆãƒ¬ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(268, 4263, 'ã‚³ãƒ³ãƒ‘ã‚¤ãƒ©', UNIX_TIMESTAMP()),
+	(560, 559, 'ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ã‚¦ã‚¤ãƒ«ã‚¹', UNIX_TIMESTAMP()),
+	(962, 1960, 'ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ã‚¿ã‚°ãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚¹', UNIX_TIMESTAMP()),
+	(494, 4489, 'ã‚³ãƒ³ãƒ”ãƒ¥ãƒ¼ãƒ†ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(771, 770, 'ã‚³ãƒ³ãƒ•ã‚£ã‚°ç®¡ç†', UNIX_TIMESTAMP()),
+	(983, 6976, 'ã‚µãƒ¼ã‚­ãƒƒãƒˆãƒ–ãƒ¬ãƒ¼ã‚«ãƒ¼', UNIX_TIMESTAMP()),
+	(834, 1832, 'ã‚µãƒ¼ã‚­ãƒƒãƒˆãƒ–ãƒ¬ãƒ¼ã‚«ãƒ¼', UNIX_TIMESTAMP()),
+	(177, 7169, 'ã‚µãƒ¼ãƒãƒ¼ãƒ¬ã‚¹', UNIX_TIMESTAMP()),
+	(108, 5102, 'ã‚µãƒ¼ãƒãƒ•ã‚¡ãƒ¼ãƒ ', UNIX_TIMESTAMP()),
+	(74, 1072, 'ã‚µãƒ¼ãƒãƒ­ã‚°', UNIX_TIMESTAMP()),
+	(977, 4972, 'ã‚µãƒ¼ãƒç›£è¦–', UNIX_TIMESTAMP()),
+	(106, 105, 'ã‚µãƒ¼ãƒ“ã‚¹ã‚­ãƒ£ãƒ‘ã‚·ãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(786, 1784, 'ã‚µãƒ¼ãƒ“ã‚¹ãƒ‡ã‚£ã‚¹ã‚«ãƒãƒª', UNIX_TIMESTAMP()),
+	(58, 57, 'ã‚µãƒ¼ãƒ“ã‚¹ãƒ‡ã‚£ã‚¹ã‚«ãƒãƒª', UNIX_TIMESTAMP()),
+	(211, 5205, 'ã‚µãƒ¼ãƒ“ã‚¹ãƒ¡ãƒƒã‚·ãƒ¥', UNIX_TIMESTAMP()),
+	(977, 3973, 'ã‚µãƒ¼ãƒ“ã‚¹ãƒ¡ãƒƒã‚·ãƒ¥', UNIX_TIMESTAMP()),
+	(403, 3399, 'ã‚µãƒ¼ãƒ“ã‚¹ãƒ¬ãƒ™ãƒ«', UNIX_TIMESTAMP()),
+	(930, 2927, 'ã‚µãƒ¼ãƒ“ã‚¹æ”¹å–„', UNIX_TIMESTAMP()),
+	(702, 4697, 'ã‚µãƒ¼ãƒ“ã‚¹å“è³ª', UNIX_TIMESTAMP()),
+	(436, 4431, 'ã‚µãƒ–ã‚¹ã‚¯ãƒ©ã‚¤ãƒ', UNIX_TIMESTAMP()),
+	(21, 20, 'ã‚µãƒ–ãƒãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(898, 4893, 'ã‚µãƒ–ãƒãƒƒãƒˆãƒžã‚¹ã‚¯', UNIX_TIMESTAMP()),
+	(696, 6689, 'ã‚µãƒãƒ¼ãƒˆãƒ™ã‚¯ã‚¿ãƒ¼ãƒžã‚·ãƒ³', UNIX_TIMESTAMP()),
+	(578, 5572, 'ã‚·ã‚°ãƒŠãƒªãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(821, 3817, 'ã‚·ã‚¹ãƒ†ãƒ ã‚¢ãƒƒãƒ—ãƒ‡ãƒ¼ãƒˆ', UNIX_TIMESTAMP()),
+	(131, 4126, 'ã‚·ã‚¹ãƒ†ãƒ ãƒ†ã‚¹ãƒˆ', UNIX_TIMESTAMP()),
+	(516, 2513, 'ã‚·ã‚¹ãƒ†ãƒ å¾©æ—§', UNIX_TIMESTAMP()),
+	(880, 4875, 'ã‚·ãƒ£ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(485, 3481, 'ã‚·ãƒ³ã‚°ãƒ«ãƒã‚¤ãƒ³ãƒˆã‚ªãƒ–ãƒ•ã‚§ã‚¤ãƒ«ã‚¢', UNIX_TIMESTAMP()),
+	(109, 3105, 'ã‚·ãƒ³ã‚»ãƒ™ãƒ¼ã‚¹', UNIX_TIMESTAMP()),
+	(592, 591, 'ã‚¸ã‚§ãƒãƒªãƒƒã‚¯ãƒ—ãƒ­ã‚°ãƒ©ãƒŸãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(255, 3251, 'ã‚¸ãƒƒã‚¿', UNIX_TIMESTAMP()),
+	(408, 4403, 'ã‚¸ãƒ§ã‚¤ã‚¹ãƒ†ã‚£ãƒƒã‚¯', UNIX_TIMESTAMP()),
+	(422, 1420, 'ã‚¹ã‚¤ãƒƒãƒ', UNIX_TIMESTAMP()),
+	(491, 6484, 'ã‚¹ã‚¤ãƒƒãƒ', UNIX_TIMESTAMP()),
+	(45, 4040, 'ã‚¹ã‚¿ãƒ³ãƒã‚¤ãƒŽãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(74, 3070, 'ã‚¹ãƒ†ãƒ¼ãƒˆãƒ•ãƒ«', UNIX_TIMESTAMP()),
+	(681, 2678, 'ã‚¹ãƒ†ãƒ¼ãƒˆãƒ¬ã‚¹', UNIX_TIMESTAMP()),
+	(718, 717, 'ã‚¹ãƒ†ã‚£ãƒƒã‚­ãƒ¼ã‚»ãƒƒã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(709, 2706, 'ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸', UNIX_TIMESTAMP()),
+	(265, 2262, 'ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã‚¨ãƒªã‚¢ãƒãƒƒãƒˆãƒ¯ãƒ¼ã‚¯', UNIX_TIMESTAMP()),
+	(911, 3907, 'ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã‚¯ãƒ©ã‚¹ã‚¿', UNIX_TIMESTAMP()),
+	(402, 7394, 'ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ã‚¯ãƒ©ã‚¹ã‚¿', UNIX_TIMESTAMP()),
+	(81, 2078, 'ã‚¹ãƒˆãƒ¬ãƒ¼ã‚¸ç®¡ç†', UNIX_TIMESTAMP()),
+	(313, 6306, 'ã‚¹ãƒˆãƒ¬ã‚¹ãƒ†ã‚¹ãƒˆ', UNIX_TIMESTAMP()),
+	(602, 2599, 'ã‚¹ãƒˆãƒ¬ã‚¹ãƒ†ã‚¹ãƒˆ', UNIX_TIMESTAMP()),
+	(60, 3056, 'ã‚¹ãƒŠãƒƒãƒ—ã‚·ãƒ§ãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(863, 2860, 'ã‚¹ãƒŠãƒƒãƒ—ã‚·ãƒ§ãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(800, 5794, 'ã‚¹ãƒ‘ã‚³ãƒ³', UNIX_TIMESTAMP()),
+	(45, 7037, 'ã‚¹ãƒ¢ãƒ¼ã‚¯ãƒ‡ã‚£ãƒ†ã‚¯ã‚¿', UNIX_TIMESTAMP()),
+	(73, 6066, 'ã‚¹ãƒ©ãƒ–ãƒ•ãƒ­ã‚¢', UNIX_TIMESTAMP()),
+	(236, 3232, 'ã‚¹ãƒ©ãƒ–ãƒ•ãƒ­ã‚¢', UNIX_TIMESTAMP()),
+	(65, 5059, 'ã‚¹ãƒ«ãƒ¼ãƒ—ãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(901, 3897, 'ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ã‚«ãƒ¡ãƒ©', UNIX_TIMESTAMP()),
+	(736, 1734, 'ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ãƒ›ãƒ¼ãƒ«', UNIX_TIMESTAMP()),
+	(408, 1406, 'ã‚»ã‚­ãƒ¥ãƒªãƒ†ã‚£ç›£æŸ»', UNIX_TIMESTAMP()),
+	(448, 447, 'ã‚»ã‚°ãƒ¡ãƒ³ãƒˆ', UNIX_TIMESTAMP()),
+	(532, 1530, 'ã‚»ãƒƒã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(60, 59, 'ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚¢ãƒ•ã‚£ãƒ‹ãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(62, 2059, 'ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚­ãƒ¼', UNIX_TIMESTAMP()),
+	(524, 523, 'ã‚»ãƒƒã‚·ãƒ§ãƒ³å±¤', UNIX_TIMESTAMP()),
+	(591, 6584, 'ã‚¼ãƒ­ã‚³ãƒ³ãƒ•ã‚£ã‚°', UNIX_TIMESTAMP()),
+	(688, 687, 'ã‚½ãƒ¼ã‚·ãƒ£ãƒ«ã‚¨ãƒ³ã‚¸ãƒ‹ã‚¢ãƒªãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(410, 7402, 'ã‚½ãƒªãƒƒãƒ‰ã‚¹ãƒ†ãƒ¼ãƒˆãƒ‰ãƒ©ã‚¤ãƒ–', UNIX_TIMESTAMP()),
+	(656, 1654, 'ã‚¾ãƒ¼ãƒ³', UNIX_TIMESTAMP()),
+	(303, 3299, 'ã‚¾ãƒ¼ãƒ³è»¢é€', UNIX_TIMESTAMP()),
+	(386, 5380, 'ã‚¿ãƒ¼ãƒŸãƒãƒ¼ã‚¿ãƒ¼', UNIX_TIMESTAMP()),
+	(354, 2351, 'ãƒ€ãƒƒã‚·ãƒ¥ãƒœãƒ¼ãƒ‰', UNIX_TIMESTAMP()),
+	(146, 3142, 'ãƒã‚§ãƒ¼ãƒ³ãƒªãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(757, 5751, 'ãƒãƒƒãƒ—ã‚»ãƒƒãƒˆ', UNIX_TIMESTAMP()),
+	(280, 4275, 'ãƒãƒ¥ãƒ¼ãƒ‹ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(40, 7032, 'ãƒãƒ¥ãƒ¼ãƒªãƒ³ã‚°ãƒ†ã‚¹ãƒˆ', UNIX_TIMESTAMP()),
+	(18, 6011, 'ãƒ†ã‚¯ãƒ‹ã‚«ãƒ«ã‚µãƒãƒ¼ãƒˆ', UNIX_TIMESTAMP()),
+	(314, 5308, 'ãƒ‡ãƒ¼ã‚¿ã®å¯ç”¨æ€§', UNIX_TIMESTAMP()),
+	(532, 5526, 'ãƒ‡ãƒ¼ã‚¿ã‚³ãƒ³ã‚·ã‚¹ãƒ†ãƒ³ã‚·', UNIX_TIMESTAMP()),
+	(811, 1809, 'ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ³ã‚¿ãƒ¼', UNIX_TIMESTAMP()),
+	(971, 2968, 'ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ³ã‚¿ãƒ¼', UNIX_TIMESTAMP()),
+	(741, 2738, 'ãƒ‡ãƒ¼ã‚¿ã‚»ãƒ³ã‚¿ãƒ¼ç›£è¦–', UNIX_TIMESTAMP()),
+	(533, 1531, 'ãƒ‡ãƒ¼ã‚¿ãƒãƒƒã‚¯ã‚¢ãƒƒãƒ—', UNIX_TIMESTAMP()),
+	(474, 473, 'ãƒ‡ãƒ¼ã‚¿ãƒ‘ãƒ¼ãƒ†ã‚£ã‚·ãƒ§ãƒ‹ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(481, 6474, 'ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã‚·ãƒ£ãƒ¼ãƒ‡ã‚£ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(733, 5727, 'ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ç®¡ç†', UNIX_TIMESTAMP()),
+	(270, 1268, 'ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ç®¡ç†ã‚·ã‚¹ãƒ†ãƒ ', UNIX_TIMESTAMP()),
+	(678, 1676, 'ãƒ‡ãƒ¼ã‚¿ãƒªãƒ³ã‚¯å±¤', UNIX_TIMESTAMP()),
+	(920, 6913, 'ãƒ‡ãƒ¼ã‚¿ãƒ¬ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³', UNIX_TIMESTAMP()),
+	(78, 2075, 'ãƒ‡ãƒ¼ã‚¿ãƒ­ãƒ¼ã‚«ãƒªãƒ†ã‚£', UNIX_TIMESTAMP()),
+	(488, 6481, 'ãƒ‡ãƒ¼ã‚¿æ§‹é€ ', UNIX_TIMESTAMP()),
+	(986, 985, 'ãƒ‡ãƒ¼ã‚¿åŒæœŸ', UNIX_TIMESTAMP()),
+	(936, 935, 'ãƒ‡ã‚£ã‚¶ã‚¹ã‚¿ãƒªã‚«ãƒãƒª', UNIX_TIMESTAMP()),
+	(875, 2872, 'ãƒ‡ã‚£ã‚¶ã‚¹ã‚¿ãƒªã‚«ãƒãƒª', UNIX_TIMESTAMP()),
+	(444, 3440, 'ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã‚µãƒ¼ãƒ“ã‚¹', UNIX_TIMESTAMP()),
+	(180, 3176, 'ãƒ‡ã‚¶ã‚¤ãƒ³ãƒ‘ã‚¿ãƒ¼ãƒ³', UNIX_TIMESTAMP()),
+	(132, 131, 'ãƒ‡ã‚¸ã‚¿ãƒ«ç½²å', UNIX_TIMESTAMP()),
+	(190, 3186, 'ãƒ‡ã‚¹ã‚¯ãƒˆãƒƒãƒ—ãƒŸãƒ¥ãƒ¼ã‚¸ãƒƒã‚¯', UNIX_TIMESTAMP()),
+	(933, 932, 'ãƒ‡ãƒãƒƒã‚°', UNIX_TIMESTAMP()),
+	(520, 519, 'ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆã‚²ãƒ¼ãƒˆã‚¦ã‚§ã‚¤', UNIX_TIMESTAMP()),
+	(84, 3080, 'ãƒ‡ãƒ—ãƒ­ã‚¤ãƒ¡ãƒ³ãƒˆ', UNIX_TIMESTAMP()),
+	(766, 3762, 'ãƒˆãƒ¼ã‚¿ãƒ«ã‚³ã‚¹ãƒˆã‚ªãƒ–ã‚ªãƒ¼ãƒŠãƒ¼ã‚·ãƒƒãƒ—', UNIX_TIMESTAMP()),
+	(477, 476, 'ãƒˆãƒƒãƒ—ãƒ¬ãƒ™ãƒ«ãƒ‰ãƒ¡ã‚¤ãƒ³', UNIX_TIMESTAMP()),
+	(691, 5685, 'ãƒˆãƒ”ãƒƒã‚¯ãƒ™ãƒ¼ã‚¹ã®ãƒ‘ãƒ–ã‚µãƒ–', UNIX_TIMESTAMP()),
+	(204, 2201, 'ãƒˆãƒ©ãƒ•ã‚£ãƒƒã‚¯ã‚·ã‚§ã‚¤ãƒ”ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(9, 8, 'ãƒˆãƒ©ãƒ•ã‚£ãƒƒã‚¯ç®¡ç†', UNIX_TIMESTAMP()),
+	(508, 2505, 'ãƒˆãƒ©ãƒ³ã‚¹ãƒãƒ¼ãƒˆå±¤', UNIX_TIMESTAMP()),
+	(724, 3720, 'ãƒˆãƒ¬ãƒ¼ã‚·ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(968, 3964, 'ãƒˆãƒ¬ãƒ¼ã‚·ãƒ³ã‚°', UNIX_TIMESTAMP()),
+	(453, 452, 'ãƒˆãƒ­ã‚¤ã®æœ¨é¦¬', UNIX_TIMESTAMP()),
+	(696, 3692, 'ãƒˆãƒ³ãƒãƒªãƒ...\G
+
+# Query 19: ID 0xAB7A3E53517FA04C
+# Attribute     pct   total     min     max     avg     95%  median
+# ============= === ======= ======= ======= ======= ======= =======
+# Count           0    2311
+# Exec time       0 503.8ms  86.0us  10.4ms 218.0us 408.0us 162.0us
+# Lock time       0   2.3ms       0  15.0us 996.1ns   1.0us   1.0us
+# Rows sent       2  24.01k       0      59   10.00      30       8
+# Rows examined   0  48.01k       0     118   20.00      60      16
+# String:
+# Databases     
+# 
+# EXPLAIN /*!50100 PARTITIONS*/
+SELECT * FROM livecomments WHERE livestream_id = 7533 ORDER BY created_at DESC\G
 
 # Query 20: ID 0x71D433A2FC998D69
 # Attribute     pct   total     min     max     avg     95%  median
 # ============= === ======= ======= ======= ======= ======= =======
-# Count           1    2278
-# Exec time       0   1.55s  89.0us  20.9ms 678.3us   3.3ms 138.0us
-# Lock time       0   2.9ms       0   2.1ms   1.3us   1.0us       0
-# Rows sent       0   2.28k       1       1    1.00       1       1
-# Rows examined   0   4.56k       2       3    2.00       2       2
+# Count           1    3176
+# Exec time       0 472.3ms  76.0us   5.5ms 148.7us 183.0us 122.0us
+# Lock time       0 773.0us       0  99.0us 243.4ns   1.0us       0
+# Rows sent       0   3.18k       1       1    1.00       1       1
+# Rows examined   0   6.35k       2       3    2.00       2       2
 # String:
-# Databases     isupipe
+# Databases     
 # 
 # EXPLAIN /*!50100 PARTITIONS*/
 SELECT COUNT(*)
 		FROM
-		(SELECT 'é•·ã„ã“ã¨ãŠç–²ã‚Œæ§˜ï¼ã“ã‚Œã‹ã‚‰ã‚‚ãšã£ã¨å¿œæ´ã—ã¦ã„ã¾ã™ã€‚' AS text) AS texts
+		(SELECT 'å¿œæ´ã—ã¦ã‚‹ã‚ˆã€‚' AS text) AS texts
 		INNER JOIN
-		(SELECT CONCAT('%', 'èº«ä½“æ„Ÿè¦šè§£æž', '%')	AS pattern) AS patterns
+		(SELECT CONCAT('%', 'å¤©éŸ³èˆž', '%')	AS pattern) AS patterns
 		ON texts.text LIKE patterns.pattern\G
