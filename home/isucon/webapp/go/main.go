@@ -116,6 +116,15 @@ func connectDB(logger echo.Logger) (*sqlx.DB, error) {
 	}
 	rows.Close()
 
+	var themeModels []ThemeModel
+	if err := db.Select(&themeModels, "SELECT * FROM themes"); err != nil {
+		return nil, err
+	}
+	for _, t := range themeModels {
+		t := t
+		themeMap.Store(t.UserID, t)
+	}
+
 	if err := db.Ping(); err != nil {
 		return nil, err
 	}
@@ -129,6 +138,15 @@ func initializeHandler(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to initialize: "+err.Error())
 	}
 	hashMap = sync.Map{}
+	themeMap = sync.Map{}
+	var themeModels []ThemeModel
+	if err := dbConn.Select(&themeModels, "SELECT * FROM themes"); err != nil {
+		return echo.NewHTTPError(http.StatusInternalServerError, "failed to initialize themeMap: "+err.Error())
+	}
+	for _, t := range themeModels {
+		t := t
+		themeMap.Store(t.UserID, t)
+	}
 
 	c.Request().Header.Add("Content-Type", "application/json;charset=utf-8")
 	return c.JSON(http.StatusOK, InitializeResponse{

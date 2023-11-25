@@ -1,198 +1,198 @@
 Top 100 Sort By Count
 Count    Total     Mean   Stddev     Min   P50.0   P99.9     Max   2xx    3xx  4xx  5xx  TotalBytes   MinBytes  MeanBytes   MaxBytes  Request
-10470   49.943   0.0048   0.0056   0.000   0.003   0.057   0.090    18  10452    0    0     1135149          0        108      83936  GET /api/user/:username/icon HTTP/1.1
- 1434   37.723   0.0263   0.0181   0.001   0.025   0.126   0.148  1433      0    1    0     2194704         82       1530       1738  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
-  976  177.605   0.1820   0.1655   0.000   0.141   0.925   0.925   971      0    5    0    14370787          0      14724      64848  GET /api/livestream/:livestream_id/reaction HTTP/1.1
-  953   22.388   0.0235   0.0146   0.001   0.022   0.088   0.088   953      0    0    0     1400431       1332       1469       1603  POST /api/livestream/:livestream_id/reaction HTTP/1.1
-  942  206.308   0.2190   0.1788   0.000   0.174   1.000   1.000   937      0    5    0    17233228          0      18294      69243  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
-  881   20.844   0.0237   0.0210   0.004   0.016   0.176   0.176   881      0    0    0        9583          9         10         11  POST /api/icon HTTP/1.1
-  873    3.964   0.0045   0.0049   0.001   0.003   0.055   0.055   871      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
-  869   88.078   0.1014   0.0257   0.000   0.099   0.214   0.214   865      0    3    1      372306          0        428        482  POST /api/register HTTP/2.0
-  715    6.014   0.0084   0.0089   0.000   0.005   0.052   0.052   715      0    0    0      369767          3        517      17661  GET /api/livestream HTTP/1.1
-  406    4.721   0.0116   0.0260   0.000   0.005   0.282   0.282   396      0    0   10      169724          3        418      24211  GET /api/livestream/:livestream_id/report HTTP/1.1
-  344  177.334   0.5155   0.2235   0.001   0.498   1.954   1.954   341      0    3    0    16895465          0      49114     113659  GET /api/livestream/:livestream_id HTTP/1.1
-  304    1.978   0.0065   0.0071   0.000   0.004   0.060   0.060   304      0    0    0       26855          5         88        750  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
-  211   51.797   0.2455   0.1154   0.000   0.269   0.509   0.509   207      0    4    0      194167          0        920       1083  POST /api/livestream/:livestream_id HTTP/1.1
-  209    2.160   0.0103   0.0088   0.001   0.008   0.055   0.055   209      0    0    0        3762         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
-  198    1.461   0.0074   0.0084   0.000   0.005   0.061   0.061   198      0    0    0      673596       3402       3402       3402  GET /api/tag HTTP/1.1
-   94    0.427   0.0045   0.0060   0.000   0.003   0.043   0.043    94      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
-   93    6.366   0.0685   0.0800   0.000   0.025   0.279   0.279    93      0    0    0      573942          3       6171      15881  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
-   92    5.697   0.0619   0.0806   0.000   0.009   0.259   0.259    92      0    0    0      428583          3       4658      15178  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
-   83    0.440   0.0053   0.0061   0.000   0.003   0.032   0.032    83      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
-   61    1.223   0.0200   0.0181   0.002   0.013   0.070   0.070    59      0    2    0      118491         52       1942       2117  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
-   16    0.703   0.0439   0.0265   0.006   0.055   0.079   0.079    16      0    0    0        1904        108        119        132  GET /api/user/:username/statistics HTTP/1.1
-   15    0.095   0.0063   0.0054   0.001   0.007   0.022   0.022    15      0    0    0         435         29         29         29  GET /api/user/:username/theme HTTP/1.1
-   14    0.342   0.0244   0.0189   0.002   0.020   0.084   0.084    14      0    0    0       25875        946       1848       2879  GET /api/user/:username/livestream HTTP/1.1
-    5   65.442  13.0884   8.4666   2.717  20.000  20.003  20.003     2      0    3    0         160          0         32         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
-    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         804        195        201        207  GET /api/user/:username HTTP/1.1
-    2    0.112   0.0560   0.0290   0.027   0.085   0.085   0.085     2      0    0    0      142576      40555      71288     102021  GET /api/livestream/:livestream_id HTTP/2.0
-    1    4.930   4.9300   0.0000   4.930   4.930   4.930   4.930     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
+13014   65.052   0.0050   0.0056   0.000   0.003   0.055   0.085    18  12995    1    0     1146303          0         88      78446  GET /api/user/:username/icon HTTP/1.1
+ 1762   44.021   0.0250   0.0180   0.001   0.023   0.129   0.140  1761      0    1    0     2687229         82       1525       1752  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
+ 1169  153.730   0.1315   0.1176   0.000   0.101   0.575   0.619  1168      0    1    0    18087951          0      15473      56868  GET /api/livestream/:livestream_id/reaction HTTP/1.1
+ 1150   21.525   0.0187   0.0134   0.001   0.017   0.099   0.102  1149      0    1    0     1680301          0       1461       1600  POST /api/livestream/:livestream_id/reaction HTTP/1.1
+ 1135  199.199   0.1755   0.1387   0.000   0.146   0.742   0.748  1131      0    4    0    24206685          0      21327      68769  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
+  998    8.379   0.0084   0.0095   0.000   0.005   0.079   0.079   997      0    1    0      483057          0        484      17707  GET /api/livestream HTTP/1.1
+  854   22.563   0.0264   0.0208   0.003   0.020   0.135   0.135   853      0    1    0        9275          0         10         11  POST /api/icon HTTP/1.1
+  847    4.227   0.0050   0.0052   0.001   0.003   0.056   0.056   845      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
+  841   85.641   0.1018   0.0264   0.000   0.099   0.208   0.208   839      0    1    1      357851         62        425        479  POST /api/register HTTP/2.0
+  543    4.866   0.0090   0.0146   0.000   0.006   0.198   0.198   529      0    0   14      107622          3        198      22312  GET /api/livestream/:livestream_id/report HTTP/1.1
+  443  161.269   0.3640   0.1453   0.002   0.348   1.583   1.583   440      0    3    0    21501724          0      48536     121161  GET /api/livestream/:livestream_id HTTP/1.1
+  403    2.485   0.0062   0.0065   0.000   0.004   0.075   0.075   403      0    0    0       51483          5        127       1531  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
+  268    2.774   0.0104   0.0090   0.001   0.008   0.064   0.064   268      0    0    0        4824         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
+  212   52.228   0.2464   0.1132   0.000   0.271   0.491   0.491   208      0    4    0      194943          0        919       1083  POST /api/livestream/:livestream_id HTTP/1.1
+  199    1.463   0.0074   0.0086   0.000   0.005   0.051   0.051   199      0    0    0      676998       3402       3402       3402  GET /api/tag HTTP/1.1
+  113    0.585   0.0052   0.0052   0.000   0.003   0.023   0.023   113      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
+  112    6.218   0.0555   0.0534   0.001   0.043   0.188   0.188   112      0    0    0      833939          3       7445      15802  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
+  111    4.557   0.0411   0.0520   0.000   0.008   0.168   0.168   111      0    0    0      546628          3       4924      14924  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
+  103    0.666   0.0065   0.0065   0.000   0.005   0.037   0.037   103      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
+   61    1.020   0.0167   0.0154   0.002   0.011   0.068   0.068    57      0    4    0      114111         52       1870       2111  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
+   16    0.789   0.0493   0.0251   0.006   0.055   0.106   0.106    16      0    0    0        1832        108        114        129  GET /api/user/:username/statistics HTTP/1.1
+   15    0.088   0.0059   0.0063   0.000   0.004   0.026   0.026    15      0    0    0         390         26         26         26  GET /api/user/:username/theme HTTP/1.1
+   14    0.348   0.0249   0.0153   0.003   0.023   0.070   0.070    14      0    0    0       21743        906       1553       3786  GET /api/user/:username/livestream HTTP/1.1
+    7   84.417  12.0596   7.5360   2.720  12.709  20.000  20.000     2      0    5    0         160          0         22         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
+    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         798        192        199        207  GET /api/user/:username HTTP/1.1
+    2    0.086   0.0430   0.0230   0.020   0.066   0.066   0.066     2      0    0    0      142619      40601      71309     102018  GET /api/livestream/:livestream_id HTTP/2.0
+    1    4.793   4.7930   0.0000   4.793   4.793   4.793   4.793     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
+    1    0.000   0.0000   0.0000   0.000   0.000   0.000   0.000     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
+    1    0.002   0.0020   0.0000   0.002   0.002   0.002   0.002     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
 
 Top 100 Sort By Total
 Count    Total     Mean   Stddev     Min   P50.0   P99.9     Max   2xx    3xx  4xx  5xx  TotalBytes   MinBytes  MeanBytes   MaxBytes  Request
-  942  206.308   0.2190   0.1788   0.000   0.174   1.000   1.000   937      0    5    0    17233228          0      18294      69243  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
-  976  177.605   0.1820   0.1655   0.000   0.141   0.925   0.925   971      0    5    0    14370787          0      14724      64848  GET /api/livestream/:livestream_id/reaction HTTP/1.1
-  344  177.334   0.5155   0.2235   0.001   0.498   1.954   1.954   341      0    3    0    16895465          0      49114     113659  GET /api/livestream/:livestream_id HTTP/1.1
-  869   88.078   0.1014   0.0257   0.000   0.099   0.214   0.214   865      0    3    1      372306          0        428        482  POST /api/register HTTP/2.0
-    5   65.442  13.0884   8.4666   2.717  20.000  20.003  20.003     2      0    3    0         160          0         32         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
-  211   51.797   0.2455   0.1154   0.000   0.269   0.509   0.509   207      0    4    0      194167          0        920       1083  POST /api/livestream/:livestream_id HTTP/1.1
-10470   49.943   0.0048   0.0056   0.000   0.003   0.057   0.090    18  10452    0    0     1135149          0        108      83936  GET /api/user/:username/icon HTTP/1.1
- 1434   37.723   0.0263   0.0181   0.001   0.025   0.126   0.148  1433      0    1    0     2194704         82       1530       1738  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
-  953   22.388   0.0235   0.0146   0.001   0.022   0.088   0.088   953      0    0    0     1400431       1332       1469       1603  POST /api/livestream/:livestream_id/reaction HTTP/1.1
-  881   20.844   0.0237   0.0210   0.004   0.016   0.176   0.176   881      0    0    0        9583          9         10         11  POST /api/icon HTTP/1.1
-   93    6.366   0.0685   0.0800   0.000   0.025   0.279   0.279    93      0    0    0      573942          3       6171      15881  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
-  715    6.014   0.0084   0.0089   0.000   0.005   0.052   0.052   715      0    0    0      369767          3        517      17661  GET /api/livestream HTTP/1.1
-   92    5.697   0.0619   0.0806   0.000   0.009   0.259   0.259    92      0    0    0      428583          3       4658      15178  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
-    1    4.930   4.9300   0.0000   4.930   4.930   4.930   4.930     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
-  406    4.721   0.0116   0.0260   0.000   0.005   0.282   0.282   396      0    0   10      169724          3        418      24211  GET /api/livestream/:livestream_id/report HTTP/1.1
-  873    3.964   0.0045   0.0049   0.001   0.003   0.055   0.055   871      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
-  209    2.160   0.0103   0.0088   0.001   0.008   0.055   0.055   209      0    0    0        3762         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
-  304    1.978   0.0065   0.0071   0.000   0.004   0.060   0.060   304      0    0    0       26855          5         88        750  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
-  198    1.461   0.0074   0.0084   0.000   0.005   0.061   0.061   198      0    0    0      673596       3402       3402       3402  GET /api/tag HTTP/1.1
-   61    1.223   0.0200   0.0181   0.002   0.013   0.070   0.070    59      0    2    0      118491         52       1942       2117  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
-   16    0.703   0.0439   0.0265   0.006   0.055   0.079   0.079    16      0    0    0        1904        108        119        132  GET /api/user/:username/statistics HTTP/1.1
-   83    0.440   0.0053   0.0061   0.000   0.003   0.032   0.032    83      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
-   94    0.427   0.0045   0.0060   0.000   0.003   0.043   0.043    94      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
-   14    0.342   0.0244   0.0189   0.002   0.020   0.084   0.084    14      0    0    0       25875        946       1848       2879  GET /api/user/:username/livestream HTTP/1.1
-    2    0.112   0.0560   0.0290   0.027   0.085   0.085   0.085     2      0    0    0      142576      40555      71288     102021  GET /api/livestream/:livestream_id HTTP/2.0
-   15    0.095   0.0063   0.0054   0.001   0.007   0.022   0.022    15      0    0    0         435         29         29         29  GET /api/user/:username/theme HTTP/1.1
-    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         804        195        201        207  GET /api/user/:username HTTP/1.1
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
+ 1135  199.199   0.1755   0.1387   0.000   0.146   0.742   0.748  1131      0    4    0    24206685          0      21327      68769  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
+  443  161.269   0.3640   0.1453   0.002   0.348   1.583   1.583   440      0    3    0    21501724          0      48536     121161  GET /api/livestream/:livestream_id HTTP/1.1
+ 1169  153.730   0.1315   0.1176   0.000   0.101   0.575   0.619  1168      0    1    0    18087951          0      15473      56868  GET /api/livestream/:livestream_id/reaction HTTP/1.1
+  841   85.641   0.1018   0.0264   0.000   0.099   0.208   0.208   839      0    1    1      357851         62        425        479  POST /api/register HTTP/2.0
+    7   84.417  12.0596   7.5360   2.720  12.709  20.000  20.000     2      0    5    0         160          0         22         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
+13014   65.052   0.0050   0.0056   0.000   0.003   0.055   0.085    18  12995    1    0     1146303          0         88      78446  GET /api/user/:username/icon HTTP/1.1
+  212   52.228   0.2464   0.1132   0.000   0.271   0.491   0.491   208      0    4    0      194943          0        919       1083  POST /api/livestream/:livestream_id HTTP/1.1
+ 1762   44.021   0.0250   0.0180   0.001   0.023   0.129   0.140  1761      0    1    0     2687229         82       1525       1752  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
+  854   22.563   0.0264   0.0208   0.003   0.020   0.135   0.135   853      0    1    0        9275          0         10         11  POST /api/icon HTTP/1.1
+ 1150   21.525   0.0187   0.0134   0.001   0.017   0.099   0.102  1149      0    1    0     1680301          0       1461       1600  POST /api/livestream/:livestream_id/reaction HTTP/1.1
+  998    8.379   0.0084   0.0095   0.000   0.005   0.079   0.079   997      0    1    0      483057          0        484      17707  GET /api/livestream HTTP/1.1
+  112    6.218   0.0555   0.0534   0.001   0.043   0.188   0.188   112      0    0    0      833939          3       7445      15802  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
+  543    4.866   0.0090   0.0146   0.000   0.006   0.198   0.198   529      0    0   14      107622          3        198      22312  GET /api/livestream/:livestream_id/report HTTP/1.1
+    1    4.793   4.7930   0.0000   4.793   4.793   4.793   4.793     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
+  111    4.557   0.0411   0.0520   0.000   0.008   0.168   0.168   111      0    0    0      546628          3       4924      14924  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
+  847    4.227   0.0050   0.0052   0.001   0.003   0.056   0.056   845      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
+  268    2.774   0.0104   0.0090   0.001   0.008   0.064   0.064   268      0    0    0        4824         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
+  403    2.485   0.0062   0.0065   0.000   0.004   0.075   0.075   403      0    0    0       51483          5        127       1531  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
+  199    1.463   0.0074   0.0086   0.000   0.005   0.051   0.051   199      0    0    0      676998       3402       3402       3402  GET /api/tag HTTP/1.1
+   61    1.020   0.0167   0.0154   0.002   0.011   0.068   0.068    57      0    4    0      114111         52       1870       2111  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
+   16    0.789   0.0493   0.0251   0.006   0.055   0.106   0.106    16      0    0    0        1832        108        114        129  GET /api/user/:username/statistics HTTP/1.1
+  103    0.666   0.0065   0.0065   0.000   0.005   0.037   0.037   103      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
+  113    0.585   0.0052   0.0052   0.000   0.003   0.023   0.023   113      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
+   14    0.348   0.0249   0.0153   0.003   0.023   0.070   0.070    14      0    0    0       21743        906       1553       3786  GET /api/user/:username/livestream HTTP/1.1
+   15    0.088   0.0059   0.0063   0.000   0.004   0.026   0.026    15      0    0    0         390         26         26         26  GET /api/user/:username/theme HTTP/1.1
+    2    0.086   0.0430   0.0230   0.020   0.066   0.066   0.066     2      0    0    0      142619      40601      71309     102018  GET /api/livestream/:livestream_id HTTP/2.0
+    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         798        192        199        207  GET /api/user/:username HTTP/1.1
+    1    0.002   0.0020   0.0000   0.002   0.002   0.002   0.002     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
+    1    0.000   0.0000   0.0000   0.000   0.000   0.000   0.000     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
 
 Top 100 Sort By Mean
 Count    Total     Mean   Stddev     Min   P50.0   P99.9     Max   2xx    3xx  4xx  5xx  TotalBytes   MinBytes  MeanBytes   MaxBytes  Request
-    5   65.442  13.0884   8.4666   2.717  20.000  20.003  20.003     2      0    3    0         160          0         32         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
-    1    4.930   4.9300   0.0000   4.930   4.930   4.930   4.930     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
-  344  177.334   0.5155   0.2235   0.001   0.498   1.954   1.954   341      0    3    0    16895465          0      49114     113659  GET /api/livestream/:livestream_id HTTP/1.1
-  211   51.797   0.2455   0.1154   0.000   0.269   0.509   0.509   207      0    4    0      194167          0        920       1083  POST /api/livestream/:livestream_id HTTP/1.1
-  942  206.308   0.2190   0.1788   0.000   0.174   1.000   1.000   937      0    5    0    17233228          0      18294      69243  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
-  976  177.605   0.1820   0.1655   0.000   0.141   0.925   0.925   971      0    5    0    14370787          0      14724      64848  GET /api/livestream/:livestream_id/reaction HTTP/1.1
-  869   88.078   0.1014   0.0257   0.000   0.099   0.214   0.214   865      0    3    1      372306          0        428        482  POST /api/register HTTP/2.0
-   93    6.366   0.0685   0.0800   0.000   0.025   0.279   0.279    93      0    0    0      573942          3       6171      15881  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
-   92    5.697   0.0619   0.0806   0.000   0.009   0.259   0.259    92      0    0    0      428583          3       4658      15178  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
-    2    0.112   0.0560   0.0290   0.027   0.085   0.085   0.085     2      0    0    0      142576      40555      71288     102021  GET /api/livestream/:livestream_id HTTP/2.0
-   16    0.703   0.0439   0.0265   0.006   0.055   0.079   0.079    16      0    0    0        1904        108        119        132  GET /api/user/:username/statistics HTTP/1.1
- 1434   37.723   0.0263   0.0181   0.001   0.025   0.126   0.148  1433      0    1    0     2194704         82       1530       1738  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
-   14    0.342   0.0244   0.0189   0.002   0.020   0.084   0.084    14      0    0    0       25875        946       1848       2879  GET /api/user/:username/livestream HTTP/1.1
-  881   20.844   0.0237   0.0210   0.004   0.016   0.176   0.176   881      0    0    0        9583          9         10         11  POST /api/icon HTTP/1.1
-  953   22.388   0.0235   0.0146   0.001   0.022   0.088   0.088   953      0    0    0     1400431       1332       1469       1603  POST /api/livestream/:livestream_id/reaction HTTP/1.1
-   61    1.223   0.0200   0.0181   0.002   0.013   0.070   0.070    59      0    2    0      118491         52       1942       2117  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
-  406    4.721   0.0116   0.0260   0.000   0.005   0.282   0.282   396      0    0   10      169724          3        418      24211  GET /api/livestream/:livestream_id/report HTTP/1.1
-  209    2.160   0.0103   0.0088   0.001   0.008   0.055   0.055   209      0    0    0        3762         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
-  715    6.014   0.0084   0.0089   0.000   0.005   0.052   0.052   715      0    0    0      369767          3        517      17661  GET /api/livestream HTTP/1.1
-  198    1.461   0.0074   0.0084   0.000   0.005   0.061   0.061   198      0    0    0      673596       3402       3402       3402  GET /api/tag HTTP/1.1
-  304    1.978   0.0065   0.0071   0.000   0.004   0.060   0.060   304      0    0    0       26855          5         88        750  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
-   15    0.095   0.0063   0.0054   0.001   0.007   0.022   0.022    15      0    0    0         435         29         29         29  GET /api/user/:username/theme HTTP/1.1
-   83    0.440   0.0053   0.0061   0.000   0.003   0.032   0.032    83      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
-10470   49.943   0.0048   0.0056   0.000   0.003   0.057   0.090    18  10452    0    0     1135149          0        108      83936  GET /api/user/:username/icon HTTP/1.1
-   94    0.427   0.0045   0.0060   0.000   0.003   0.043   0.043    94      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
-  873    3.964   0.0045   0.0049   0.001   0.003   0.055   0.055   871      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
-    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         804        195        201        207  GET /api/user/:username HTTP/1.1
+    7   84.417  12.0596   7.5360   2.720  12.709  20.000  20.000     2      0    5    0         160          0         22         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
+    1    4.793   4.7930   0.0000   4.793   4.793   4.793   4.793     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
+  443  161.269   0.3640   0.1453   0.002   0.348   1.583   1.583   440      0    3    0    21501724          0      48536     121161  GET /api/livestream/:livestream_id HTTP/1.1
+  212   52.228   0.2464   0.1132   0.000   0.271   0.491   0.491   208      0    4    0      194943          0        919       1083  POST /api/livestream/:livestream_id HTTP/1.1
+ 1135  199.199   0.1755   0.1387   0.000   0.146   0.742   0.748  1131      0    4    0    24206685          0      21327      68769  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
+ 1169  153.730   0.1315   0.1176   0.000   0.101   0.575   0.619  1168      0    1    0    18087951          0      15473      56868  GET /api/livestream/:livestream_id/reaction HTTP/1.1
+  841   85.641   0.1018   0.0264   0.000   0.099   0.208   0.208   839      0    1    1      357851         62        425        479  POST /api/register HTTP/2.0
+  112    6.218   0.0555   0.0534   0.001   0.043   0.188   0.188   112      0    0    0      833939          3       7445      15802  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
+   16    0.789   0.0493   0.0251   0.006   0.055   0.106   0.106    16      0    0    0        1832        108        114        129  GET /api/user/:username/statistics HTTP/1.1
+    2    0.086   0.0430   0.0230   0.020   0.066   0.066   0.066     2      0    0    0      142619      40601      71309     102018  GET /api/livestream/:livestream_id HTTP/2.0
+  111    4.557   0.0411   0.0520   0.000   0.008   0.168   0.168   111      0    0    0      546628          3       4924      14924  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
+  854   22.563   0.0264   0.0208   0.003   0.020   0.135   0.135   853      0    1    0        9275          0         10         11  POST /api/icon HTTP/1.1
+ 1762   44.021   0.0250   0.0180   0.001   0.023   0.129   0.140  1761      0    1    0     2687229         82       1525       1752  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
+   14    0.348   0.0249   0.0153   0.003   0.023   0.070   0.070    14      0    0    0       21743        906       1553       3786  GET /api/user/:username/livestream HTTP/1.1
+ 1150   21.525   0.0187   0.0134   0.001   0.017   0.099   0.102  1149      0    1    0     1680301          0       1461       1600  POST /api/livestream/:livestream_id/reaction HTTP/1.1
+   61    1.020   0.0167   0.0154   0.002   0.011   0.068   0.068    57      0    4    0      114111         52       1870       2111  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
+  268    2.774   0.0104   0.0090   0.001   0.008   0.064   0.064   268      0    0    0        4824         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
+  543    4.866   0.0090   0.0146   0.000   0.006   0.198   0.198   529      0    0   14      107622          3        198      22312  GET /api/livestream/:livestream_id/report HTTP/1.1
+  998    8.379   0.0084   0.0095   0.000   0.005   0.079   0.079   997      0    1    0      483057          0        484      17707  GET /api/livestream HTTP/1.1
+  199    1.463   0.0074   0.0086   0.000   0.005   0.051   0.051   199      0    0    0      676998       3402       3402       3402  GET /api/tag HTTP/1.1
+  103    0.666   0.0065   0.0065   0.000   0.005   0.037   0.037   103      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
+  403    2.485   0.0062   0.0065   0.000   0.004   0.075   0.075   403      0    0    0       51483          5        127       1531  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
+   15    0.088   0.0059   0.0063   0.000   0.004   0.026   0.026    15      0    0    0         390         26         26         26  GET /api/user/:username/theme HTTP/1.1
+  113    0.585   0.0052   0.0052   0.000   0.003   0.023   0.023   113      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
+13014   65.052   0.0050   0.0056   0.000   0.003   0.055   0.085    18  12995    1    0     1146303          0         88      78446  GET /api/user/:username/icon HTTP/1.1
+  847    4.227   0.0050   0.0052   0.001   0.003   0.056   0.056   845      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
+    1    0.002   0.0020   0.0000   0.002   0.002   0.002   0.002     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
+    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         798        192        199        207  GET /api/user/:username HTTP/1.1
+    1    0.000   0.0000   0.0000   0.000   0.000   0.000   0.000     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
 
 Top 100 Sort By Standard Deviation
 Count    Total     Mean   Stddev     Min   P50.0   P99.9     Max   2xx    3xx  4xx  5xx  TotalBytes   MinBytes  MeanBytes   MaxBytes  Request
-    5   65.442  13.0884   8.4666   2.717  20.000  20.003  20.003     2      0    3    0         160          0         32         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
-  344  177.334   0.5155   0.2235   0.001   0.498   1.954   1.954   341      0    3    0    16895465          0      49114     113659  GET /api/livestream/:livestream_id HTTP/1.1
-  942  206.308   0.2190   0.1788   0.000   0.174   1.000   1.000   937      0    5    0    17233228          0      18294      69243  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
-  976  177.605   0.1820   0.1655   0.000   0.141   0.925   0.925   971      0    5    0    14370787          0      14724      64848  GET /api/livestream/:livestream_id/reaction HTTP/1.1
-  211   51.797   0.2455   0.1154   0.000   0.269   0.509   0.509   207      0    4    0      194167          0        920       1083  POST /api/livestream/:livestream_id HTTP/1.1
-   92    5.697   0.0619   0.0806   0.000   0.009   0.259   0.259    92      0    0    0      428583          3       4658      15178  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
-   93    6.366   0.0685   0.0800   0.000   0.025   0.279   0.279    93      0    0    0      573942          3       6171      15881  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
-    2    0.112   0.0560   0.0290   0.027   0.085   0.085   0.085     2      0    0    0      142576      40555      71288     102021  GET /api/livestream/:livestream_id HTTP/2.0
-   16    0.703   0.0439   0.0265   0.006   0.055   0.079   0.079    16      0    0    0        1904        108        119        132  GET /api/user/:username/statistics HTTP/1.1
-  406    4.721   0.0116   0.0260   0.000   0.005   0.282   0.282   396      0    0   10      169724          3        418      24211  GET /api/livestream/:livestream_id/report HTTP/1.1
-  869   88.078   0.1014   0.0257   0.000   0.099   0.214   0.214   865      0    3    1      372306          0        428        482  POST /api/register HTTP/2.0
-  881   20.844   0.0237   0.0210   0.004   0.016   0.176   0.176   881      0    0    0        9583          9         10         11  POST /api/icon HTTP/1.1
-   14    0.342   0.0244   0.0189   0.002   0.020   0.084   0.084    14      0    0    0       25875        946       1848       2879  GET /api/user/:username/livestream HTTP/1.1
-   61    1.223   0.0200   0.0181   0.002   0.013   0.070   0.070    59      0    2    0      118491         52       1942       2117  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
- 1434   37.723   0.0263   0.0181   0.001   0.025   0.126   0.148  1433      0    1    0     2194704         82       1530       1738  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
-  953   22.388   0.0235   0.0146   0.001   0.022   0.088   0.088   953      0    0    0     1400431       1332       1469       1603  POST /api/livestream/:livestream_id/reaction HTTP/1.1
-  715    6.014   0.0084   0.0089   0.000   0.005   0.052   0.052   715      0    0    0      369767          3        517      17661  GET /api/livestream HTTP/1.1
-  209    2.160   0.0103   0.0088   0.001   0.008   0.055   0.055   209      0    0    0        3762         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
-  198    1.461   0.0074   0.0084   0.000   0.005   0.061   0.061   198      0    0    0      673596       3402       3402       3402  GET /api/tag HTTP/1.1
-  304    1.978   0.0065   0.0071   0.000   0.004   0.060   0.060   304      0    0    0       26855          5         88        750  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
-   83    0.440   0.0053   0.0061   0.000   0.003   0.032   0.032    83      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
-   94    0.427   0.0045   0.0060   0.000   0.003   0.043   0.043    94      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
-10470   49.943   0.0048   0.0056   0.000   0.003   0.057   0.090    18  10452    0    0     1135149          0        108      83936  GET /api/user/:username/icon HTTP/1.1
-   15    0.095   0.0063   0.0054   0.001   0.007   0.022   0.022    15      0    0    0         435         29         29         29  GET /api/user/:username/theme HTTP/1.1
-  873    3.964   0.0045   0.0049   0.001   0.003   0.055   0.055   871      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
-    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         804        195        201        207  GET /api/user/:username HTTP/1.1
-    1    4.930   4.9300   0.0000   4.930   4.930   4.930   4.930     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
+    7   84.417  12.0596   7.5360   2.720  12.709  20.000  20.000     2      0    5    0         160          0         22         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
+  443  161.269   0.3640   0.1453   0.002   0.348   1.583   1.583   440      0    3    0    21501724          0      48536     121161  GET /api/livestream/:livestream_id HTTP/1.1
+ 1135  199.199   0.1755   0.1387   0.000   0.146   0.742   0.748  1131      0    4    0    24206685          0      21327      68769  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
+ 1169  153.730   0.1315   0.1176   0.000   0.101   0.575   0.619  1168      0    1    0    18087951          0      15473      56868  GET /api/livestream/:livestream_id/reaction HTTP/1.1
+  212   52.228   0.2464   0.1132   0.000   0.271   0.491   0.491   208      0    4    0      194943          0        919       1083  POST /api/livestream/:livestream_id HTTP/1.1
+  112    6.218   0.0555   0.0534   0.001   0.043   0.188   0.188   112      0    0    0      833939          3       7445      15802  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
+  111    4.557   0.0411   0.0520   0.000   0.008   0.168   0.168   111      0    0    0      546628          3       4924      14924  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
+  841   85.641   0.1018   0.0264   0.000   0.099   0.208   0.208   839      0    1    1      357851         62        425        479  POST /api/register HTTP/2.0
+   16    0.789   0.0493   0.0251   0.006   0.055   0.106   0.106    16      0    0    0        1832        108        114        129  GET /api/user/:username/statistics HTTP/1.1
+    2    0.086   0.0430   0.0230   0.020   0.066   0.066   0.066     2      0    0    0      142619      40601      71309     102018  GET /api/livestream/:livestream_id HTTP/2.0
+  854   22.563   0.0264   0.0208   0.003   0.020   0.135   0.135   853      0    1    0        9275          0         10         11  POST /api/icon HTTP/1.1
+ 1762   44.021   0.0250   0.0180   0.001   0.023   0.129   0.140  1761      0    1    0     2687229         82       1525       1752  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
+   61    1.020   0.0167   0.0154   0.002   0.011   0.068   0.068    57      0    4    0      114111         52       1870       2111  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
+   14    0.348   0.0249   0.0153   0.003   0.023   0.070   0.070    14      0    0    0       21743        906       1553       3786  GET /api/user/:username/livestream HTTP/1.1
+  543    4.866   0.0090   0.0146   0.000   0.006   0.198   0.198   529      0    0   14      107622          3        198      22312  GET /api/livestream/:livestream_id/report HTTP/1.1
+ 1150   21.525   0.0187   0.0134   0.001   0.017   0.099   0.102  1149      0    1    0     1680301          0       1461       1600  POST /api/livestream/:livestream_id/reaction HTTP/1.1
+  998    8.379   0.0084   0.0095   0.000   0.005   0.079   0.079   997      0    1    0      483057          0        484      17707  GET /api/livestream HTTP/1.1
+  268    2.774   0.0104   0.0090   0.001   0.008   0.064   0.064   268      0    0    0        4824         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
+  199    1.463   0.0074   0.0086   0.000   0.005   0.051   0.051   199      0    0    0      676998       3402       3402       3402  GET /api/tag HTTP/1.1
+  403    2.485   0.0062   0.0065   0.000   0.004   0.075   0.075   403      0    0    0       51483          5        127       1531  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
+  103    0.666   0.0065   0.0065   0.000   0.005   0.037   0.037   103      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
+   15    0.088   0.0059   0.0063   0.000   0.004   0.026   0.026    15      0    0    0         390         26         26         26  GET /api/user/:username/theme HTTP/1.1
+13014   65.052   0.0050   0.0056   0.000   0.003   0.055   0.085    18  12995    1    0     1146303          0         88      78446  GET /api/user/:username/icon HTTP/1.1
+  847    4.227   0.0050   0.0052   0.001   0.003   0.056   0.056   845      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
+  113    0.585   0.0052   0.0052   0.000   0.003   0.023   0.023   113      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
+    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         798        192        199        207  GET /api/user/:username HTTP/1.1
+    1    4.793   4.7930   0.0000   4.793   4.793   4.793   4.793     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
+    1    0.002   0.0020   0.0000   0.002   0.002   0.002   0.002     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
+    1    0.000   0.0000   0.0000   0.000   0.000   0.000   0.000     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
 
 Top 100 Sort By Maximum(100 Percentile)
 Count    Total     Mean   Stddev     Min   P50.0   P99.9     Max   2xx    3xx  4xx  5xx  TotalBytes   MinBytes  MeanBytes   MaxBytes  Request
-    5   65.442  13.0884   8.4666   2.717  20.000  20.003  20.003     2      0    3    0         160          0         32         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
-    1    4.930   4.9300   0.0000   4.930   4.930   4.930   4.930     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
-  344  177.334   0.5155   0.2235   0.001   0.498   1.954   1.954   341      0    3    0    16895465          0      49114     113659  GET /api/livestream/:livestream_id HTTP/1.1
-  942  206.308   0.2190   0.1788   0.000   0.174   1.000   1.000   937      0    5    0    17233228          0      18294      69243  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
-  976  177.605   0.1820   0.1655   0.000   0.141   0.925   0.925   971      0    5    0    14370787          0      14724      64848  GET /api/livestream/:livestream_id/reaction HTTP/1.1
-  211   51.797   0.2455   0.1154   0.000   0.269   0.509   0.509   207      0    4    0      194167          0        920       1083  POST /api/livestream/:livestream_id HTTP/1.1
-  406    4.721   0.0116   0.0260   0.000   0.005   0.282   0.282   396      0    0   10      169724          3        418      24211  GET /api/livestream/:livestream_id/report HTTP/1.1
-   93    6.366   0.0685   0.0800   0.000   0.025   0.279   0.279    93      0    0    0      573942          3       6171      15881  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
-   92    5.697   0.0619   0.0806   0.000   0.009   0.259   0.259    92      0    0    0      428583          3       4658      15178  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
-  869   88.078   0.1014   0.0257   0.000   0.099   0.214   0.214   865      0    3    1      372306          0        428        482  POST /api/register HTTP/2.0
-  881   20.844   0.0237   0.0210   0.004   0.016   0.176   0.176   881      0    0    0        9583          9         10         11  POST /api/icon HTTP/1.1
- 1434   37.723   0.0263   0.0181   0.001   0.025   0.126   0.148  1433      0    1    0     2194704         82       1530       1738  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
-10470   49.943   0.0048   0.0056   0.000   0.003   0.057   0.090    18  10452    0    0     1135149          0        108      83936  GET /api/user/:username/icon HTTP/1.1
-  953   22.388   0.0235   0.0146   0.001   0.022   0.088   0.088   953      0    0    0     1400431       1332       1469       1603  POST /api/livestream/:livestream_id/reaction HTTP/1.1
-    2    0.112   0.0560   0.0290   0.027   0.085   0.085   0.085     2      0    0    0      142576      40555      71288     102021  GET /api/livestream/:livestream_id HTTP/2.0
-   14    0.342   0.0244   0.0189   0.002   0.020   0.084   0.084    14      0    0    0       25875        946       1848       2879  GET /api/user/:username/livestream HTTP/1.1
-   16    0.703   0.0439   0.0265   0.006   0.055   0.079   0.079    16      0    0    0        1904        108        119        132  GET /api/user/:username/statistics HTTP/1.1
-   61    1.223   0.0200   0.0181   0.002   0.013   0.070   0.070    59      0    2    0      118491         52       1942       2117  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
-  198    1.461   0.0074   0.0084   0.000   0.005   0.061   0.061   198      0    0    0      673596       3402       3402       3402  GET /api/tag HTTP/1.1
-  304    1.978   0.0065   0.0071   0.000   0.004   0.060   0.060   304      0    0    0       26855          5         88        750  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
-  873    3.964   0.0045   0.0049   0.001   0.003   0.055   0.055   871      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
-  209    2.160   0.0103   0.0088   0.001   0.008   0.055   0.055   209      0    0    0        3762         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
-  715    6.014   0.0084   0.0089   0.000   0.005   0.052   0.052   715      0    0    0      369767          3        517      17661  GET /api/livestream HTTP/1.1
-   94    0.427   0.0045   0.0060   0.000   0.003   0.043   0.043    94      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
-   83    0.440   0.0053   0.0061   0.000   0.003   0.032   0.032    83      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
-   15    0.095   0.0063   0.0054   0.001   0.007   0.022   0.022    15      0    0    0         435         29         29         29  GET /api/user/:username/theme HTTP/1.1
-    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         804        195        201        207  GET /api/user/:username HTTP/1.1
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
-    1    0.001   0.0010   0.0000   0.001   0.001   0.001   0.001     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
+    7   84.417  12.0596   7.5360   2.720  12.709  20.000  20.000     2      0    5    0         160          0         22         81  GET /api/livestream/:livestream_id/statistics HTTP/1.1
+    1    4.793   4.7930   0.0000   4.793   4.793   4.793   4.793     1      0    0    0          22         22         22         22  POST /api/initialize HTTP/2.0
+  443  161.269   0.3640   0.1453   0.002   0.348   1.583   1.583   440      0    3    0    21501724          0      48536     121161  GET /api/livestream/:livestream_id HTTP/1.1
+ 1135  199.199   0.1755   0.1387   0.000   0.146   0.742   0.748  1131      0    4    0    24206685          0      21327      68769  GET /api/livestream/:livestream_id/livecomment HTTP/1.1
+ 1169  153.730   0.1315   0.1176   0.000   0.101   0.575   0.619  1168      0    1    0    18087951          0      15473      56868  GET /api/livestream/:livestream_id/reaction HTTP/1.1
+  212   52.228   0.2464   0.1132   0.000   0.271   0.491   0.491   208      0    4    0      194943          0        919       1083  POST /api/livestream/:livestream_id HTTP/1.1
+  841   85.641   0.1018   0.0264   0.000   0.099   0.208   0.208   839      0    1    1      357851         62        425        479  POST /api/register HTTP/2.0
+  543    4.866   0.0090   0.0146   0.000   0.006   0.198   0.198   529      0    0   14      107622          3        198      22312  GET /api/livestream/:livestream_id/report HTTP/1.1
+  112    6.218   0.0555   0.0534   0.001   0.043   0.188   0.188   112      0    0    0      833939          3       7445      15802  GET /api/livestream/:livestream_id/livecomment?limit=<num> HTTP/1.1
+  111    4.557   0.0411   0.0520   0.000   0.008   0.168   0.168   111      0    0    0      546628          3       4924      14924  GET /api/livestream/:livestream_id/reaction?limit=<num> HTTP/1.1
+ 1762   44.021   0.0250   0.0180   0.001   0.023   0.129   0.140  1761      0    1    0     2687229         82       1525       1752  POST /api/livestream/:livestream_id/livecomment HTTP/1.1
+  854   22.563   0.0264   0.0208   0.003   0.020   0.135   0.135   853      0    1    0        9275          0         10         11  POST /api/icon HTTP/1.1
+   16    0.789   0.0493   0.0251   0.006   0.055   0.106   0.106    16      0    0    0        1832        108        114        129  GET /api/user/:username/statistics HTTP/1.1
+ 1150   21.525   0.0187   0.0134   0.001   0.017   0.099   0.102  1149      0    1    0     1680301          0       1461       1600  POST /api/livestream/:livestream_id/reaction HTTP/1.1
+13014   65.052   0.0050   0.0056   0.000   0.003   0.055   0.085    18  12995    1    0     1146303          0         88      78446  GET /api/user/:username/icon HTTP/1.1
+  998    8.379   0.0084   0.0095   0.000   0.005   0.079   0.079   997      0    1    0      483057          0        484      17707  GET /api/livestream HTTP/1.1
+  403    2.485   0.0062   0.0065   0.000   0.004   0.075   0.075   403      0    0    0       51483          5        127       1531  GET /api/livestream/:livestream_id/ngwords HTTP/1.1
+   14    0.348   0.0249   0.0153   0.003   0.023   0.070   0.070    14      0    0    0       21743        906       1553       3786  GET /api/user/:username/livestream HTTP/1.1
+   61    1.020   0.0167   0.0154   0.002   0.011   0.068   0.068    57      0    4    0      114111         52       1870       2111  POST /api/livestream/:livestream_id/livecomment/:livecomment_id/report HTTP/1.1
+    2    0.086   0.0430   0.0230   0.020   0.066   0.066   0.066     2      0    0    0      142619      40601      71309     102018  GET /api/livestream/:livestream_id HTTP/2.0
+  268    2.774   0.0104   0.0090   0.001   0.008   0.064   0.064   268      0    0    0        4824         18         18         18  POST /api/livestream/:livestream_id/moderate HTTP/1.1
+  847    4.227   0.0050   0.0052   0.001   0.003   0.056   0.056   845      0    2    0         118          0          0         59  POST /api/login HTTP/2.0
+  199    1.463   0.0074   0.0086   0.000   0.005   0.051   0.051   199      0    0    0      676998       3402       3402       3402  GET /api/tag HTTP/1.1
+  103    0.666   0.0065   0.0065   0.000   0.005   0.037   0.037   103      0    0    0           0          0          0          0  DELETE /api/livestream/:livestream_id/exit HTTP/1.1
+   15    0.088   0.0059   0.0063   0.000   0.004   0.026   0.026    15      0    0    0         390         26         26         26  GET /api/user/:username/theme HTTP/1.1
+  113    0.585   0.0052   0.0052   0.000   0.003   0.023   0.023   113      0    0    0           0          0          0          0  POST /api/livestream/:livestream_id/enter HTTP/1.1
+    1    0.002   0.0020   0.0000   0.002   0.002   0.002   0.002     1      0    0    0          16         16         16         16  GET /api/payment HTTP/2.0
+    4    0.002   0.0005   0.0005   0.000   0.001   0.001   0.001     4      0    0    0         798        192        199        207  GET /api/user/:username HTTP/1.1
+    1    0.000   0.0000   0.0000   0.000   0.000   0.000   0.000     1      0    0    0        3390       3390       3390       3390  GET /api/tag HTTP/2.0
 
 TOP 37 Slow Requests
- 1  20.003  GET /api/livestream/7524/statistics HTTP/1.1
- 2  20.001  GET /api/livestream/7528/statistics HTTP/1.1
- 3  20.000  GET /api/livestream/7539/statistics HTTP/1.1
- 4   4.930  POST /api/initialize HTTP/2.0
- 5   2.721  GET /api/livestream/7496/statistics HTTP/1.1
- 6   2.717  GET /api/livestream/7496/statistics HTTP/1.1
- 7   1.954  GET /api/livestream/search?tag=%E3%82%B9%E3%83%94%E3%83%AA%E3%83%81%E3%83%A5%E3%82%A2%E3%83%AB HTTP/1.1
- 8   1.800  GET /api/livestream/search?tag=%E6%96%B0%E6%83%85%E5%A0%B1%E7%99%BA%E8%A1%A8 HTTP/1.1
- 9   1.637  GET /api/livestream/search?tag=%E6%96%B0%E6%83%85%E5%A0%B1%E7%99%BA%E8%A1%A8 HTTP/1.1
-10   1.522  GET /api/livestream/search?tag=%E3%83%AF%E3%83%BC%E3%82%AF%E3%82%A2%E3%82%A6%E3%83%88 HTTP/1.1
-11   1.482  GET /api/livestream/search?tag=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E7%94%9F%E6%94%BE%E9%80%81 HTTP/1.1
-12   1.468  GET /api/livestream/search?tag=%E3%83%90%E3%83%B3%E3%83%89%E3%82%BB%E3%83%83%E3%82%B7%E3%83%A7%E3%83%B3 HTTP/1.1
-13   1.394  GET /api/livestream/search?tag=%E6%96%B0%E6%83%85%E5%A0%B1%E7%99%BA%E8%A1%A8 HTTP/1.1
-14   1.392  GET /api/livestream/search?tag=%E8%B5%B7%E6%A5%AD HTTP/1.1
-15   1.370  GET /api/livestream/search?tag=%E3%83%95%E3%82%A1%E3%83%B3%E3%83%9F%E3%83%BC%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0 HTTP/1.1
-16   1.360  GET /api/livestream/search?tag=%E3%82%A2%E3%82%A6%E3%83%88%E3%83%89%E3%82%A2 HTTP/1.1
-17   1.332  GET /api/livestream/search?tag=%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF HTTP/1.1
-18   1.274  GET /api/livestream/search?tag=%E3%82%B2%E3%83%BC%E3%83%A0%E5%AE%9F%E6%B3%81 HTTP/1.1
-19   1.250  GET /api/livestream/search?tag=%E3%83%86%E3%82%AF%E3%83%8E%E3%83%AD%E3%82%B8%E3%83%BC HTTP/1.1
-20   1.089  GET /api/livestream/search?tag=%E3%82%A2%E3%82%B3%E3%83%BC%E3%82%B9%E3%83%86%E3%82%A3%E3%83%83%E3%82%AF HTTP/1.1
-21   1.000  GET /api/livestream/7525/livecomment HTTP/1.1
-22   0.938  GET /api/livestream/7529/livecomment HTTP/1.1
-23   0.925  GET /api/livestream/7525/reaction HTTP/1.1
-24   0.911  GET /api/livestream/7529/livecomment HTTP/1.1
-25   0.891  GET /api/livestream/7525/livecomment HTTP/1.1
-26   0.820  GET /api/livestream/7525/livecomment HTTP/1.1
-27   0.809  GET /api/livestream/7525/livecomment HTTP/1.1
-28   0.808  GET /api/livestream/7525/reaction HTTP/1.1
-29   0.786  GET /api/livestream/7529/livecomment HTTP/1.1
-30   0.780  GET /api/livestream/7541/livecomment HTTP/1.1
-31   0.766  GET /api/livestream/7533/livecomment HTTP/1.1
-32   0.754  GET /api/livestream/7525/livecomment HTTP/1.1
-33   0.750  GET /api/livestream/7525/livecomment HTTP/1.1
-34   0.746  GET /api/livestream/7529/livecomment HTTP/1.1
-35   0.738  GET /api/livestream/7525/reaction HTTP/1.1
-36   0.738  GET /api/livestream/7525/reaction HTTP/1.1
-37   0.735  GET /api/livestream/7529/livecomment HTTP/1.1
+ 1  20.000  GET /api/livestream/7534/statistics HTTP/1.1
+ 2  20.000  GET /api/livestream/7567/statistics HTTP/1.1
+ 3  20.000  GET /api/livestream/7527/statistics HTTP/1.1
+ 4  12.709  GET /api/livestream/7599/statistics HTTP/1.1
+ 5   6.263  GET /api/livestream/7629/statistics HTTP/1.1
+ 6   4.793  POST /api/initialize HTTP/2.0
+ 7   2.725  GET /api/livestream/7496/statistics HTTP/1.1
+ 8   2.720  GET /api/livestream/7496/statistics HTTP/1.1
+ 9   1.583  GET /api/livestream/search?tag=%E6%A0%AA%E5%BC%8F%E6%8A%95%E8%B3%87 HTTP/1.1
+10   1.136  GET /api/livestream/search?tag=%E6%8A%95%E8%B3%87 HTTP/1.1
+11   1.110  GET /api/livestream/search?tag=%E9%87%A3%E3%82%8A HTTP/1.1
+12   1.093  GET /api/livestream/search?tag=%E6%AD%8C%E9%85%8D%E4%BF%A1 HTTP/1.1
+13   1.086  GET /api/livestream/search?tag=%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E7%94%9F%E6%94%BE%E9%80%81 HTTP/1.1
+14   1.031  GET /api/livestream/search?tag=%E9%87%8E%E7%90%83 HTTP/1.1
+15   1.018  GET /api/livestream/search?tag=%E3%83%9E%E3%83%AB%E3%83%81%E3%83%97%E3%83%AC%E3%82%A4 HTTP/1.1
+16   0.985  GET /api/livestream/search?tag=%E3%83%A9%E3%82%A4%E3%83%95%E3%83%8F%E3%83%83%E3%82%AF HTTP/1.1
+17   0.974  GET /api/livestream/search?tag=%E3%82%AC%E3%83%BC%E3%83%87%E3%83%8B%E3%83%B3%E3%82%B0 HTTP/1.1
+18   0.894  GET /api/livestream/search?tag=%E3%82%B5%E3%83%97%E3%83%A9%E3%82%A4%E3%82%BA HTTP/1.1
+19   0.880  GET /api/livestream/search?tag=%E3%83%90%E3%82%B9%E3%82%B1%E3%83%83%E3%83%88%E3%83%9C%E3%83%BC%E3%83%AB HTTP/1.1
+20   0.875  GET /api/livestream/search?tag=%E6%97%A5%E5%B8%B8%E8%A9%B1 HTTP/1.1
+21   0.755  GET /api/livestream/search?tag=%E3%83%9A%E3%83%83%E3%83%88%E3%81%A8%E4%B8%80%E7%B7%92 HTTP/1.1
+22   0.748  GET /api/livestream/7541/livecomment HTTP/1.1
+23   0.742  GET /api/livestream/7536/livecomment HTTP/1.1
+24   0.726  GET /api/livestream/search?tag=%E6%96%B0%E4%BD%9C%E3%82%B2%E3%83%BC%E3%83%A0 HTTP/1.1
+25   0.673  GET /api/livestream/7524/livecomment HTTP/1.1
+26   0.619  GET /api/livestream/7522/reaction HTTP/1.1
+27   0.605  GET /api/livestream/7522/livecomment HTTP/1.1
+28   0.601  GET /api/livestream/7541/livecomment HTTP/1.1
+29   0.595  GET /api/livestream/7540/livecomment HTTP/1.1
+30   0.583  GET /api/livestream/7522/livecomment HTTP/1.1
+31   0.575  GET /api/livestream/7526/reaction HTTP/1.1
+32   0.573  GET /api/livestream/7541/livecomment HTTP/1.1
+33   0.568  GET /api/livestream/7522/livecomment HTTP/1.1
+34   0.558  GET /api/livestream/7540/livecomment HTTP/1.1
+35   0.551  GET /api/livestream/7524/livecomment HTTP/1.1
+36   0.549  GET /api/livestream/7541/livecomment HTTP/1.1
+37   0.544  GET /api/livestream/7524/reaction HTTP/1.1

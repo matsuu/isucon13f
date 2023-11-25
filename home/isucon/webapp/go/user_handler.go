@@ -87,6 +87,7 @@ type PostIconResponse struct {
 }
 
 var hashMap sync.Map
+var themeMap sync.Map
 
 func getIconHandler(c echo.Context) error {
 	ctx := c.Request().Context()
@@ -289,6 +290,7 @@ func registerHandler(c echo.Context) error {
 	if _, err := tx.NamedExecContext(ctx, "INSERT INTO themes (user_id, dark_mode) VALUES(:user_id, :dark_mode)", themeModel); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert user theme: "+err.Error())
 	}
+	themeMap.Store(userID, themeModel)
 
 	if out, err := exec.Command("pdnsutil", "add-record", "u.isucon.dev", req.Name, "A", "60", powerDNSSubdomainAddress).CombinedOutput(); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, string(out)+": "+err.Error())
@@ -433,10 +435,18 @@ func verifyUserSession(c echo.Context) error {
 }
 
 func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (User, error) {
-	themeModel := ThemeModel{}
-	if err := tx.GetContext(ctx, &themeModel, "SELECT * FROM themes WHERE user_id = ?", userModel.ID); err != nil {
-		return User{}, err
+	t, ok := themeMap.Load(userModel.ID)
+	if !ok {
+		return User{}, fmt.Errorf("no theme")
 	}
+	themeModel := t.(ThemeModel)
+
+	/*
+		themeModel := ThemeModel{}
+		if err := tx.GetContext(ctx, &themeModel, "SELECT * FROM themes WHERE user_id = ?", userModel.ID); err != nil {
+			return User{}, err
+		}
+	*/
 
 	v, ok := hashMap.Load(userModel.ID)
 	var iconHash string
