@@ -122,12 +122,15 @@ func postReactionHandler(c echo.Context) error {
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert reaction: "+err.Error())
 	}
-
 	reactionID, err := result.LastInsertId()
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted reaction id: "+err.Error())
 	}
 	reactionModel.ID = reactionID
+
+	if _, err := tx.ExecContext(ctx, "UPDATE scores SET score = score + 1 WHERE user_id = ?", userID); err != nil {
+		return echo.NewHTTPError(http.StatusInternalServerError, "failed to update score for reaction: "+err.Error())
+	}
 
 	reaction, err := fillReactionResponse(ctx, tx, reactionModel)
 	if err != nil {

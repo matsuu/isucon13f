@@ -113,3 +113,10 @@ CREATE TABLE `reactions` (
   `created_at` BIGINT NOT NULL
 ) ENGINE=InnoDB CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 ALTER TABLE reactions ADD INDEX (livestream_id);
+
+CREATE TABLE `scores` (
+  `user_id` BIGINT NOT NULL PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `score` INT NOT NULL,
+  INDEX(score, name)
+) ENGINE=InnoDB CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;

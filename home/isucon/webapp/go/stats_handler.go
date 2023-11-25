@@ -88,7 +88,7 @@ func getUserStatisticsHandler(c echo.Context) error {
 
 	// ランク算出
 	var ranking []UserRankingEntry
-	if err := tx.SelectContext(ctx, &ranking, "SELECT u.name AS name, (SELECT count(*) from livestreams l inner join reactions r on r.livestream_id = l.id WHERE u.id = l.user_id) + (SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l2.livestream_id = l.id WHERE u.id = l.user_id) AS score FROM users u ORDER BY score ASC, u.name ASC"); err != nil {
+	if err := tx.SelectContext(ctx, &ranking, "SELECT name, score FROM scores ORDER BY score ASC, name ASC"); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get users: "+err.Error())
 	}
 	/*

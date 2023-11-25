@@ -8,7 +8,6 @@ import (
 	"errors"
 	"fmt"
 	"net/http"
-	"os"
 	"os/exec"
 	"strings"
 	"time"
@@ -108,6 +107,10 @@ func getIconHandler(c echo.Context) error {
 	etag := strings.Trim(c.Request().Header.Get("If-None-Match"), `"`)
 
 	if etag != "" {
+		if etag == "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0" {
+			return c.NoContent(http.StatusNotModified)
+		}
+
 		var cnt int
 		if err := tx.GetContext(ctx, &cnt, "SELECT COUNT(*) FROM icons WHERE user_id = ? AND hash = ?", user.ID, etag); err != nil {
 			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user icon: "+err.Error())
@@ -260,6 +263,9 @@ func registerHandler(c echo.Context) error {
 	userID, err := result.LastInsertId()
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted user id: "+err.Error())
+	}
+	if _, err := tx.ExecContext(ctx, "INSERT INTO scores (user_id, name, score) VALUES (?, ?, 0)", userID, req.Name); err != nil {
+		return echo.NewHTTPError(http.StatusInternalServerError, "failed to insert score: "+err.Error())
 	}
 
 	userModel.ID = userID
@@ -425,13 +431,12 @@ func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (Us
 		if !errors.Is(err, sql.ErrNoRows) {
 			return User{}, err
 		}
-		image, err := os.ReadFile(fallbackImage)
-		iconHash = fmt.Sprintf("%x", sha256.Sum256(image))
-		// iconHash = "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0"
-		// log.Printf("fallbackImage hash: %s", iconHash)
-		if err != nil {
-			return User{}, err
-		}
+		iconHash = "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0"
+		// image, err := os.ReadFile(fallbackImage)
+		// iconHash = fmt.Sprintf("%x", sha256.Sum256(image))
+		// if err != nil {
+		// 	return User{}, err
+		// }
 	}
 
 	user := User{

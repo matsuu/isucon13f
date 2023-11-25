@@ -241,6 +241,12 @@ func postLivecommentHandler(c echo.Context) error {
 	}
 	livecommentModel.ID = livecommentID
 
+	if req.Tip > 0 {
+		if _, err := tx.ExecContext(ctx, "UPDATE scores SET score = score + ? WHERE user_id = ?", req.Tip, userID); err != nil {
+			return echo.NewHTTPError(http.StatusInternalServerError, "failed to update score for tip: "+err.Error())
+		}
+	}
+
 	livecomment, err := fillLivecommentResponse(ctx, tx, livecommentModel)
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livecomment: "+err.Error())
