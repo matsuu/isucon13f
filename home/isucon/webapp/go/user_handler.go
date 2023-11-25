@@ -7,7 +7,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"log"
 	"net/http"
 	"os"
 	"os/exec"
@@ -427,7 +426,7 @@ func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (Us
 		image, err := os.ReadFile(fallbackImage)
 		iconHash = fmt.Sprintf("%x", sha256.Sum256(image))
 		// iconHash = "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0"
-		log.Printf("fallbackImage hash: %s", iconHash)
+		// log.Printf("fallbackImage hash: %s", iconHash)
 		if err != nil {
 			return User{}, err
 		}
