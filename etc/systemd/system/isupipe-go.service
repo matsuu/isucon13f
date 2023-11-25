@@ -5,6 +5,7 @@ After=mysql.service
 Requires=mysql.service
 
 [Service]
+StartLimitBurst=999
 WorkingDirectory=/home/isucon/webapp/go
 EnvironmentFile=/home/isucon/env.sh
 
