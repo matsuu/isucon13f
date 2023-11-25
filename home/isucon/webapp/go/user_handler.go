@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os/exec"
 	"strings"
+	"sync"
 	"time"
 
 	"github.com/google/uuid"
@@ -85,6 +86,8 @@ type PostIconResponse struct {
 	ID int64 `json:"id"`
 }
 
+var hashMap sync.Map
+
 func getIconHandler(c echo.Context) error {
 	ctx := c.Request().Context()
 
@@ -110,16 +113,24 @@ func getIconHandler(c echo.Context) error {
 		if etag == "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0" {
 			return c.NoContent(http.StatusNotModified)
 		}
-
-		var cnt int
-		if err := tx.GetContext(ctx, &cnt, "SELECT COUNT(*) FROM icons WHERE user_id = ? AND hash = ?", user.ID, etag); err != nil {
-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user icon: "+err.Error())
-		}
-		if cnt > 0 {
+		v, ok := hashMap.Load(user.ID)
+		if ok && etag == v.(string) {
 			return c.NoContent(http.StatusNotModified)
 		} else {
-			c.Logger().Printf("etag not matched: %s, %s", user.ID, etag)
+			c.Logger().Printf("etag not matched: %s, %s, %s", user.ID, etag, v)
 		}
+
+		/*
+			var cnt int
+			if err := tx.GetContext(ctx, &cnt, "SELECT COUNT(*) FROM icons WHERE user_id = ? AND hash = ?", user.ID, etag); err != nil {
+				return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user icon: "+err.Error())
+			}
+			if cnt > 0 {
+				return c.NoContent(http.StatusNotModified)
+			} else {
+				c.Logger().Printf("etag not matched: %s, %s", user.ID, etag)
+			}
+		*/
 	}
 
 	var image []byte
@@ -172,6 +183,7 @@ func postIconHandler(c echo.Context) error {
 	if err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get last inserted icon id: "+err.Error())
 	}
+	hashMap.Store(userID, iconHash)
 
 	if err := tx.Commit(); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
@@ -426,18 +438,27 @@ func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (Us
 		return User{}, err
 	}
 
+	v, ok := hashMap.Load(userModel.ID)
 	var iconHash string
-	if err := tx.GetContext(ctx, &iconHash, "SELECT hash FROM icons WHERE user_id = ?", userModel.ID); err != nil {
-		if !errors.Is(err, sql.ErrNoRows) {
-			return User{}, err
-		}
+	if ok {
+		iconHash = v.(string)
+
+	} else {
 		iconHash = "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0"
-		// image, err := os.ReadFile(fallbackImage)
-		// iconHash = fmt.Sprintf("%x", sha256.Sum256(image))
-		// if err != nil {
-		// 	return User{}, err
-		// }
 	}
+	/*
+		if err := tx.GetContext(ctx, &iconHash, "SELECT hash FROM icons WHERE user_id = ?", userModel.ID); err != nil {
+			if !errors.Is(err, sql.ErrNoRows) {
+				return User{}, err
+			}
+			iconHash = "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0"
+			// image, err := os.ReadFile(fallbackImage)
+			// iconHash = fmt.Sprintf("%x", sha256.Sum256(image))
+			// if err != nil {
+			// 	return User{}, err
+			// }
+		}
+	*/
 
 	user := User{
 		ID:          userModel.ID,

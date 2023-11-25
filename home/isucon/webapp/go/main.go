@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/exec"
 	"strconv"
+	"sync"
 
 	"github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
@@ -101,6 +102,20 @@ func connectDB(logger echo.Logger) (*sqlx.DB, error) {
 	db.SetMaxOpenConns(128)
 	db.SetMaxIdleConns(128)
 
+	rows, err := db.Queryx("SELECT user_id, hash FROM icons")
+	if err != nil {
+		return nil, err
+	}
+	for rows.Next() {
+		var id int64
+		var hash string
+		if err := rows.Scan(&id, &hash); err != nil {
+			return nil, err
+		}
+		hashMap.Store(id, hash)
+	}
+	rows.Close()
+
 	if err := db.Ping(); err != nil {
 		return nil, err
 	}
@@ -113,6 +128,7 @@ func initializeHandler(c echo.Context) error {
 		c.Logger().Warnf("init.sh failed with err=%s", string(out))
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to initialize: "+err.Error())
 	}
+	hashMap = sync.Map{}
 
 	c.Request().Header.Add("Content-Type", "application/json;charset=utf-8")
 	return c.JSON(http.StatusOK, InitializeResponse{
