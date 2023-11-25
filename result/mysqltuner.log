@@ -9,27 +9,34 @@
  
 -------- Log file Recommendations ------------------------------------------------------------------
 [OK] Log file /var/log/mysql/error.log exists
-[--] Log file: /var/log/mysql/error.log(7K)
+[--] Log file: /var/log/mysql/error.log(14K)
 [OK] Log file /var/log/mysql/error.log is readable.
 [OK] Log file /var/log/mysql/error.log is not empty
 [OK] Log file /var/log/mysql/error.log is smaller than 32 Mb
-[!!] /var/log/mysql/error.log contains 12 warning(s).
-[OK] /var/log/mysql/error.log doesn't contain any error.
-[--] 9 start(s) detected in /var/log/mysql/error.log
-[--] 1) 2023-11-25T01:28:46.704477Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
-[--] 2) 2023-11-25T01:28:46.704388Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-[--] 3) 2023-11-25T01:06:14.758074Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
-[--] 4) 2023-11-25T01:06:14.758004Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-[--] 5) 2023-11-24T21:28:00.987418Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
-[--] 6) 2023-11-24T21:28:00.987345Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-[--] 7) 2023-11-24T21:27:57.979392Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
-[--] 8) 2023-11-24T21:27:55.113624Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/tmp/tmp.511JTPVXMa/mysqld.sock'  port: 0  (Ubuntu).
-[--] 9) 2023-11-24T21:27:55.113570Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
-[--] 4 shutdown(s) detected in /var/log/mysql/error.log
-[--] 1) 2023-11-25T01:28:45.898661Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
-[--] 2) 2023-11-24T21:31:08.784457Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
-[--] 3) 2023-11-24T21:27:59.543898Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
-[--] 4) 2023-11-24T21:27:56.620238Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[!!] /var/log/mysql/error.log contains 22 warning(s).
+[!!] /var/log/mysql/error.log contains 35 error(s).
+[--] 11 start(s) detected in /var/log/mysql/error.log
+[--] 1) 2023-11-25T06:26:46.634693Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
+[--] 2) 2023-11-25T06:26:46.634523Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+[--] 3) 2023-11-25T01:28:46.704477Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
+[--] 4) 2023-11-25T01:28:46.704388Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+[--] 5) 2023-11-25T01:06:14.758074Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
+[--] 6) 2023-11-25T01:06:14.758004Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+[--] 7) 2023-11-24T21:28:00.987418Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  (Ubuntu).
+[--] 8) 2023-11-24T21:28:00.987345Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+[--] 9) 2023-11-24T21:27:57.979392Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '127.0.0.1' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+[--] 10) 2023-11-24T21:27:55.113624Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.35-0ubuntu0.22.04.1'  socket: '/tmp/tmp.511JTPVXMa/mysqld.sock'  port: 0  (Ubuntu).
+[--] 10 shutdown(s) detected in /var/log/mysql/error.log
+[--] 1) 2023-11-25T06:26:33.454784Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 2) 2023-11-25T06:26:32.204291Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 3) 2023-11-25T06:26:30.956483Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 4) 2023-11-25T06:26:29.707677Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 5) 2023-11-25T06:26:28.507755Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 6) 2023-11-25T06:26:27.478990Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 7) 2023-11-25T01:28:45.898661Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 8) 2023-11-24T21:31:08.784457Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 9) 2023-11-24T21:27:59.543898Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
+[--] 10) 2023-11-24T21:27:56.620238Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.35-0ubuntu0.22.04.1)  (Ubuntu).
  
 -------- Storage Engine Statistics -----------------------------------------------------------------
 [--] Status: +ARCHIVE +BLACKHOLE +CSV -FEDERATED +InnoDB +MEMORY +MRG_MYISAM +MyISAM +PERFORMANCE_SCHEMA 
@@ -47,7 +54,7 @@
 [OK] NO SECURITY CVE FOUND FOR YOUR VERSION
  
 -------- Performance Metrics -----------------------------------------------------------------------
-[--] Up for: 4h 54m 1s (8M q [497.757 qps], 14K conn, TX: 14G, RX: 1G)
+[--] Up for: 8m 51s (307K q [578.603 qps], 1K conn, TX: 99M, RX: 79M)
 [--] Reads / Writes: 96% / 4%
 [--] Binary logging is disabled
 [--] Physical Memory     : 3.6G
@@ -56,21 +63,21 @@
 [--] Total buffers: 176.0M global + 1.9M per thread (151 max threads)
 [--] P_S Max memory usage: 72B
 [--] Galera GCache Max memory usage: 0B
-[OK] Maximum reached memory usage: 243.5M (6.59% of installed RAM)
+[OK] Maximum reached memory usage: 232.3M (6.28% of installed RAM)
 [OK] Maximum possible memory usage: 459.1M (12.42% of installed RAM)
 [OK] Overall possible memory usage with other process is compatible with memory available
-[!!] Slow queries: 112% (9M/8M)
-[OK] Highest usage of available connections: 23% (36/151)
-[OK] Aborted connections: 0.06%  (9/14409)
+[!!] Slow queries: 116% (357K/307K)
+[OK] Highest usage of available connections: 19% (30/151)
+[OK] Aborted connections: 0.00%  (0/1746)
 [!!] name resolution is active : a reverse name resolution is made for each new connection and can reduce performance
 [--] Query cache have been removed in MySQL 8
-[OK] Sorts requiring temporary tables: 0% (40 temp sorts / 16K sorts)
-[!!] Joins performed without indexes: 85
-[OK] Temporary tables created on disk: 0% (0 on disk / 297K total)
-[OK] Thread cache hit rate: 99% (136 created / 14K connections)
-[OK] Table cache hit rate: 32% (1K open / 5K opened)
-[OK] Open file limit used: 0% (5/10K)
-[OK] Table locks acquired immediately: 100% (55 immediate / 55 locks)
+[OK] Sorts requiring temporary tables: 0% (13 temp sorts / 1K sorts)
+[!!] Joins performed without indexes: 7
+[OK] Temporary tables created on disk: 0% (0 on disk / 29K total)
+[OK] Thread cache hit rate: 98% (30 created / 1K connections)
+[OK] Table cache hit rate: 86% (610 open / 703 opened)
+[OK] Open file limit used: 0% (1/10K)
+[OK] Table locks acquired immediately: 100% (8 immediate / 8 locks)
  
 -------- Performance schema ------------------------------------------------------------------------
 [--] Memory used by P_S: 72B
@@ -91,9 +98,9 @@
 [OK] InnoDB buffer pool instances: 1
 [--] Number of InnoDB Buffer Pool Chunk : 1 for 1 Buffer Pool Instance(s)
 [OK] Innodb_buffer_pool_size aligned with Innodb_buffer_pool_chunk_size & Innodb_buffer_pool_instances
-[OK] InnoDB Read buffer efficiency: 100.00% (403874703 hits/ 403876310 total)
-[OK] InnoDB Write log efficiency: 93.02% (5115842 hits/ 5499639 total)
-[OK] InnoDB log waits: 0.00% (0 waits / 383797 writes)
+[OK] InnoDB Read buffer efficiency: 99.99% (28251992 hits/ 28254613 total)
+[!!] InnoDB Write Log efficiency: 89.75% (202343 hits/ 225448 total)
+[OK] InnoDB log waits: 0.00% (0 waits / 23105 writes)
  
 -------- AriaDB Metrics ----------------------------------------------------------------------------
 [--] AriaDB is disabled.
@@ -119,6 +126,7 @@
 -------- Recommendations ---------------------------------------------------------------------------
 General recommendations:
     Control warning line(s) into /var/log/mysql/error.log file
+    Control error line(s) into /var/log/mysql/error.log file
     MySQL was started within the last 24 hours - recommendations may be inaccurate
     Configure your accounts with ip or subnets only, then update your configuration with skip-name-resolve=1
     Adjust your join queries to always utilize indexes

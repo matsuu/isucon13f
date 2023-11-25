@@ -80,3 +80,10 @@ disable-log-bin
 slow_query_log = 1
 slow_query_log_file = /var/log/mysql/slow.log
 long_query_time = 0
+
+innodb_buffer_pool_size = 128M
+innodb_doublewrite = 0
+innodb_flush_log_at_trx_commit = 0
+innodb_flush_log_at_timeout = 3
+innodb_log_group_home_dir = /dev/shm
+innodb_redo_log_capacity = 128M
