@@ -54,7 +54,7 @@
 [OK] NO SECURITY CVE FOUND FOR YOUR VERSION
  
 -------- Performance Metrics -----------------------------------------------------------------------
-[--] Up for: 1h 41m 56s (3M q [513.024 qps], 15K conn, TX: 1G, RX: 700M)
+[--] Up for: 2h 1m 28s (3M q [430.537 qps], 15K conn, TX: 1G, RX: 700M)
 [--] Reads / Writes: 95% / 5%
 [--] Binary logging is disabled
 [--] Physical Memory     : 3.6G
@@ -68,16 +68,16 @@
 [OK] Overall possible memory usage with other process is compatible with memory available
 [!!] Slow queries: 120% (3M/3M)
 [OK] Highest usage of available connections: 19% (30/151)
-[OK] Aborted connections: 0.03%  (4/15369)
+[OK] Aborted connections: 0.03%  (4/15399)
 [!!] name resolution is active : a reverse name resolution is made for each new connection and can reduce performance
 [--] Query cache have been removed in MySQL 8
 [OK] Sorts requiring temporary tables: 0% (28 temp sorts / 15K sorts)
-[!!] Joins performed without indexes: 134
+[!!] Joins performed without indexes: 141
 [OK] Temporary tables created on disk: 0% (0 on disk / 308K total)
 [OK] Thread cache hit rate: 99% (127 created / 15K connections)
-[OK] Table cache hit rate: 41% (1K open / 3K opened)
+[OK] Table cache hit rate: 43% (1K open / 3K opened)
 [OK] Open file limit used: 0% (1/10K)
-[OK] Table locks acquired immediately: 100% (34 immediate / 34 locks)
+[OK] Table locks acquired immediately: 100% (38 immediate / 38 locks)
  
 -------- Performance schema ------------------------------------------------------------------------
 [--] Memory used by P_S: 72B
@@ -98,7 +98,7 @@
 [OK] InnoDB buffer pool instances: 1
 [--] Number of InnoDB Buffer Pool Chunk : 1 for 1 Buffer Pool Instance(s)
 [OK] Innodb_buffer_pool_size aligned with Innodb_buffer_pool_chunk_size & Innodb_buffer_pool_instances
-[OK] InnoDB Read buffer efficiency: 100.00% (140422688 hits/ 140425685 total)
+[OK] InnoDB Read buffer efficiency: 100.00% (140424635 hits/ 140427632 total)
 [OK] InnoDB Write log efficiency: 90.15% (2127242 hits/ 2359586 total)
 [OK] InnoDB log waits: 0.00% (0 waits / 232344 writes)
  

@@ -292,7 +292,7 @@ func registerHandler(c echo.Context) error {
 	}
 	themeMap.Store(userID, themeModel)
 
-	if out, err := exec.Command("pdnsutil", "add-record", "u.isucon.dev", req.Name, "A", "60", powerDNSSubdomainAddress).CombinedOutput(); err != nil {
+	if out, err := exec.Command("ssh", "192.168.0.13", "pdnsutil", "add-record", "u.isucon.dev", req.Name, "A", "60", powerDNSSubdomainAddress).CombinedOutput(); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, string(out)+": "+err.Error())
 	}
 
