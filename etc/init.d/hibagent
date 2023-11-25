@@ -1,0 +1,90 @@
+#!/bin/sh
+# hibagent daemon
+# chkconfig: - 20 80
+# description: EC2 instance hibernation agent
+# processname: hibagent
+
+### BEGIN INIT INFO
+# Provides:        hibagent
+# Required-Start:  $network $remote_fs $syslog
+# Required-Stop:   $network $remote_fs $syslog
+# Default-Start:   2 3 4 5
+# Default-Stop:    0 1 6
+# Short-Description: Start EC2 Spot hibernation agent
+### END INIT INFO
+
+. /lib/lsb/init-functions
+
+DAEMON_PATH="/usr/bin"
+
+NAME=hibagent
+DESC="My daemon description"
+PIDFILE=/var/run/$NAME.pid
+SCRIPTNAME=/etc/init.d/hibagent
+
+DAEMON=hibagent
+DAEMONOPTS="--config /etc/hibagent-config.cfg --pidfile $PIDFILE"
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+else
+    COMMAND="$1"
+fi
+
+case $COMMAND in
+start)
+	printf "%-50s" "Starting $NAME..."
+	if [ -f $PIDFILE ]; then
+		PID=`cat $PIDFILE`
+		if [[ "`ps axf | grep ${PID} | grep -v grep`" ]]; then
+			echo "hibagent is already running"
+			exit 0
+		fi
+	fi
+
+	cd $DAEMON_PATH
+	$DAEMON $DAEMONOPTS > /dev/null 2>&1
+	if [ $? -eq 0 ]; then
+		printf "%s\n" "Ok"
+	else
+		printf "%s\n" "Fail"
+		exit 1
+	fi
+;;
+status)
+	printf "%-50s" "Checking $NAME..."
+	if [ -f $PIDFILE ]; then
+		PID=`cat $PIDFILE`
+		if [ -z "`ps axf | grep ${PID} | grep -v grep`" ]; then
+			printf "%s\n" "Process dead but pidfile exists"
+		else
+			echo "Running"
+		fi
+	else
+		printf "%s\n" "Service not running"
+	fi
+;;
+stop)
+	printf "%-50s" "Stopping $NAME"
+	if [ -f $PIDFILE ]; then
+		PID=`cat $PIDFILE`
+		kill -HUP $PID
+		printf "%s\n" "Ok"
+		rm -f $PIDFILE
+		exit 0
+	else
+		printf "%s\n" "already stopped"
+		exit 0
+	fi
+;;
+
+restart)
+  	$0 stop
+  	$0 start
+;;
+
+*)
+	echo "Usage: $0 {status|start|stop|restart}"
+	exit 1
+esac

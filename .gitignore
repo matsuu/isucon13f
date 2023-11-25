@@ -146,6 +146,8 @@
 /home/isucon/local/
 /home/isucon/pprof/
 /home/isucon/tmp/
+/home/isucon/webapp/rust/target/
+/home/isucon/webapp/node/node_modules/
 /home/isucon/.*
 
 !/result/
