@@ -1,0 +1,2 @@
+-- INSERT INTO scores (user_id, name, score) SELECT id, name, 0 FROM users;
+INSERT INTO scores (user_id, name, score) SELECT u.id, u.name AS name, (SELECT count(*) from livestreams l inner join reactions r on r.livestream_id = l.id WHERE u.id = l.user_id) + (SELECT IFNULL(SUM(l2.tip), 0) FROM livestreams l INNER JOIN livecomments l2 ON l2.livestream_id = l.id WHERE u.id = l.user_id) AS score FROM users u;
