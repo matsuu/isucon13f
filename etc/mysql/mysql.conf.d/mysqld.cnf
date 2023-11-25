@@ -76,3 +76,7 @@ log_error = /var/log/mysql/error.log
 max_binlog_size   = 100M
 # binlog_do_db		= include_database_name
 # binlog_ignore_db	= include_database_name
+disable-log-bin
+slow_query_log = 1
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 0
