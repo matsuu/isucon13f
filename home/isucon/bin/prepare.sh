@@ -35,6 +35,6 @@ sudo truncate -s 0 "${nginx_access_log}"
 # sudo systemctl reload nginx
 
 # cleanup
-rm -f "${result_dir}"/*.*
+#rm -f "${result_dir}"/*.*
  
 echo "OK"
