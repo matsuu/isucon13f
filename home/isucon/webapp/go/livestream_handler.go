@@ -160,7 +160,7 @@ func reserveLivestreamHandler(c echo.Context) error {
 
 	livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModel)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
+		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream 5: "+err.Error())
 	}
 
 	if err := tx.Commit(); err != nil {
@@ -225,7 +225,7 @@ func searchLivestreamsHandler(c echo.Context) error {
 	for i := range livestreamModels {
 		livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModels[i])
 		if err != nil {
-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
+			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream 1: "+err.Error())
 		}
 		livestreams[i] = livestream
 	}
@@ -262,7 +262,7 @@ func getMyLivestreamsHandler(c echo.Context) error {
 	for i := range livestreamModels {
 		livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModels[i])
 		if err != nil {
-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
+			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream 2: "+err.Error())
 		}
 		livestreams[i] = livestream
 	}
@@ -305,7 +305,7 @@ func getUserLivestreamsHandler(c echo.Context) error {
 	for i := range livestreamModels {
 		livestream, err := fillLivestreamResponse(ctx, tx, *livestreamModels[i])
 		if err != nil {
-			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
+			return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream 3: "+err.Error())
 		}
 		livestreams[i] = livestream
 	}
@@ -421,7 +421,7 @@ func getLivestreamHandler(c echo.Context) error {
 
 	livestream, err := fillLivestreamResponse(ctx, tx, livestreamModel)
 	if err != nil {
-		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream: "+err.Error())
+		return echo.NewHTTPError(http.StatusInternalServerError, "failed to fill livestream 4: "+err.Error())
 	}
 
 	if err := tx.Commit(); err != nil {
