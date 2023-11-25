@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"log"
 	"net/http"
 	"os"
 	"os/exec"
@@ -102,6 +103,19 @@ func getIconHandler(c echo.Context) error {
 			return echo.NewHTTPError(http.StatusNotFound, "not found user that has the given username")
 		}
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
+	}
+
+	etag := c.Request().Header.Get("If-None-Match")
+	if etag != "" {
+		var cnt int
+		if err := tx.GetContext(ctx, &cnt, "SELECT COUNT(*) FROM icons WHERE user_id = ? AND hash = ?", user.ID, etag); err != nil {
+			return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user icon: "+err.Error())
+		}
+		if cnt > 0 {
+			return c.NoContent(http.StatusNotModified)
+		} else {
+			c.Logger().Printf("etag not matched: %s, %s", user.ID, etag)
+		}
 	}
 
 	var image []byte
@@ -412,6 +426,8 @@ func fillUserResponse(ctx context.Context, tx *sqlx.Tx, userModel UserModel) (Us
 		}
 		image, err := os.ReadFile(fallbackImage)
 		iconHash = fmt.Sprintf("%x", sha256.Sum256(image))
+		// iconHash = "d9f8294e9d895f81ce62e73dc7d5dff862a4fa40bd4e0fecf53f7526a8edcac0"
+		log.Printf("fallbackImage hash: %s", iconHash)
 		if err != nil {
 			return User{}, err
 		}

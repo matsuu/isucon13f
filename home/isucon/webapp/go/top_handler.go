@@ -9,8 +9,8 @@ import (
 )
 
 type Tag struct {
-	ID   int64  `json:"id"`
-	Name string `json:"name"`
+	ID   int64  `json:"id" db:"id"`
+	Name string `json:"name" db:"name"`
 }
 
 type TagModel struct {
@@ -31,8 +31,8 @@ func getTagHandler(c echo.Context) error {
 	}
 	defer tx.Rollback()
 
-	var tagModels []*TagModel
-	if err := tx.SelectContext(ctx, &tagModels, "SELECT * FROM tags"); err != nil {
+	var tags []*Tag
+	if err := tx.SelectContext(ctx, &tags, "SELECT * FROM tags"); err != nil {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get tags: "+err.Error())
 	}
 
@@ -40,13 +40,6 @@ func getTagHandler(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to commit: "+err.Error())
 	}
 
-	tags := make([]*Tag, len(tagModels))
-	for i := range tagModels {
-		tags[i] = &Tag{
-			ID:   tagModels[i].ID,
-			Name: tagModels[i].Name,
-		}
-	}
 	return c.JSON(http.StatusOK, &TagsResponse{
 		Tags: tags,
 	})
