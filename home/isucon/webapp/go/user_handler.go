@@ -10,6 +10,7 @@ import (
 	"net/http"
 	"os"
 	"os/exec"
+	"strings"
 	"time"
 
 	"github.com/google/uuid"
@@ -104,7 +105,8 @@ func getIconHandler(c echo.Context) error {
 		return echo.NewHTTPError(http.StatusInternalServerError, "failed to get user: "+err.Error())
 	}
 
-	etag := c.Request().Header.Get("If-None-Match")
+	etag := strings.Trim(c.Request().Header.Get("If-None-Match"), `"`)
+
 	if etag != "" {
 		var cnt int
 		if err := tx.GetContext(ctx, &cnt, "SELECT COUNT(*) FROM icons WHERE user_id = ? AND hash = ?", user.ID, etag); err != nil {
